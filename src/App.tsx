@@ -53,6 +53,7 @@ export default function App() {
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
   const [typeFilter, setTypeFilter] = useState<'all' | 'สพป.' | 'สพม.' | 'สศศ.'>('all');
   const [statusFilter, setStatusFilter] = useState<'all' | 'announced' | 'pending'>('all');
+  const [sortBy, setSortBy] = useState<'official' | 'positions' | 'province' | 'region'>('official');
   const [visibleCount, setVisibleCount] = useState<number>(40);
   const [feedItems] = useState<LiveFeedItem[]>(OFFICIAL_FEED);
   const [centralAgencies] = useState<CentralAgencyData[]>(OFFICIAL_CENTRAL_AGENCIES);
@@ -186,10 +187,12 @@ export default function App() {
   const specCount = useMemo(() => districts.filter((d) => d.type === 'สศศ.').length, [districts]);
 
   const filteredDistricts = useMemo(() => {
-    return districts.filter((d) => {
+    const list = districts.filter((d) => {
       const matchSearch =
         d.name.toLowerCase().includes(searchDistrict.toLowerCase()) ||
-        d.province.toLowerCase().includes(searchDistrict.toLowerCase());
+        d.province.toLowerCase().includes(searchDistrict.toLowerCase()) ||
+        (d.jurisdiction && d.jurisdiction.toLowerCase().includes(searchDistrict.toLowerCase())) ||
+        (d.headquarters && d.headquarters.toLowerCase().includes(searchDistrict.toLowerCase()));
       const matchRegion = selectedRegion === 'all' || d.region === selectedRegion;
       const matchType = typeFilter === 'all' || d.type === typeFilter;
       const matchStatus =
@@ -198,7 +201,20 @@ export default function App() {
         (statusFilter === 'pending' && d.positions === null);
       return matchSearch && matchRegion && matchType && matchStatus;
     });
-  }, [districts, searchDistrict, selectedRegion, typeFilter, statusFilter]);
+
+    return [...list].sort((a, b) => {
+      if (sortBy === 'positions') {
+        return (b.positions || 0) - (a.positions || 0);
+      }
+      if (sortBy === 'province') {
+        return a.province.localeCompare(b.province, 'th');
+      }
+      if (sortBy === 'region') {
+        return a.region.localeCompare(b.region);
+      }
+      return 0; // official order as declared by OBEC sequence
+    });
+  }, [districts, searchDistrict, selectedRegion, typeFilter, statusFilter, sortBy]);
 
   const filteredAgencies = useMemo(() => {
     if (!agencySearch) return centralAgencies;
@@ -533,18 +549,41 @@ export default function App() {
                     ศูนย์รวมข้อมูลและเว็บไซต์ทางการ สพฐ.
                   </h2>
                   <p className="text-xs text-slate-500">
-                    เชื่อมต่อฐานข้อมูลจริงครบทั้ง 3 แหล่งข้อมูลหลักตามคำสั่ง สพฐ.
+                    เชื่อมต่อฐานข้อมูลทางการครบถ้วน: สารสนเทศ BOPP, พอร์ทัล IBNS, สพป.กทม., หน่วยงาน สพฐ. และ ขอบเขตพื้นที่วิกิพีเดีย
                   </p>
                 </div>
                 <button
                   onClick={() => { setActiveTab('feed'); setFeedSubTab('agencies'); }}
                   className="text-xs font-bold text-blue-700 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded-full border border-blue-200"
                 >
-                  ดู 14 หน่วยงาน สพฐ.
+                  ดู 16 หน่วยงาน สพฐ.
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 pt-1">
+                <a
+                  href="https://info.obec.go.th/districts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 rounded-xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-blue-50 hover:bg-indigo-100/80 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-indigo-700 text-white flex items-center justify-center mb-2 shadow-xs">
+                      <span className="material-symbols-outlined text-lg">lan</span>
+                    </div>
+                    <h3 className="font-bold text-xs sm:text-sm text-indigo-950 group-hover:text-indigo-700">
+                      พอร์ทัลเขตพื้นที่ สพฐ. IBNS
+                    </h3>
+                    <p className="text-[11px] text-indigo-800 mt-1 leading-relaxed">
+                      ระบบสารสนเทศ IBNS เชื่อมโยงพอร์ทัลข่าวสารประจำเขตทั่วประเทศ
+                    </p>
+                  </div>
+                  <div className="mt-3 flex items-center text-[11px] font-bold text-indigo-700">
+                    <span>info.obec.go.th/districts</span>
+                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                  </div>
+                </a>
+
                 <a
                   href="https://info.bopp.go.th/area"
                   target="_blank"
@@ -559,7 +598,7 @@ export default function App() {
                       สารสนเทศ สพฐ. (BOPP)
                     </h3>
                     <p className="text-[11px] text-sky-800 mt-1 leading-relaxed">
-                      ข้อมูลสารสนเทศเขตพื้นที่การศึกษา 246 เขต และสถานศึกษาทั่วประเทศ
+                      ข้อมูลสารสนเทศเขตพื้นที่การศึกษา 246 เขต และสถานศึกษาทั่วไทย
                     </p>
                   </div>
                   <div className="mt-3 flex items-center text-[11px] font-bold text-sky-700">
@@ -572,20 +611,20 @@ export default function App() {
                   href="https://www.bkkp.go.th/web/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50 hover:bg-indigo-100/80 transition-all flex flex-col justify-between group"
+                  className="p-3.5 rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 hover:bg-blue-100/80 transition-all flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                    <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-2 shadow-xs">
                       <span className="material-symbols-outlined text-lg">apartment</span>
                     </div>
-                    <h3 className="font-bold text-xs sm:text-sm text-indigo-950 group-hover:text-indigo-700">
+                    <h3 className="font-bold text-xs sm:text-sm text-blue-950 group-hover:text-blue-700">
                       สพป.กรุงเทพมหานคร
                     </h3>
-                    <p className="text-[11px] text-indigo-800 mt-1 leading-relaxed">
+                    <p className="text-[11px] text-blue-800 mt-1 leading-relaxed">
                       Bangkok Primary Educational Service Area Office พอร์ทัลทางการ
                     </p>
                   </div>
-                  <div className="mt-3 flex items-center text-[11px] font-bold text-indigo-700">
+                  <div className="mt-3 flex items-center text-[11px] font-bold text-blue-700">
                     <span>www.bkkp.go.th/web</span>
                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                   </div>
@@ -605,7 +644,7 @@ export default function App() {
                       หน่วยงานในสังกัด สพฐ.
                     </h3>
                     <p className="text-[11px] text-emerald-800 mt-1 leading-relaxed">
-                      ศูนย์รวม 14 สำนักและหน่วยงานส่วนกลาง กระทรวงศึกษาธิการ
+                      ศูนย์รวม 16 สำนัก/ศูนย์ส่วนกลาง กระทรวงศึกษาธิการ
                     </p>
                   </div>
                   <div className="mt-3 flex items-center text-[11px] font-bold text-emerald-700">
@@ -743,6 +782,35 @@ export default function App() {
               ))}
             </div>
 
+            {/* Official Sorting Controls (เรียงลำดับข้อมูลทางการ) */}
+            <div className="bg-white rounded-xl p-3 border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700">
+                <span className="material-symbols-outlined text-blue-700 text-base">sort</span>
+                <span>เรียงลำดับ:</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {[
+                  { id: 'official', label: 'ลำดับทางการ สพฐ.', icon: 'format_list_numbered' },
+                  { id: 'positions', label: 'ตำแหน่งว่างมากที่สุด', icon: 'trending_up' },
+                  { id: 'province', label: 'จังหวัด (ก-ฮ)', icon: 'sort_by_alpha' },
+                  { id: 'region', label: 'ตามภูมิภาค', icon: 'public' },
+                ].map((s) => (
+                  <button
+                    key={s.id}
+                    onClick={() => setSortBy(s.id as any)}
+                    className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+                      sortBy === s.id
+                        ? 'bg-blue-800 text-white shadow-xs'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-sm">{s.icon}</span>
+                    <span>{s.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* District List Card */}
             <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
@@ -830,7 +898,25 @@ export default function App() {
                         </div>
                       )}
 
-                      {/* Direct Links Action Bar: Download Docs, District Website & BOPP */}
+                      {/* Jurisdiction Coverage (อำเภอที่รับผิดชอบ) */}
+                      {d.jurisdiction && (
+                        <div className="mt-2 text-xs bg-slate-50 rounded-lg p-2 border border-slate-200/80">
+                          <span className="font-bold text-slate-700">อำเภอในความรับผิดชอบ: </span>
+                          <span className="text-slate-600">{d.jurisdiction}</span>
+                          {d.headquarters && (
+                            <span className="ml-2 font-semibold text-blue-800">
+                              (ที่ตั้งสำนักงาน: อ.{d.headquarters})
+                            </span>
+                          )}
+                          {d.formerCode && (
+                            <span className="ml-2 text-[11px] text-slate-400">
+                              [{d.formerCode}]
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Direct Links Action Bar: Download Docs, District Website, IBNS & BOPP */}
                       <div className="flex flex-wrap items-center gap-2 mt-3">
                         <a
                           href={d.officialAnnouncementUrl}
@@ -852,6 +938,18 @@ export default function App() {
                           <span className="material-symbols-outlined text-sm">open_in_new</span>
                           <span>เว็บ สพฐ. เขต</span>
                         </a>
+                        {d.ibnsUrl && (
+                          <a
+                            href={d.ibnsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 font-bold text-xs active:scale-95 transition-all"
+                            title={`พอร์ทัลเขตพื้นที่การศึกษา สพฐ. IBNS (info.obec.go.th)`}
+                          >
+                            <span className="material-symbols-outlined text-sm">lan</span>
+                            <span>พอร์ทัล IBNS</span>
+                          </a>
+                        )}
                         {d.boppUrl && (
                           <a
                             href={d.boppUrl}
@@ -1151,6 +1249,17 @@ export default function App() {
                             <span className="material-symbols-outlined text-sm">open_in_new</span>
                             <span>เข้าเว็บเขต</span>
                           </a>
+                          {item.ibnsUrl && (
+                            <a
+                              href={item.ibnsUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 font-bold text-xs transition-all"
+                            >
+                              <span className="material-symbols-outlined text-sm">lan</span>
+                              <span>พอร์ทัล IBNS</span>
+                            </a>
+                          )}
                           {item.boppUrl && (
                             <a
                               href={item.boppUrl}
@@ -1299,6 +1408,26 @@ export default function App() {
                 <span className="material-symbols-outlined text-lg text-blue-600">launch</span>
               </a>
 
+              {selectedDistrictForDetails.ibnsUrl && (
+                <a
+                  href={selectedDistrictForDetails.ibnsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-indigo-50 to-blue-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-950 font-bold text-sm active:scale-98 transition-all"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-700 text-white flex items-center justify-center">
+                      <span className="material-symbols-outlined text-xl">lan</span>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm">ระบบสารสนเทศ สพฐ. IBNS (พอร์ทัลเขต)</div>
+                      <div className="text-[11px] font-normal text-indigo-700">{selectedDistrictForDetails.ibnsUrl}</div>
+                    </div>
+                  </div>
+                  <span className="material-symbols-outlined text-lg text-indigo-700">launch</span>
+                </a>
+              )}
+
               {selectedDistrictForDetails.boppUrl && (
                 <a
                   href={selectedDistrictForDetails.boppUrl}
@@ -1319,6 +1448,29 @@ export default function App() {
                 </a>
               )}
             </div>
+
+            {/* Jurisdiction Coverage Callout */}
+            {selectedDistrictForDetails.jurisdiction && (
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+                <div className="font-bold text-slate-800 flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-sm text-blue-700">map</span>
+                  <span>ขอบเขตพื้นที่และอำเภอที่รับผิดชอบ:</span>
+                </div>
+                <p className="text-slate-600 leading-relaxed pl-5">
+                  {selectedDistrictForDetails.jurisdiction}
+                </p>
+                {selectedDistrictForDetails.headquarters && (
+                  <p className="text-blue-900 font-semibold pl-5 pt-1">
+                    ที่ตั้งสำนักงานเขต: อำเภอ{selectedDistrictForDetails.headquarters}
+                  </p>
+                )}
+                {selectedDistrictForDetails.formerCode && (
+                  <p className="text-slate-500 pl-5 text-[11px]">
+                    เดิมคือ: {selectedDistrictForDetails.formerCode}
+                  </p>
+                )}
+              </div>
+            )}
 
             {/* Contact Phone if available */}
             {selectedDistrictForDetails.contactPhone && (
