@@ -3,7 +3,9 @@ import {
   type DistrictData,
   type MajorSubjectData,
   type LiveFeedItem,
+  type CentralAgencyData,
   OFFICIAL_FEED,
+  OFFICIAL_CENTRAL_AGENCIES,
 } from './services/obecApi';
 import {
   getDailyObecStatistics,
@@ -49,8 +51,13 @@ export default function App() {
   // Filters & State
   const [searchDistrict, setSearchDistrict] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
+  const [typeFilter, setTypeFilter] = useState<'all' | 'สพป.' | 'สพม.' | 'สศศ.'>('all');
   const [statusFilter, setStatusFilter] = useState<'all' | 'announced' | 'pending'>('all');
+  const [visibleCount, setVisibleCount] = useState<number>(40);
   const [feedItems] = useState<LiveFeedItem[]>(OFFICIAL_FEED);
+  const [centralAgencies] = useState<CentralAgencyData[]>(OFFICIAL_CENTRAL_AGENCIES);
+  const [agencySearch, setAgencySearch] = useState('');
+  const [feedSubTab, setFeedSubTab] = useState<'agencies' | 'watchlist' | 'announcements'>('agencies');
 
   // ปักดาวเริ่มต้นให้ติดตามแค่ อุดรธานี และ กรุงเทพมหานคร ตามคำสั่ง
   const [watchlist, setWatchlist] = useState<string[]>([
@@ -174,19 +181,32 @@ export default function App() {
     return districts.filter((d) => d.positions === null).length;
   }, [districts]);
 
+  const sppCount = useMemo(() => districts.filter((d) => d.type === 'สพป.').length, [districts]);
+  const spmCount = useMemo(() => districts.filter((d) => d.type === 'สพม.').length, [districts]);
+  const specCount = useMemo(() => districts.filter((d) => d.type === 'สศศ.').length, [districts]);
+
   const filteredDistricts = useMemo(() => {
     return districts.filter((d) => {
       const matchSearch =
         d.name.toLowerCase().includes(searchDistrict.toLowerCase()) ||
         d.province.toLowerCase().includes(searchDistrict.toLowerCase());
       const matchRegion = selectedRegion === 'all' || d.region === selectedRegion;
+      const matchType = typeFilter === 'all' || d.type === typeFilter;
       const matchStatus =
         statusFilter === 'all' ||
         (statusFilter === 'announced' && d.positions !== null) ||
         (statusFilter === 'pending' && d.positions === null);
-      return matchSearch && matchRegion && matchStatus;
+      return matchSearch && matchRegion && matchType && matchStatus;
     });
-  }, [districts, searchDistrict, selectedRegion, statusFilter]);
+  }, [districts, searchDistrict, selectedRegion, typeFilter, statusFilter]);
+
+  const filteredAgencies = useMemo(() => {
+    if (!agencySearch) return centralAgencies;
+    const q = agencySearch.toLowerCase();
+    return centralAgencies.filter(
+      (a) => a.name.toLowerCase().includes(q) || a.category.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)
+    );
+  }, [centralAgencies, agencySearch]);
 
   return (
     <div className="bg-slate-50 text-slate-900 min-h-screen pb-28 antialiased selection:bg-blue-600 selection:text-white">
@@ -503,6 +523,98 @@ export default function App() {
                 ))}
               </div>
             </section>
+
+            {/* Official Data Sources Showcase */}
+            <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-blue-700 text-xl">hub</span>
+                    ศูนย์รวมข้อมูลและเว็บไซต์ทางการ สพฐ.
+                  </h2>
+                  <p className="text-xs text-slate-500">
+                    เชื่อมต่อฐานข้อมูลจริงครบทั้ง 3 แหล่งข้อมูลหลักตามคำสั่ง สพฐ.
+                  </p>
+                </div>
+                <button
+                  onClick={() => { setActiveTab('feed'); setFeedSubTab('agencies'); }}
+                  className="text-xs font-bold text-blue-700 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded-full border border-blue-200"
+                >
+                  ดู 14 หน่วยงาน สพฐ.
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                <a
+                  href="https://info.bopp.go.th/area"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 rounded-xl border border-sky-200 bg-gradient-to-br from-sky-50 to-blue-50 hover:bg-sky-100/80 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                      <span className="material-symbols-outlined text-lg">database</span>
+                    </div>
+                    <h3 className="font-bold text-xs sm:text-sm text-sky-950 group-hover:text-blue-700">
+                      สารสนเทศ สพฐ. (BOPP)
+                    </h3>
+                    <p className="text-[11px] text-sky-800 mt-1 leading-relaxed">
+                      ข้อมูลสารสนเทศเขตพื้นที่การศึกษา 246 เขต และสถานศึกษาทั่วประเทศ
+                    </p>
+                  </div>
+                  <div className="mt-3 flex items-center text-[11px] font-bold text-sky-700">
+                    <span>info.bopp.go.th/area</span>
+                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.bkkp.go.th/web/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 rounded-xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50 hover:bg-indigo-100/80 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                      <span className="material-symbols-outlined text-lg">apartment</span>
+                    </div>
+                    <h3 className="font-bold text-xs sm:text-sm text-indigo-950 group-hover:text-indigo-700">
+                      สพป.กรุงเทพมหานคร
+                    </h3>
+                    <p className="text-[11px] text-indigo-800 mt-1 leading-relaxed">
+                      Bangkok Primary Educational Service Area Office พอร์ทัลทางการ
+                    </p>
+                  </div>
+                  <div className="mt-3 flex items-center text-[11px] font-bold text-indigo-700">
+                    <span>www.bkkp.go.th/web</span>
+                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.obec.go.th/th/agency-website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 hover:bg-emerald-100/80 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                      <span className="material-symbols-outlined text-lg">account_balance</span>
+                    </div>
+                    <h3 className="font-bold text-xs sm:text-sm text-emerald-950 group-hover:text-emerald-700">
+                      หน่วยงานในสังกัด สพฐ.
+                    </h3>
+                    <p className="text-[11px] text-emerald-800 mt-1 leading-relaxed">
+                      ศูนย์รวม 14 สำนักและหน่วยงานส่วนกลาง กระทรวงศึกษาธิการ
+                    </p>
+                  </div>
+                  <div className="mt-3 flex items-center text-[11px] font-bold text-emerald-700">
+                    <span>obec.go.th/th/agency-website</span>
+                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                  </div>
+                </a>
+              </div>
+            </section>
           </div>
         )}
 
@@ -527,9 +639,9 @@ export default function App() {
             </div>
 
             {/* Status Filter Tabs (เปิดรับตำแหน่งแล้ว vs ทั้งหมด vs รอประกาศ) */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <button
-                onClick={() => setStatusFilter('all')}
+                onClick={() => { setStatusFilter('all'); setVisibleCount(40); }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   statusFilter === 'all'
                     ? 'bg-slate-900 text-white shadow-xs'
@@ -539,7 +651,7 @@ export default function App() {
                 ทั้งหมด ({districts.length})
               </button>
               <button
-                onClick={() => setStatusFilter('announced')}
+                onClick={() => { setStatusFilter('announced'); setVisibleCount(40); }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                   statusFilter === 'announced'
                     ? 'bg-emerald-600 text-white shadow-xs shadow-emerald-600/20'
@@ -550,7 +662,7 @@ export default function App() {
                 <span>เปิดรับตำแหน่งแล้ว ({announcedCount})</span>
               </button>
               <button
-                onClick={() => setStatusFilter('pending')}
+                onClick={() => { setStatusFilter('pending'); setVisibleCount(40); }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   statusFilter === 'pending'
                     ? 'bg-slate-700 text-white shadow-xs'
@@ -558,6 +670,51 @@ export default function App() {
                 }`}
               >
                 รอประกาศ ({pendingCount})
+              </button>
+            </div>
+
+            {/* Type Filter Chips (สพป. / สพม. / สศศ.) */}
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+              <span className="text-xs font-bold text-slate-500 shrink-0">ประเภท:</span>
+              <button
+                onClick={() => { setTypeFilter('all'); setVisibleCount(40); }}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                  typeFilter === 'all'
+                    ? 'bg-blue-800 text-white shadow-xs'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                ทุกสังกัด ({districts.length})
+              </button>
+              <button
+                onClick={() => { setTypeFilter('สพป.'); setVisibleCount(40); }}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                  typeFilter === 'สพป.'
+                    ? 'bg-cyan-700 text-white shadow-xs'
+                    : 'bg-cyan-50 text-cyan-900 border border-cyan-200 hover:bg-cyan-100'
+                }`}
+              >
+                สพป. ประถมศึกษา ({sppCount})
+              </button>
+              <button
+                onClick={() => { setTypeFilter('สพม.'); setVisibleCount(40); }}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                  typeFilter === 'สพม.'
+                    ? 'bg-indigo-700 text-white shadow-xs'
+                    : 'bg-indigo-50 text-indigo-900 border border-indigo-200 hover:bg-indigo-100'
+                }`}
+              >
+                สพม. มัธยมศึกษา ({spmCount})
+              </button>
+              <button
+                onClick={() => { setTypeFilter('สศศ.'); setVisibleCount(40); }}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                  typeFilter === 'สศศ.'
+                    ? 'bg-purple-700 text-white shadow-xs'
+                    : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
+                }`}
+              >
+                การศึกษาพิเศษ ({specCount})
               </button>
             </div>
 
@@ -574,7 +731,7 @@ export default function App() {
               ].map((r) => (
                 <button
                   key={r.id}
-                  onClick={() => setSelectedRegion(r.id)}
+                  onClick={() => { setSelectedRegion(r.id); setVisibleCount(40); }}
                   className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
                     selectedRegion === r.id
                       ? 'bg-blue-700 text-white shadow-sm shadow-blue-500/20'
@@ -605,7 +762,7 @@ export default function App() {
               </div>
 
               <div className="divide-y divide-slate-100">
-                {filteredDistricts.map((d) => {
+                {filteredDistricts.slice(0, visibleCount).map((d) => {
                   const isSaved = watchlist.includes(d.id);
                   const isLive = d.status === 'open' && d.applicants !== null;
                   const hasAnnouncedPositions = d.positions !== null;
@@ -673,7 +830,7 @@ export default function App() {
                         </div>
                       )}
 
-                      {/* Direct Links Action Bar: Download Docs & District Website */}
+                      {/* Direct Links Action Bar: Download Docs, District Website & BOPP */}
                       <div className="flex flex-wrap items-center gap-2 mt-3">
                         <a
                           href={d.officialAnnouncementUrl}
@@ -695,6 +852,18 @@ export default function App() {
                           <span className="material-symbols-outlined text-sm">open_in_new</span>
                           <span>เว็บ สพฐ. เขต</span>
                         </a>
+                        {d.boppUrl && (
+                          <a
+                            href={d.boppUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200 font-bold text-xs active:scale-95 transition-all"
+                            title={`สารสนเทศเขตพื้นที่การศึกษา สพฐ. (info.bopp.go.th)`}
+                          >
+                            <span className="material-symbols-outlined text-sm">database</span>
+                            <span>BOPP</span>
+                          </a>
+                        )}
                         <button
                           onClick={() => setSelectedDistrictForDetails(d)}
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs active:scale-95 transition-all ml-auto"
@@ -707,6 +876,24 @@ export default function App() {
                   );
                 })}
               </div>
+
+              {/* Load More Pagination for 246 districts */}
+              {filteredDistricts.length > visibleCount && (
+                <div className="pt-4 flex flex-wrap items-center justify-center gap-2 border-t border-slate-100 mt-4">
+                  <button
+                    onClick={() => setVisibleCount((prev) => prev + 50)}
+                    className="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-900 font-bold text-xs shadow-xs transition-all"
+                  >
+                    โหลดเขตพื้นที่เพิ่ม (+50 เขต)
+                  </button>
+                  <button
+                    onClick={() => setVisibleCount(filteredDistricts.length)}
+                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-all"
+                  >
+                    แสดงทั้งหมด ({filteredDistricts.length} เขต)
+                  </button>
+                </div>
+              )}
             </section>
           </div>
         )}
@@ -769,122 +956,255 @@ export default function App() {
           </div>
         )}
 
-        {/* ================= VIEW 4: LIVE FEED & WATCHLIST ================= */}
+        {/* ================= VIEW 4: OBEC AGENCIES, WATCHLIST & LIVE FEED ================= */}
         {activeTab === 'feed' && (
           <div className="space-y-4">
-            {/* Watchlist Section (อุดรธานี & กรุงเทพมหานคร เริ่มต้น พร้อมแสดงจำนวนที่เปิดรับจริง) */}
-            <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-amber-500 filled text-xl">star</span>
-                  เขตพื้นที่ในรายการติดตาม ({watchlist.length})
-                </h2>
-                <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
-                  ปักดาวเริ่มต้น: อุดรฯ & กทม.
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 mb-3">
-                แสดงข้อมูลตำแหน่งที่เปิดรับจริง พร้อมลิงก์ดาวน์โหลดเอกสารสมัครตรงของแต่ละเขต
-              </p>
+            {/* Sub-tab Navigation */}
+            <div className="flex items-center gap-2 p-1 bg-white rounded-2xl border border-slate-200 shadow-xs">
+              <button
+                onClick={() => setFeedSubTab('agencies')}
+                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                  feedSubTab === 'agencies'
+                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                }`}
+              >
+                <span className="material-symbols-outlined text-base">account_balance</span>
+                <span>หน่วยงาน สพฐ. ({centralAgencies.length})</span>
+              </button>
+              <button
+                onClick={() => setFeedSubTab('watchlist')}
+                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                  feedSubTab === 'watchlist'
+                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                }`}
+              >
+                <span className="material-symbols-outlined text-base">star</span>
+                <span>เขตที่ติดตาม ({watchlist.length})</span>
+              </button>
+              <button
+                onClick={() => setFeedSubTab('announcements')}
+                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                  feedSubTab === 'announcements'
+                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                }`}
+              >
+                <span className="material-symbols-outlined text-base">notifications</span>
+                <span>ประกาศ สพฐ. ({feedItems.length})</span>
+              </button>
+            </div>
 
-              <div className="space-y-3">
-                {watchlist.map((wid) => {
-                  const item = districts.find((d) => d.id === wid);
-                  if (!item) return null;
-                  const isLive = item.status === 'open' && item.applicants !== null;
-                  return (
+            {/* SUBTAB 1: OFFICIAL OBEC CENTRAL AGENCIES */}
+            {feedSubTab === 'agencies' && (
+              <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-blue-700 text-xl">account_balance</span>
+                      เว็บไซต์หน่วยงานในสังกัด สพฐ. ({centralAgencies.length} สำนัก/หน่วยงานส่วนกลาง)
+                    </h2>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      ข้อมูลอย่างเป็นทางการจาก obec.go.th/th/agency-website เชื่อมต่อลิงก์ตรงทุกสำนัก
+                    </p>
+                  </div>
+                  <a
+                    href="https://www.obec.go.th/th/agency-website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-blue-700 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full border border-blue-200 font-bold transition-all"
+                  >
+                    <span>เว็บไซต์หลัก สพฐ.</span>
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                </div>
+
+                {/* Agency Search */}
+                <div className="flex items-center bg-slate-50 rounded-xl border border-slate-200 px-3 py-2 gap-2 focus-within:border-blue-500 focus-within:bg-white transition-all">
+                  <span className="material-symbols-outlined text-slate-400 text-lg">search</span>
+                  <input
+                    type="text"
+                    className="w-full bg-transparent outline-none text-xs text-slate-900 placeholder:text-slate-400"
+                    placeholder="ค้นหาสำนัก เช่น บริหารงานบุคคล, นโยบายและแผน, ทดสอบทางการศึกษา..."
+                    value={agencySearch}
+                    onChange={(e) => setAgencySearch(e.target.value)}
+                  />
+                  {agencySearch && (
+                    <button onClick={() => setAgencySearch('')} className="text-slate-400 hover:text-slate-600">
+                      <span className="material-symbols-outlined text-xs">close</span>
+                    </button>
+                  )}
+                </div>
+
+                {/* Agency Cards Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {filteredAgencies.map((agency) => (
                     <div
-                      key={wid}
-                      className="p-3.5 rounded-xl bg-gradient-to-r from-amber-50/70 via-orange-50/50 to-amber-50/70 border border-amber-200 text-xs shadow-xs space-y-2.5"
+                      key={agency.id}
+                      className="p-4 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-blue-300 hover:shadow-xs transition-all flex flex-col justify-between"
                     >
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-bold text-slate-900 text-sm block">{item.name}</span>
-                            <span className="px-1.5 py-0.2 rounded text-[10px] font-bold bg-white text-slate-800 border border-amber-200">
-                              {item.type}
-                            </span>
-                          </div>
-                          {item.positions !== null ? (
-                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 font-extrabold text-xs border border-emerald-200">
-                              <span className="material-symbols-outlined text-sm text-emerald-700">check_circle</span>
-                              <span>เปิดรับสมัครจริง: {item.positions} อัตรา</span>
-                            </div>
-                          ) : (
-                            <span className="text-slate-600 block">รอประกาศจำนวนตำแหน่ง</span>
-                          )}
-                          <span className="text-slate-600 block">
-                            จังหวัด {item.province} • {isLive ? `ผู้สมัคร: ${item.applicants?.toLocaleString()} คน (อัตรา 1:${item.ratio})` : `เปิดรับสมัครออนไลน์: ${OFFICIAL_OPEN_DATE_STR}`}
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200">
+                            {agency.category}
                           </span>
                         </div>
-                        <button
-                          onClick={() => toggleWatchlist(wid)}
-                          className="text-rose-600 font-bold hover:bg-rose-50 px-2.5 py-1 rounded-lg transition-all border border-rose-200 text-xs shrink-0"
-                        >
-                          ยกเลิกติดตาม
-                        </button>
+                        <h3 className="font-bold text-slate-900 text-xs sm:text-sm">
+                          {agency.name}
+                        </h3>
+                        <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                          {agency.description}
+                        </p>
                       </div>
-
-                      {/* Direct Links in Watchlist */}
-                      <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-amber-200/60">
+                      <div className="pt-3 mt-3 border-t border-slate-200/60 flex items-center justify-between">
+                        <span className="text-[10px] text-slate-400 truncate max-w-[160px]">
+                          {agency.url}
+                        </span>
                         <a
-                          href={item.officialAnnouncementUrl}
+                          href={agency.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
+                          className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow-xs active:scale-95 transition-all"
                         >
-                          <span className="material-symbols-outlined text-sm">download</span>
-                          <span>ดาวน์โหลดเอกสารสมัคร</span>
+                          <span>เข้าเว็บไซต์</span>
+                          <span className="material-symbols-outlined text-xs">launch</span>
                         </a>
-                        <a
-                          href={item.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-blue-900 border border-slate-300 font-bold text-xs transition-all"
-                        >
-                          <span className="material-symbols-outlined text-sm">open_in_new</span>
-                          <span>เข้าเว็บเขต</span>
-                        </a>
-                        <button
-                          onClick={() => setSelectedDistrictForDetails(item)}
-                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-xs ml-auto"
-                        >
-                          <span className="material-symbols-outlined text-sm">info</span>
-                          <span>รายละเอียด</span>
-                        </button>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </section>
+            )}
 
-            {/* Official Announcement Feed */}
-            <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-              <h2 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-1">
-                <span className="material-symbols-outlined text-blue-700 text-xl">notifications_active</span>
-                ประกาศและสถานะทางการ (สพฐ.)
-              </h2>
-              <p className="text-xs text-slate-500 mb-4">รวบรวมประกาศอย่างเป็นทางการที่ผ่านการตรวจสอบแล้ว</p>
+            {/* SUBTAB 2: WATCHLIST */}
+            {feedSubTab === 'watchlist' && (
+              <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-amber-500 filled text-xl">star</span>
+                    เขตพื้นที่ในรายการติดตาม ({watchlist.length})
+                  </h2>
+                  <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                    ปักดาวเริ่มต้น: อุดรฯ & กทม.
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 mb-3">
+                  แสดงข้อมูลตำแหน่งที่เปิดรับจริง พร้อมลิงก์ดาวน์โหลดเอกสารสมัครตรงของแต่ละเขต
+                </p>
 
-              <div className="space-y-3">
-                {feedItems.map((feed) => (
-                  <div key={feed.id} className="p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white transition-all">
-                    <div className="flex items-center justify-between text-xs mb-1.5">
-                      <span className="text-slate-500 flex items-center gap-1">
-                        <span className="material-symbols-outlined text-xs">schedule</span>
-                        {feed.timestamp}
-                      </span>
-                      <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-bold text-[10px] border border-blue-200">
-                        {feed.source}
-                      </span>
+                <div className="space-y-3">
+                  {watchlist.map((wid) => {
+                    const item = districts.find((d) => d.id === wid);
+                    if (!item) return null;
+                    const isLive = item.status === 'open' && item.applicants !== null;
+                    return (
+                      <div
+                        key={wid}
+                        className="p-3.5 rounded-xl bg-gradient-to-r from-amber-50/70 via-orange-50/50 to-amber-50/70 border border-amber-200 text-xs shadow-xs space-y-2.5"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-bold text-slate-900 text-sm block">{item.name}</span>
+                              <span className="px-1.5 py-0.2 rounded text-[10px] font-bold bg-white text-slate-800 border border-amber-200">
+                                {item.type}
+                              </span>
+                            </div>
+                            {item.positions !== null ? (
+                              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 font-extrabold text-xs border border-emerald-200">
+                                <span className="material-symbols-outlined text-sm text-emerald-700">check_circle</span>
+                                <span>เปิดรับสมัครจริง: {item.positions} อัตรา</span>
+                              </div>
+                            ) : (
+                              <span className="text-slate-600 block">รอประกาศจำนวนตำแหน่ง</span>
+                            )}
+                            <span className="text-slate-600 block">
+                              จังหวัด {item.province} • {isLive ? `ผู้สมัคร: ${item.applicants?.toLocaleString()} คน (อัตรา 1:${item.ratio})` : `เปิดรับสมัครออนไลน์: ${OFFICIAL_OPEN_DATE_STR}`}
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => toggleWatchlist(wid)}
+                            className="text-rose-600 font-bold hover:bg-rose-50 px-2.5 py-1 rounded-lg transition-all border border-rose-200 text-xs shrink-0"
+                          >
+                            ยกเลิกติดตาม
+                          </button>
+                        </div>
+
+                        {/* Direct Links in Watchlist */}
+                        <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-amber-200/60">
+                          <a
+                            href={item.officialAnnouncementUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
+                          >
+                            <span className="material-symbols-outlined text-sm">download</span>
+                            <span>ดาวน์โหลดเอกสารสมัคร</span>
+                          </a>
+                          <a
+                            href={item.websiteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-blue-900 border border-slate-300 font-bold text-xs transition-all"
+                          >
+                            <span className="material-symbols-outlined text-sm">open_in_new</span>
+                            <span>เข้าเว็บเขต</span>
+                          </a>
+                          {item.boppUrl && (
+                            <a
+                              href={item.boppUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200 font-bold text-xs transition-all"
+                            >
+                              <span className="material-symbols-outlined text-sm">database</span>
+                              <span>BOPP</span>
+                            </a>
+                          )}
+                          <button
+                            onClick={() => setSelectedDistrictForDetails(item)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-xs ml-auto"
+                          >
+                            <span className="material-symbols-outlined text-sm">info</span>
+                            <span>รายละเอียด</span>
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* SUBTAB 3: OFFICIAL ANNOUNCEMENT FEED */}
+            {feedSubTab === 'announcements' && (
+              <section className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+                <h2 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-1">
+                  <span className="material-symbols-outlined text-blue-700 text-xl">notifications_active</span>
+                  ประกาศและสถานะทางการ (สพฐ.)
+                </h2>
+                <p className="text-xs text-slate-500 mb-4">รวบรวมประกาศอย่างเป็นทางการที่ผ่านการตรวจสอบแล้ว</p>
+
+                <div className="space-y-3">
+                  {feedItems.map((feed) => (
+                    <div key={feed.id} className="p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white transition-all">
+                      <div className="flex items-center justify-between text-xs mb-1.5">
+                        <span className="text-slate-500 flex items-center gap-1">
+                          <span className="material-symbols-outlined text-xs">schedule</span>
+                          {feed.timestamp}
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-bold text-[10px] border border-blue-200">
+                          {feed.source}
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-blue-950 text-sm">{feed.title}</h3>
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">{feed.message}</p>
                     </div>
-                    <h3 className="font-bold text-blue-950 text-sm">{feed.title}</h3>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">{feed.message}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         )}
       </main>
@@ -978,6 +1298,26 @@ export default function App() {
                 </div>
                 <span className="material-symbols-outlined text-lg text-blue-600">launch</span>
               </a>
+
+              {selectedDistrictForDetails.boppUrl && (
+                <a
+                  href={selectedDistrictForDetails.boppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-sky-50 to-blue-50 hover:bg-sky-100 border border-sky-200 text-sky-950 font-bold text-sm active:scale-98 transition-all"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center">
+                      <span className="material-symbols-outlined text-xl">database</span>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm">สารสนเทศเขตพื้นที่การศึกษา สพฐ. (BOPP)</div>
+                      <div className="text-[11px] font-normal text-sky-700">{selectedDistrictForDetails.boppUrl}</div>
+                    </div>
+                  </div>
+                  <span className="material-symbols-outlined text-lg text-sky-700">launch</span>
+                </a>
+              )}
             </div>
 
             {/* Contact Phone if available */}
@@ -1090,8 +1430,8 @@ export default function App() {
               : 'text-slate-600 hover:text-blue-700 hover:bg-slate-100'
           }`}
         >
-          <span className="material-symbols-outlined text-xl" data-icon="star">star</span>
-          <span className="text-[11px] font-semibold mt-0.5">ติดตาม / ประกาศ</span>
+          <span className="material-symbols-outlined text-xl" data-icon="account_balance">account_balance</span>
+          <span className="text-[11px] font-semibold mt-0.5">หน่วยงาน & ติดตาม</span>
         </button>
       </nav>
     </div>

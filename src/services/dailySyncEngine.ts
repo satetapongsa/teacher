@@ -20,7 +20,7 @@ export interface DailyUpdateRecord {
   };
 }
 
-const STORAGE_KEY = 'obec_daily_teacher_stats_v4';
+const STORAGE_KEY = 'obec_daily_teacher_stats_v5';
 
 // Official Schedule Targets:
 // 19 ต.ค. 2569 เวลา 08:30 น. - 25 ต.ค. 2569 เวลา 16:30 น.
