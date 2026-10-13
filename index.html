@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>สถิติครูผู้ช่วย 2569 - ระบบติดตามความเคลื่อนไหว สพฐ.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eceef0",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#00164e",
+              "on-surface-variant": "#444651",
+              "secondary": "#006c49",
+              "inverse-on-surface": "#eff1f3",
+              "surface": "#f7f9fb",
+              "on-tertiary-fixed": "#2a1700",
+              "surface-container-highest": "#e0e3e5",
+              "secondary-container": "#6cf8bb",
+              "tertiary": "#3e2400",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#b6c4ff",
+              "surface-container-low": "#f2f4f6",
+              "on-primary-container": "#90a8ff",
+              "primary": "#00236f",
+              "inverse-surface": "#2d3133",
+              "outline": "#757682",
+              "tertiary-container": "#5c3800",
+              "primary-container": "#1e3a8a",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e0e3e5",
+              "tertiary-fixed-dim": "#ffb95f",
+              "secondary-fixed-dim": "#4edea3",
+              "surface-container-high": "#e6e8ea",
+              "secondary-fixed": "#6ffbbe",
+              "inverse-primary": "#b6c4ff",
+              "on-secondary-fixed-variant": "#005236",
+              "primary-fixed": "#dce1ff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#191c1e",
+              "tertiary-fixed": "#ffddb8",
+              "surface-bright": "#f7f9fb",
+              "background": "#f7f9fb",
+              "outline-variant": "#c5c5d3",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#264191",
+              "on-secondary-container": "#00714d",
+              "on-surface": "#191c1e",
+              "on-tertiary-container": "#ef9900",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d8dadc",
+              "on-secondary-fixed": "#002113",
+              "surface-tint": "#4059aa",
+              "on-tertiary-fixed-variant": "#653e00"
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            spacing: {
+              "margin-desktop": "2rem",
+              "space-md": "0.75rem",
+              "margin": "1rem",
+              "space-lg": "1rem",
+              "space-xl": "1.5rem",
+              "space-xs": "0.25rem",
+              "gutter": "1rem",
+              "margin-tablet": "1.5rem",
+              "gutter-mobile": "0.75rem",
+              "space-sm": "0.5rem"
+            },
+            fontFamily: {
+              "headline-sm": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "label-lg": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "headline-xl": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "headline-xl-mobile": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "body-lg": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "body-md": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "stat-display": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "label-md": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "label-sm": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "headline-lg": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "body-sm": ["Plus Jakarta Sans", "Sarabun", "sans-serif"],
+              "headline-md": ["Plus Jakarta Sans", "Sarabun", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', 'Sarabun', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        background-color: #f7f9fb;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
