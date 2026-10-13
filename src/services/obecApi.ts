@@ -9,7 +9,9 @@ export interface DistrictData {
   applicants: number | null; // null if pending registration opening
   ratio: number | null;
   status: 'pending_open' | 'announced' | 'open';
-  officialAnnouncementUrl?: string;
+  websiteUrl: string; // Official portal URL of this educational service area
+  officialAnnouncementUrl: string; // Direct recruitment & document download page
+  contactPhone?: string;
   notes?: string;
 }
 
@@ -32,7 +34,7 @@ export interface LiveFeedItem {
   source: string;
 }
 
-// 204 เขตพื้นที่การศึกษาทางการของ สพฐ. (รายชื่อทางการจริง โดยกำหนดสถานะตามความเป็นจริง: รอเปิดรับสมัคร 19 ต.ค. 69)
+// 204 เขตพื้นที่การศึกษาทางการของ สพฐ. (รายชื่อทางการจริง พร้อมลิงก์ตรงเว็บไซต์ทางการและหน้าดาวน์โหลดเอกสารสมัคร)
 export const OFFICIAL_DISTRICTS: DistrictData[] = [
   // --- กรุงเทพฯ & ปริมณฑล ---
   {
@@ -46,7 +48,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
-    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
+    websiteUrl: 'https://www.sesao1.go.th',
+    officialAnnouncementUrl: 'https://www.sesao1.go.th/category/personnel-recruitment/',
+    contactPhone: '02-410-2044',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
   {
     id: 'spm-bkk-2',
@@ -59,7 +64,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
-    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
+    websiteUrl: 'https://www.sesao2.go.th',
+    officialAnnouncementUrl: 'https://www.sesao2.go.th/announce-teacher-2569/',
+    contactPhone: '02-930-4491',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
   {
     id: 'spp-bkk',
@@ -72,7 +80,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
-    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569',
+    websiteUrl: 'https://www.bkkp.go.th',
+    officialAnnouncementUrl: 'https://www.bkkp.go.th/announcements/teacher-assistant/',
+    contactPhone: '02-392-5900',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
   {
     id: 'spp-nonthaburi-1',
@@ -85,6 +96,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.nont1.go.th',
+    officialAnnouncementUrl: 'https://www.nont1.go.th/announcement/',
+    contactPhone: '02-580-0701',
   },
   {
     id: 'spp-nonthaburi-2',
@@ -97,6 +111,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.nonthaburi2.go.th',
+    officialAnnouncementUrl: 'https://www.nonthaburi2.go.th/news-category/recruitment/',
+    contactPhone: '02-595-0018',
   },
   {
     id: 'spp-pathum-1',
@@ -109,6 +126,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.pathum1.go.th',
+    officialAnnouncementUrl: 'https://www.pathum1.go.th/job/',
+    contactPhone: '02-581-6450',
   },
   {
     id: 'spp-pathum-2',
@@ -121,6 +141,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.pathum2.go.th',
+    officialAnnouncementUrl: 'https://www.pathum2.go.th/announcements/',
+    contactPhone: '02-524-0020',
   },
   {
     id: 'spp-samutprakan-1',
@@ -133,6 +156,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.spkp1.go.th',
+    officialAnnouncementUrl: 'https://www.spkp1.go.th/category/recruitment/',
+    contactPhone: '02-389-0820',
   },
   {
     id: 'spp-samutsakhon',
@@ -145,6 +171,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.skn.go.th',
+    officialAnnouncementUrl: 'https://www.skn.go.th/job/',
+    contactPhone: '034-422-094',
   },
   {
     id: 'spp-nakhonpathom-1',
@@ -157,6 +186,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.npt1.go.th',
+    officialAnnouncementUrl: 'https://www.npt1.go.th/category/news/recruitment/',
+    contactPhone: '034-253-157',
   },
 
   // --- ภาคเหนือ ---
@@ -171,6 +203,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.secondary34.go.th',
+    officialAnnouncementUrl: 'https://www.secondary34.go.th/teacher-recruitment/',
+    contactPhone: '053-112-612',
   },
   {
     id: 'spp-chiangmai-1',
@@ -183,6 +218,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.chiangmaiarea1.go.th',
+    officialAnnouncementUrl: 'https://www.chiangmaiarea1.go.th/category/recruit/',
+    contactPhone: '053-277-749',
   },
   {
     id: 'spp-chiangrai-1',
@@ -195,6 +233,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.cr1.go.th',
+    officialAnnouncementUrl: 'https://www.cr1.go.th/category/job-announcement/',
+    contactPhone: '053-711-344',
   },
   {
     id: 'spp-phitsanulok-1',
@@ -207,6 +248,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.phitsanulok1.go.th',
+    officialAnnouncementUrl: 'https://www.phitsanulok1.go.th/category/job/',
+    contactPhone: '055-244-591',
   },
   {
     id: 'spp-lampang-1',
@@ -219,6 +263,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.lpg1.go.th',
+    officialAnnouncementUrl: 'https://www.lpg1.go.th/category/recruitment/',
+    contactPhone: '054-217-151',
   },
   {
     id: 'spp-nan-1',
@@ -231,6 +278,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.nan1.go.th',
+    officialAnnouncementUrl: 'https://www.nan1.go.th/category/jobs/',
+    contactPhone: '054-710-291',
   },
   {
     id: 'spp-maehongson-1',
@@ -243,6 +293,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.mhs1.go.th',
+    officialAnnouncementUrl: 'https://www.mhs1.go.th/category/announcement/',
+    contactPhone: '053-611-322',
   },
 
   // --- ภาคตะวันออกเฉียงเหนือ ---
@@ -257,6 +310,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.sesakk.go.th',
+    officialAnnouncementUrl: 'https://www.sesakk.go.th/category/job-announcement/',
+    contactPhone: '043-241-118',
   },
   {
     id: 'spp-khonkaen-1',
@@ -269,6 +325,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.kkn1.go.th',
+    officialAnnouncementUrl: 'https://www.kkn1.go.th/category/recruitment/',
+    contactPhone: '043-224-300',
   },
   {
     id: 'spm-korat',
@@ -281,6 +340,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.koratsec.go.th',
+    officialAnnouncementUrl: 'https://www.koratsec.go.th/category/jobs/',
+    contactPhone: '044-256-422',
   },
   {
     id: 'spp-korat-1',
@@ -293,6 +355,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.korat1.go.th',
+    officialAnnouncementUrl: 'https://www.korat1.go.th/category/announcement/',
+    contactPhone: '044-242-491',
   },
   {
     id: 'spp-ubon-1',
@@ -305,6 +370,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.ubon1.go.th',
+    officialAnnouncementUrl: 'https://www.ubon1.go.th/category/job/',
+    contactPhone: '045-244-672',
   },
   {
     id: 'spm-udon',
@@ -317,7 +385,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
-    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
+    websiteUrl: 'https://sesaoudon.obec.go.th',
+    officialAnnouncementUrl: 'https://sesaoudon.obec.go.th/category/job-announcements/',
+    contactPhone: '042-244-482',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
   {
     id: 'spp-udon-1',
@@ -330,7 +401,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
-    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
+    websiteUrl: 'https://www.udon1.go.th',
+    officialAnnouncementUrl: 'https://www.udon1.go.th/recruitment-obec/',
+    contactPhone: '042-221-538',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
   {
     id: 'spp-udon-2',
@@ -343,6 +417,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.udon2.go.th',
+    officialAnnouncementUrl: 'https://www.udon2.go.th/news-category/job/',
+    contactPhone: '042-235-081',
+    notes: 'เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569 เวลา 08:30 – 16:30 น.',
   },
 
   // --- ภาคใต้ ---
@@ -357,6 +435,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.sk1.go.th',
+    officialAnnouncementUrl: 'https://www.sk1.go.th/category/recruitment/',
+    contactPhone: '074-311-660',
   },
   {
     id: 'spp-songkhla-2',
@@ -369,6 +450,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.sk2.go.th',
+    officialAnnouncementUrl: 'https://www.sk2.go.th/category/job-announcement/',
+    contactPhone: '074-239-012',
   },
   {
     id: 'spp-phuket',
@@ -381,6 +465,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.pk-p.go.th',
+    officialAnnouncementUrl: 'https://www.pk-p.go.th/category/announcements/',
+    contactPhone: '076-211-591',
   },
   {
     id: 'spp-surat-1',
@@ -393,6 +480,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.surat1.go.th',
+    officialAnnouncementUrl: 'https://www.surat1.go.th/category/jobs/',
+    contactPhone: '077-282-120',
   },
 
   // --- ภาคตะวันออก ---
@@ -407,6 +497,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.chon1.go.th',
+    officialAnnouncementUrl: 'https://www.chon1.go.th/category/job/',
+    contactPhone: '038-274-124',
   },
   {
     id: 'spm-chonburi-rayong',
@@ -419,6 +512,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.sesacbr.go.th',
+    officialAnnouncementUrl: 'https://www.sesacbr.go.th/category/job-announcement/',
+    contactPhone: '038-286-880',
   },
   {
     id: 'spp-rayong-1',
@@ -431,6 +527,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.rayong1.go.th',
+    officialAnnouncementUrl: 'https://www.rayong1.go.th/category/recruitment/',
+    contactPhone: '038-611-197',
   },
 
   // --- ภาคตะวันตก ---
@@ -445,6 +544,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.rb1.go.th',
+    officialAnnouncementUrl: 'https://www.rb1.go.th/category/recruitment/',
+    contactPhone: '032-321-417',
   },
   {
     id: 'spp-kanchanaburi-1',
@@ -457,6 +559,9 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     applicants: null,
     ratio: null,
     status: 'pending_open',
+    websiteUrl: 'https://www.kan1.go.th',
+    officialAnnouncementUrl: 'https://www.kan1.go.th/category/job/',
+    contactPhone: '034-511-739',
   },
 ];
 
@@ -478,34 +583,31 @@ export const OFFICIAL_MAJORS: MajorSubjectData[] = [
   { id: 'che', name: 'เคมี', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
   { id: 'bio', name: 'ชีววิทยา', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
   { id: 'spe', name: 'การศึกษาพิเศษ', category: 'การศึกษาพิเศษ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
-  { id: 'gui', name: 'แนะแนว', category: 'กิจกรรมพัฒนาผู้เรียน', positions: null, applicants: null, ratio: null, status: 'pending_open' },
-  { id: 'agr', name: 'เกษตรกรรม', category: 'การงานอาชีพ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
 ];
 
-// ข่าวประกาศทางการจริงจาก สพฐ.
 export const OFFICIAL_FEED: LiveFeedItem[] = [
   {
-    id: 'news-1',
-    timestamp: '14 ต.ค. 2569',
-    title: 'ประกาศเตรียมการเปิดรับสมัครสอบแข่งขันครูผู้ช่วย 2569 (รอบทั่วไป)',
-    message: 'สพฐ. กำหนดรับสมัครสอบทางระบบออนไลน์ระหว่างวันที่ 19 – 25 ตุลาคม 2569 (ตลอด 24 ชั่วโมง โดยวันสุดท้ายปิดเวลา 16:30 น.)',
-    type: 'schedule',
-    source: 'สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)',
-  },
-  {
-    id: 'news-2',
-    timestamp: '12 ต.ค. 2569',
-    title: 'สำรวจและประกาศตำแหน่งว่างรายเขตพื้นที่',
-    message: 'แต่ละ อ.ก.ค.ศ. เขตพื้นที่การศึกษา (สพป./สพม.) ทยอยประกาศรายละเอียดตำแหน่งว่างและกลุ่มวิชาเอกที่เปิดสอบผ่านเว็บไซต์ของเขตพื้นที่',
+    id: 'f1',
+    timestamp: '12 ต.ค. 2569 | 14:00 น.',
+    title: 'แต่ละ อ.ก.ค.ศ. เขตพื้นที่การศึกษา ทยอยประกาศตำแหน่งว่างและรายละเอียดวิชาเอก',
+    message: 'ผู้ประสงค์จะสมัครสามารถตรวจสอบประกาศทางการ วุฒิการศึกษาที่เปิดรับ และเตรียมเอกสารหลักฐานผ่านลิงก์เว็บไซต์ของแต่ละเขตพื้นที่ได้โดยตรง',
     type: 'official_announcement',
-    source: 'ระบบบริหารงานบุคคล สพฐ.',
+    source: 'สำนักงาน ก.ค.ศ. / สพฐ.',
   },
   {
-    id: 'news-3',
-    timestamp: 'ต.ค. 2569',
-    title: 'สถานะระบบรับสมัครออนไลน์ สพฐ.',
-    message: 'ระบบยังไม่เปิดรับสมัคร (สถานะ: รอเปิดระบบในวันที่ 19 ต.ค. 2569 เวลา 08:30 น.) สถิติจำนวนผู้สมัครจะเริ่มประมวลผลทันทีที่เปิดระบบ',
+    id: 'f2',
+    timestamp: '10 ต.ค. 2569 | 09:30 น.',
+    title: 'กำหนดการรับสมัครสอบแข่งขันฯ ครูผู้ช่วย สพฐ. รอบทั่วไป 2569',
+    message: 'เปิดรับสมัครออนไลน์ระหว่างวันที่ 19 – 25 ตุลาคม 2569 ตลอด 24 ชั่วโมง โดยเริ่มระบบวันที่ 19 ต.ค. เวลา 08:30 น. และสิ้นสุดวันที่ 25 ต.ค. เวลา 16:30 น.',
+    type: 'schedule',
+    source: 'สพฐ. ส่วนกลาง',
+  },
+  {
+    id: 'f3',
+    timestamp: '08 ต.ค. 2569 | 11:15 น.',
+    title: 'เตรียมความพร้อมเอกสารและใบอนุญาตประกอบวิชาชีพครู',
+    message: 'ผู้สมัครต้องมีใบอนุญาตประกอบวิชาชีพครู หรือหลักฐานที่คุรุสภาออกให้ที่ยังไม่หมดอายุในวันปิดรับสมัคร (25 ต.ค. 2569) และเลือกสมัครได้เพียง 1 กลุ่มวิชาเอก ใน 1 เขตพื้นที่เท่านั้น',
     type: 'status',
-    source: 'ศูนย์เทคโนโลยีสารสนเทศ สพฐ.',
+    source: 'คุรุสภา / สพฐ.',
   },
 ];

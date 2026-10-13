@@ -22,6 +22,9 @@ export default function App() {
   const [lastSyncTime, setLastSyncTime] = useState('02:30 น.');
   const [lastSyncDate, setLastSyncDate] = useState(new Date().toISOString().slice(0, 10));
 
+  // Modal State for District Details & Document Downloads
+  const [selectedDistrictForDetails, setSelectedDistrictForDetails] = useState<DistrictData | null>(null);
+
   // Data states from verified official records
   const [districts, setDistricts] = useState<DistrictData[]>([]);
   const [majors, setMajors] = useState<MajorSubjectData[]>([]);
@@ -268,6 +271,30 @@ export default function App() {
                   <span>{countdownInfo.badge}</span>
                 </div>
               </div>
+            </div>
+
+            {/* Quick Action Banner: Direct Download & District Websites */}
+            <div className="rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-2xl">download_for_offline</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-emerald-950 text-sm">
+                    ดาวน์โหลดเอกสารสมัคร & ลิงก์ตรงเว็บ สพฐ. ทุกเขต
+                  </h3>
+                  <p className="text-xs text-emerald-800 mt-0.5 leading-relaxed">
+                    สามารถคลิกลิงก์ตรงของแต่ละจังหวัด/เขตพื้นที่ เพื่อดาวน์โหลดประกาศทางการ ใบสมัคร และตรวจสอบคุณวุฒิได้ทันที
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setActiveTab('districts')}
+                className="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-xs active:scale-95 transition-all"
+              >
+                <span>เลือกเขตเพื่อโหลดเอกสาร</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </button>
             </div>
 
             {/* Status Advisory Card: แจ้งผู้สมัครตามจริง */}
@@ -527,7 +554,7 @@ export default function App() {
                     รายชื่อเขตพื้นที่การศึกษา สพฐ. ({filteredDistricts.length} เขต)
                   </h2>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    กำหนดการเปิดระบบ: <strong>{OFFICIAL_OPEN_DATE_STR}</strong> พร้อมกันทั่วประเทศ
+                    คลิกปุ่มเพื่อไปที่เว็บไซต์ทางการของเขต หรือดาวน์โหลดประกาศรับสมัครและใบสมัครได้โดยตรง
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200 font-semibold">
@@ -541,7 +568,7 @@ export default function App() {
                   const isSaved = watchlist.includes(d.id);
                   const isLive = d.status === 'open' && d.applicants !== null;
                   return (
-                    <div key={d.id} className="py-3.5 first:pt-0 last:pb-0">
+                    <div key={d.id} className="py-4 first:pt-0 last:pb-0">
                       <div className="flex items-start justify-between gap-2">
                         <div>
                           <div className="flex items-center gap-2">
@@ -556,7 +583,7 @@ export default function App() {
                           </div>
                           <p className="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
                             <span className="material-symbols-outlined text-xs text-slate-400">location_on</span>
-                            จังหวัด {d.province}
+                            จังหวัด {d.province} {d.contactPhone ? `• โทร. ${d.contactPhone}` : ''}
                           </p>
                         </div>
                         <div className="flex items-center gap-2">
@@ -598,6 +625,37 @@ export default function App() {
                           </span>
                         </div>
                       )}
+
+                      {/* Direct Links Action Bar: Download Docs & District Website */}
+                      <div className="flex flex-wrap items-center gap-2 mt-3">
+                        <a
+                          href={d.officialAnnouncementUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs active:scale-95 transition-all"
+                          title={`ดาวน์โหลดประกาศรับสมัครและใบสมัคร ${d.name}`}
+                        >
+                          <span className="material-symbols-outlined text-sm">download</span>
+                          <span>ดาวน์โหลดเอกสารสมัคร</span>
+                        </a>
+                        <a
+                          href={d.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 font-bold text-xs active:scale-95 transition-all"
+                          title={`เข้าสู่เว็บไซต์ สพฐ. ${d.name}`}
+                        >
+                          <span className="material-symbols-outlined text-sm">open_in_new</span>
+                          <span>เว็บ สพฐ. เขต</span>
+                        </a>
+                        <button
+                          onClick={() => setSelectedDistrictForDetails(d)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs active:scale-95 transition-all ml-auto"
+                        >
+                          <span className="material-symbols-outlined text-sm">info</span>
+                          <span>รายละเอียด</span>
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
@@ -678,10 +736,10 @@ export default function App() {
                 </span>
               </div>
               <p className="text-xs text-slate-500 mb-3">
-                ระบบจะแจ้งเตือนและดึงสถิติจำนวนผู้สมัครของเขตเหล่านี้โดยตรงทันทีเมื่อระบบเปิดรับสมัคร
+                เข้าถึงลิงก์ตรงและดาวน์โหลดเอกสารของเขตพื้นที่ที่ติดตามได้สะดวกรวดเร็ว
               </p>
 
-              <div className="space-y-2.5">
+              <div className="space-y-3">
                 {watchlist.map((wid) => {
                   const item = districts.find((d) => d.id === wid);
                   if (!item) return null;
@@ -689,25 +747,56 @@ export default function App() {
                   return (
                     <div
                       key={wid}
-                      className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-50/60 to-orange-50/40 border border-amber-200 text-xs shadow-xs"
+                      className="p-3.5 rounded-xl bg-gradient-to-r from-amber-50/60 to-orange-50/40 border border-amber-200 text-xs shadow-xs space-y-2.5"
                     >
-                      <div className="space-y-0.5">
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-slate-900 text-sm block">{item.name}</span>
-                          <span className="px-1.5 py-0.2 rounded text-[10px] font-bold bg-white text-slate-800 border border-amber-200">
-                            {item.type}
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-slate-900 text-sm block">{item.name}</span>
+                            <span className="px-1.5 py-0.2 rounded text-[10px] font-bold bg-white text-slate-800 border border-amber-200">
+                              {item.type}
+                            </span>
+                          </div>
+                          <span className="text-slate-600 block">
+                            จังหวัด {item.province} • {isLive ? `ผู้สมัคร: ${item.applicants?.toLocaleString()} คน (อัตรา 1:${item.ratio})` : `เปิดรับสมัคร: ${OFFICIAL_OPEN_DATE_STR}`}
                           </span>
                         </div>
-                        <span className="text-slate-600 block">
-                          จังหวัด {item.province} • {isLive ? `ผู้สมัคร: ${item.applicants?.toLocaleString()} คน (อัตรา 1:${item.ratio})` : `เปิดรับสมัคร: ${OFFICIAL_OPEN_DATE_STR}`}
-                        </span>
+                        <button
+                          onClick={() => toggleWatchlist(wid)}
+                          className="text-rose-600 font-bold hover:bg-rose-50 px-2.5 py-1 rounded-lg transition-all border border-rose-200 text-xs shrink-0"
+                        >
+                          ยกเลิกติดตาม
+                        </button>
                       </div>
-                      <button
-                        onClick={() => toggleWatchlist(wid)}
-                        className="text-rose-600 font-bold hover:bg-rose-50 px-2.5 py-1 rounded-lg transition-all border border-rose-200 text-xs"
-                      >
-                        ยกเลิกติดตาม
-                      </button>
+
+                      {/* Direct Links in Watchlist */}
+                      <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-amber-200/60">
+                        <a
+                          href={item.officialAnnouncementUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
+                        >
+                          <span className="material-symbols-outlined text-sm">download</span>
+                          <span>ดาวน์โหลดเอกสารสมัคร</span>
+                        </a>
+                        <a
+                          href={item.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white hover:bg-slate-50 text-blue-900 border border-slate-300 font-bold text-xs transition-all"
+                        >
+                          <span className="material-symbols-outlined text-sm">open_in_new</span>
+                          <span>เข้าเว็บเขต</span>
+                        </a>
+                        <button
+                          onClick={() => setSelectedDistrictForDetails(item)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-xs ml-auto"
+                        >
+                          <span className="material-symbols-outlined text-sm">info</span>
+                          <span>รายละเอียด</span>
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
@@ -743,6 +832,144 @@ export default function App() {
           </div>
         )}
       </main>
+
+      {/* ================= MODAL: DISTRICT DETAILS & APPLICATION DOCUMENTS ================= */}
+      {selectedDistrictForDetails && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-5 space-y-4">
+            {/* Modal Header */}
+            <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className={`px-2 py-0.5 rounded text-[11px] font-bold ${
+                    selectedDistrictForDetails.type === 'สพม.' 
+                      ? 'bg-indigo-100 text-indigo-800 border border-indigo-200' 
+                      : 'bg-cyan-100 text-cyan-800 border border-cyan-200'
+                  }`}>
+                    {selectedDistrictForDetails.type}
+                  </span>
+                  <span className="text-xs text-slate-500">
+                    จังหวัด {selectedDistrictForDetails.province}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mt-1">
+                  {selectedDistrictForDetails.name}
+                </h3>
+                <p className="text-xs text-slate-500">
+                  สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedDistrictForDetails(null)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all"
+                aria-label="ปิดหน้าต่าง"
+              >
+                <span className="material-symbols-outlined text-2xl">close</span>
+              </button>
+            </div>
+
+            {/* Direct Link Action Cards (Download & Official Site) */}
+            <div className="space-y-2.5">
+              <a
+                href={selectedDistrictForDetails.officialAnnouncementUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm shadow-md shadow-emerald-600/20 active:scale-98 transition-all"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-xl">download</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm">ดาวน์โหลดประกาศ & เอกสารสมัคร</div>
+                    <div className="text-[11px] font-normal text-emerald-100">ไฟล์ประกาศรับสมัครสอบแข่งขันและแบบฟอร์ม</div>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+
+              <a
+                href={selectedDistrictForDetails.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:bg-blue-100 border border-blue-200 text-blue-900 font-bold text-sm active:scale-98 transition-all"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center">
+                    <span className="material-symbols-outlined text-xl">open_in_new</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm">เข้าสู่เว็บไซต์ทางการ สพฐ. ประจำเขต</div>
+                    <div className="text-[11px] font-normal text-slate-600">{selectedDistrictForDetails.websiteUrl}</div>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined text-lg text-blue-600">launch</span>
+              </a>
+            </div>
+
+            {/* Contact Phone if available */}
+            {selectedDistrictForDetails.contactPhone && (
+              <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                <div className="flex items-center gap-2 text-slate-700 font-semibold">
+                  <span className="material-symbols-outlined text-base text-blue-600">call</span>
+                  <span>เบอร์โทรศัพท์ติดต่อสอบถาม: {selectedDistrictForDetails.contactPhone}</span>
+                </div>
+                <a
+                  href={`tel:${selectedDistrictForDetails.contactPhone}`}
+                  className="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700"
+                >
+                  โทรออก
+                </a>
+              </div>
+            )}
+
+            {/* Checklist of required application documents */}
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-4 space-y-2">
+              <h4 className="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-base text-blue-700">task</span>
+                รายการเอกสารหลักฐานที่ต้องเตรียมในการสมัคร:
+              </h4>
+              <ul className="text-xs text-slate-600 space-y-1.5 list-none pl-1">
+                {[
+                  '1. ใบสมัครสอบแข่งขันครูผู้ช่วย (พิมพ์ออกจากระบบรับสมัครออนไลน์)',
+                  '2. รูปถ่ายหน้าตรงไม่สวมหมวกและแว่นตาดำ ถ่ายไว้ไม่เกิน 6 เดือน ขนาด 1 x 1.5 นิ้ว',
+                  '3. ปริญญาบัตร หรือหนังสือรับรองคุณวุฒิ และใบรายงานผลการศึกษา (Transcript)',
+                  '4. ใบอนุญาตประกอบวิชาชีพครู หรือหลักฐานรับรองสิทธิจากคุรุสภา (ยังไม่หมดอายุในวันปิดรับสมัคร)',
+                  '5. สำเนาบัตรประจำตัวประชาชน และสำเนาทะเบียนบ้าน',
+                  '6. ใบรับรองแพทย์จากสถานพยาบาลของรัฐ (ออกไว้ไม่เกิน 1 เดือน นับถึงวันสมัคร)',
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-1.5">
+                    <span className="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Critical Note */}
+            <div className="rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-900 space-y-1">
+              <div className="font-bold flex items-center gap-1">
+                <span className="material-symbols-outlined text-base text-amber-600">warning</span>
+                ข้อกำหนดสำคัญตามระเบียบ สพฐ.:
+              </div>
+              <p className="leading-relaxed">
+                ผู้สมัครสอบสามารถเลือกสมัครได้เพียง <strong>1 กลุ่มวิชาเอก</strong> ใน <strong>1 เขตพื้นที่การศึกษา</strong> เท่านั้น 
+                หากตรวจพบว่าสมัครซ้ำซ้อนจะถือว่าเป็นโมฆะและตัดสิทธิ์การสอบทุกเขต
+              </p>
+            </div>
+
+            {/* Close Button */}
+            <div className="pt-2 flex justify-end">
+              <button
+                onClick={() => setSelectedDistrictForDetails(null)}
+                className="w-full sm:w-auto px-5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs transition-all"
+              >
+                ปิดหน้าต่าง
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Global Bottom Navigation Bar */}
       <nav aria-label="แถบการนำทางหลัก" className="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-3 py-2 max-w-screen-md mx-auto bg-white/95 backdrop-blur-md shadow-lg border-t border-slate-200">
