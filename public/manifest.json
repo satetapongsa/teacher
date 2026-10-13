@@ -1,0 +1,21 @@
+{
+  "name": "สถิติครูผู้ช่วย 2569 สพฐ.",
+  "short_name": "สถิติครูผู้ช่วย",
+  "description": "ระบบตรวจสอบสถิติและข้อมูลรับสมัครสอบครูผู้ช่วย สพฐ. 2569 ข้อมูลจริงรายวันจาก 246 เขตพื้นที่การศึกษา",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#102a6b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}
