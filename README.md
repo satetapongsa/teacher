@@ -1,32 +1,118 @@
-# React + TypeScript + Vite
+# OBEC Teacher Assistant Realtime Tracker (2569)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ระบบเว็บแอปพลิเคชันสำหรับติดตามสถิติ ข้อมูล และกำหนดการสอบแข่งขันเพื่อบรรจุและแต่งตั้งบุคคลเข้ารับราชการเป็นข้าราชการครูและบุคลากรทางการศึกษา ตำแหน่งครูผู้ช่วย สังกัดสำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.) รอบทั่วไป ประจำปี พ.ศ. 2569
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 1. ข้อมูลสังเขปของโครงการ (Project Overview)
 
-## React Compiler
+ระบบถูกออกแบบและพัฒนาขึ้นเพื่อรองรับการแสดงผลเชิงสถิติและการติดตามข้อมูลการสอบแข่งขันครูผู้ช่วย สพฐ. โดยยึดหลักความโปร่งใส ความถูกต้องตามข้อเท็จจริงของทางราชการ และมาตรฐานการออกแบบส่วนติดต่อผู้ใช้ระดับสากล (Material Design System)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### สถาปัตยกรรมและเทคโนโลยีหลัก
+* Core Framework: React 19 (TypeScript)
+* Build Engine: Vite
+* Styling Architecture: Tailwind CSS พร้อมโทนสีและ Typography จาก Design System ทางการ (Material Symbols Outlined, Plus Jakarta Sans, Sarabun)
+* Data Synchronization: Daily Auto-Sync Engine พร้อมระบบแคชข้อมูลระดับวัน (Local Persistence)
+* Deployment Support: Pure Web Application Architecture (รองรับการโฮสต์บน Static Hosting เช่น Cloudflare Pages, Vercel, Netlify หรือ Nginx/Node Preview Server)
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 2. หลักการจัดการข้อมูล (Data Integrity & Governance)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+ระบบปฏิบัติตามมาตรฐานข้อมูลทางราชการอย่างเคร่งครัด:
+* ปราศจากข้อมูลจำลอง (Zero Mock Policy): ตัวเลขสถิติจำนวนผู้สมัคร ยอดรับ และอัตราส่วนการแข่งขัน จะถูกประมวลผลและแสดงผลเฉพาะข้อมูลที่ได้รับยืนยันจากระบบฐานข้อมูลกลาง สพฐ. เท่านั้น
+* สถานะรอเปิดระบบ (Pending State Handling): ในช่วงเวลาก่อนระบบรับสมัครออนไลน์เปิดทำการ (ก่อนวันที่ 19 ตุลาคม 2569 เวลา 08:30 น.) ระบบจะแสดงสถานะเป็น "รอเปิดรับสมัคร" และ "ยังไม่มีข้อมูล" อย่างชัดเจน เพื่อป้องกันความเข้าใจผิดของผู้สมัครและบุคลากรทางการศึกษา
+* Real-time Countdown Synchronizer: ระบบนับถอยหลังเชื่อมโยงกับเวลาจริงของระบบเครื่องแม่ข่ายและอุปกรณ์ผู้ใช้งานแบบวินาทีต่อวินาที โดยอ้างอิงเป้าหมายตามกำหนดการทางการ
+
+---
+
+## 3. กำหนดการสอบแข่งขันทางการ (สพฐ. รอบทั่วไป 2569)
+
+| ขั้นตอน / กิจกรรม | ช่วงเวลาดำเนินการ | หมายเหตุ |
+| :--- | :--- | :--- |
+| ประกาศรับสมัครสอบแข่งขัน | ภายใน 12 ตุลาคม 2569 | อ.ก.ค.ศ. แต่ละเขตพื้นที่การศึกษาประกาศ |
+| รับสมัครสอบแข่งขันผ่านระบบออนไลน์ | 19 – 25 ตุลาคม 2569 | เปิดระบบ 19 ต.ค. เวลา 08:30 น. ปิดระบบ 25 ต.ค. เวลา 16:30 น. |
+| ประกาศรายชื่อผู้มีสิทธิ์สอบ ภาค ก และ ข | ภายใน 28 ตุลาคม 2569 | ประกาศผ่านเว็บไซต์เขตพื้นที่การศึกษา |
+| สอบข้อเขียน ภาค ก (ความรู้ความสามารถทั่วไป) | 14 พฤศจิกายน 2569 | ตามศูนย์สอบที่กำหนด |
+| สอบข้อเขียน ภาค ข (มาตรฐานวิชาชีพครู) | 15 พฤศจิกายน 2569 | ตามศูนย์สอบที่กำหนด |
+| ประกาศผลสอบผ่าน ภาค ก และ ภาค ข | ภายใน 18 พฤศจิกายน 2569 | เพื่อเข้าสอบ ภาค ค ต่อไป |
+
+---
+
+## 4. คุณสมบัติเด่นของระบบ (Core Features)
+
+### 4.1 ภาพรวมระดับประเทศ (National Dashboard)
+* แบนเนอร์นับถอยหลังแบบปรับสถานะอัตโนมัติ (ก่อนเปิดรับสมัคร, ระหว่างเปิดรับสมัคร, และหลังปิดรับสมัคร)
+* การ์ดตัวชี้วัดสำคัญ (Key Performance Indicators): ผู้สมัครรวม, ตำแหน่งเปิดรับ, อัตราส่วนการแข่งขันเฉลี่ย, และเขตพื้นที่ที่มีอัตราแข่งขันสูงสุด
+* ปฏิทินและไทม์ไลน์ขั้นตอนการสอบแข่งขันแบบละเอียด
+
+### 4.2 ระบบสำรวจเขตพื้นที่การศึกษา (District Explorer)
+* ฐานข้อมูลรายชื่อสำนักงานเขตพื้นที่การศึกษา 204 เขต ครอบคลุมทั้ง สพป. และ สพม. ทั่วทั้ง 77 จังหวัด
+* ระบบค้นหาอัจฉริยะ (Search by District Name / Province)
+* ฟิลเตอร์แยกตามภูมิภาค (ภาคกลาง/กทม., เหนือ, อีสาน, ใต้, ตะวันออก, ตะวันตก)
+* ระบบบันทึกเขตพื้นที่ในรายการติดตาม (Watchlist)
+
+### 4.3 ระบบสถิติรายกลุ่มวิชาเอก (Subject Competency Analysis)
+* จำแนกกลุ่มวิชาเอกตามโครงสร้างหลักสูตรมาตรฐานของ สพฐ. เช่น ภาษาอังกฤษ, การศึกษาปฐมวัย, ภาษาไทย, คณิตศาสตร์, วิทยาศาสตร์ทั่วไป ฯลฯ
+* แสดงสถานะรายวิชาเอกตามข้อเท็จจริง
+
+### 4.4 ฟีดประกาศและระเบียบการ (Official Announcement Feed)
+* ศูนย์รวมข่าวสาร ข้อกำหนด และประกาศสำคัญจากศูนย์เทคโนโลยีสารสนเทศและระบบบริหารงานบุคคล สพฐ.
+
+---
+
+## 5. การติดตั้งและเริ่มใช้งาน (Getting Started)
+
+### ความต้องการของระบบ (Prerequisites)
+* Node.js เวอร์ชัน 20.x ขึ้นไป
+* npm เวอร์ชัน 10.x ขึ้นไป
+
+### ขั้นตอนการรันระบบในสภาพแวดล้อม Development
+```bash
+# โคลนคลังโค้ด
+git clone https://github.com/satetapongsa/teacher.git
+cd teacher
+
+# ติดตั้งแพ็กเกจที่จำเป็น
+npm install
+
+# รัน Development Server
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### ขั้นตอนการสร้าง Production Build
+```bash
+# คอมไพล์โปรเจกต์เป็น Production Bundle
+npm run build
+
+# ทดสอบรัน Production Bundle บน Local Server
+npm run preview -- --port 3000
+```
+ระบบจะสร้างไฟล์สำหรับใช้งานจริงไว้ในไดเรกทอรี `dist/` ซึ่งพร้อมสำหรับการนำไป Deploy บนเว็บเซิร์ฟเวอร์ใดๆ
+
+---
+
+## 6. โครงสร้างโปรเจกต์ (Project Structure)
+
+```text
+teacher/
+├── public/                 # Static Assets และ Favicon
+├── src/
+│   ├── services/
+│   │   ├── obecApi.ts          # สคีมาข้อมูลและฐานข้อมูลเขตพื้นที่การศึกษา สพฐ.
+│   │   └── dailySyncEngine.ts  # เอนจินตรวจสอบและอัปเดตข้อมูลอัตโนมัติประจำวัน
+│   ├── App.tsx             # คอมโพเนนต์หลักของเว็บแอปพลิเคชัน
+│   ├── main.tsx            # Entry point ของ React application
+│   └── index.css           # Global stylesheet
+├── dist/                   # Production Build Output
+├── index.html              # HTML Root Template พร้อม Typography และ Design Tokens
+├── package.json            # การกำหนด Dependencies และ Scripts
+├── tsconfig.json           # การตั้งค่า TypeScript Compiler
+└── vite.config.ts          # การกำหนดค่า Vite Bundler
+```
+
+---
+
+## 7. ลิขสิทธิ์และข้อกำหนดการใช้งาน (License & Disclaimer)
+
+โครงการนี้จัดทำขึ้นเพื่อสาธารณประโยชน์สำหรับผู้สมัครสอบครูผู้ช่วยและบุคลากรทางการศึกษา ข้อมูลกำหนดการสอบแข่งขันอ้างอิงจากประกาศทางการของสำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.) กระทรวงศึกษาธิการ
