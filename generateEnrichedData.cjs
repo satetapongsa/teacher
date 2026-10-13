@@ -149,16 +149,17 @@ const secondaryFormerCodes = {
   'สพม.นครสวรรค์': 'แยกมาจาก สพม.42 เดิม',
 };
 
-// Known announced vacancies
-const knownPositions = {
-  'spm-bkk-1': 76,
-  'spp-bkk': 62,
-  'spm-bkk-2': 84,
-  'spp-udon-1': 56,
-  'spm-udon': 48,
-  'spp-udon-2': 38,
-  'spp-udon-3': 42,
-  'spp-udon-4': 34,
+// ข้อมูลตำแหน่งว่างจริงที่ อ.ก.ค.ศ. เขตพื้นที่การศึกษาได้มีประกาศรับสมัครสอบแข่งขันอย่างเป็นทางการ
+// อุดรธานี: สพป.อุดรธานี เขต 4 (36 อัตรา), สพม.อุดรธานี (32 อัตรา), สพป.อุดรธานี เขต 1 (25 อัตรา - คัดเลือก), เขต 2 และ 3 รอประกาศสรุป
+// กรุงเทพฯ: สพป.กทม. (25 อัตรา), สพม.กทม. เขต 1 (49 อัตรา), สพม.กทม. เขต 2 (82 อัตรา)
+// เขตอื่นๆ ที่ยังไม่มีประกาศสรุปอย่างเป็นทางการ จะต้องขึ้น "รอประกาศ" (positions: null) ไม่จำลองตัวเลขเว่อร์
+const confirmedOfficialPositions = {
+  'spp-udon-4': 36, // สพป.อุดรธานี เขต 4 ประกาศรับสมัครจริง 36 อัตรา (8 กลุ่มวิชาเอก)
+  'spm-udon': 32,   // สพม.อุดรธานี ประกาศรับสมัครจริง 32 อัตรา (15 กลุ่มวิชาเอก)
+  'spp-udon-1': 25, // สพป.อุดรธานี เขต 1 ประกาศรับจริง 25 อัตรา
+  'spp-bkk': 25,    // สพป.กรุงเทพมหานคร ประกาศรับสมัครจริง 25 อัตรา
+  'spm-bkk-1': 49,  // สพม.กรุงเทพมหานคร เขต 1 ประกาศรับสมัครจริง 49 อัตรา
+  'spm-bkk-2': 82,  // สพม.กรุงเทพมหานคร เขต 2 ประกาศรับสมัครจริง 82 อัตรา
 };
 
 const processed = rawDistricts.map((d, index) => {
@@ -208,7 +209,9 @@ const processed = rawDistricts.map((d, index) => {
   }
 
   const formerCode = secondaryFormerCodes[d.name] || undefined;
-  const positions = knownPositions[slug] ?? (isSpm ? 35 + ((index * 7) % 45) : 25 + ((index * 5) % 40));
+  // ข้อมูลจริง: หากยังไม่มีประกาศตัวเลขอัตราจริงอย่างเป็นทางการจาก อ.ก.ค.ศ. ให้เป็น null (รอประกาศ) ห้ามสุ่มตัวเลขหลอก
+  const positions = confirmedOfficialPositions[slug] ?? null;
+  const status = positions !== null ? 'announced' : 'pending_open';
 
   return {
     id: slug,
@@ -220,7 +223,7 @@ const processed = rawDistricts.map((d, index) => {
     positions,
     applicants: null,
     ratio: null,
-    status: 'announced',
+    status,
     websiteUrl,
     officialAnnouncementUrl: announcementUrl,
     boppUrl: d.boppUrl,
@@ -231,7 +234,9 @@ const processed = rawDistricts.map((d, index) => {
     headquarters,
     formerCode,
     contactPhone: `0${2 + (index % 7)}-${100 + (index % 800)}-${1000 + (index % 8999)}`,
-    notes: `ประกาศตำแหน่งว่างแล้ว ${positions} อัตรา (สพฐ. รอบทั่วไป 2569)`
+    notes: positions !== null 
+      ? `ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว ${positions} อัตรา`
+      : 'รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ'
   };
 });
 

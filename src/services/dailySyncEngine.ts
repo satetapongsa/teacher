@@ -20,7 +20,7 @@ export interface DailyUpdateRecord {
   };
 }
 
-const STORAGE_KEY = 'obec_daily_teacher_stats_v6';
+const STORAGE_KEY = 'obec_daily_teacher_stats_v7';
 
 // Official Schedule Targets:
 // 19 ต.ค. 2569 เวลา 08:30 น. - 25 ต.ค. 2569 เวลา 16:30 น.
@@ -110,7 +110,7 @@ function getRecordForCurrentTime(): DailyUpdateRecord {
       totalApplicants: null,
       totalPositions: totalAnnouncedPositions > 0 ? totalAnnouncedPositions : null,
       averageRatio: null,
-      peakDistrict: 'สพม.กรุงเทพมหานคร เขต 2 (84 อัตรา)',
+      peakDistrict: 'สพม.กรุงเทพมหานคร เขต 2 (82 อัตรา)',
       peakRatio: null,
       statusText: `ประกาศตำแหน่งว่างแล้ว ${announcedDistrictCount} เขต (รวม ${totalAnnouncedPositions.toLocaleString()} อัตรา) • เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569`,
     },

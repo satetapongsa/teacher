@@ -212,10 +212,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กระบี่",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/221",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/221/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/221",
@@ -225,7 +225,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดกระบี่",
     "headquarters": "",
     "contactPhone": "02-100-1000",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-bkk",
@@ -234,7 +234,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กรุงเทพมหานคร",
     "region": "central",
     "type": "สพป.",
-    "positions": 62,
+    "positions": 25,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -247,7 +247,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกเขตในกรุงเทพมหานคร",
     "headquarters": "",
     "contactPhone": "03-101-1001",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 62 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 25 อัตรา"
   },
   {
     "id": "spp-area-202",
@@ -256,10 +256,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาญจนบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/202",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/202/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/202",
@@ -269,7 +269,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองกาญจนบุรี ด่านมะขามเตี้ย ท่าม่วง และ ศรีสวัสดิ์",
     "headquarters": "อำเภอเมืองกาญจนบุรี",
     "contactPhone": "04-102-1002",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-203",
@@ -278,10 +278,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาญจนบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/203",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/203/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/203",
@@ -291,7 +291,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ท่ามะกา พนมทวน และ ห้วยกระเจา",
     "headquarters": "อำเภอพนมทวน",
     "contactPhone": "05-103-1003",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-204",
@@ -300,10 +300,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาญจนบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/204",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/204/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/204",
@@ -313,7 +313,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ทองผาภูมิ ไทรโยค และ สังขละบุรี",
     "headquarters": "อำเภอทองผาภูมิ",
     "contactPhone": "06-104-1004",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-205",
@@ -322,10 +322,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาญจนบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/205",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/205/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/205",
@@ -335,7 +335,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บ่อพลอย เลาขวัญ และ หนองปรือ",
     "headquarters": "อำเภอบ่อพลอย",
     "contactPhone": "07-105-1005",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-147",
@@ -344,10 +344,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาฬสินธุ์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/147",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/147/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/147",
@@ -357,7 +357,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองกาฬสินธุ์ กมลาไสย ดอนจาน ร่องคำ สหัสขันธ์ และ สามชัย",
     "headquarters": "อำเภอเมืองกาฬสินธุ์",
     "contactPhone": "08-106-1006",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-148",
@@ -366,10 +366,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาฬสินธุ์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/148",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/148/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/148",
@@ -379,7 +379,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ฆ้องชัย ท่าคันโท ยางตลาด หนองกุงศรี และ ห้วยเม็ก",
     "headquarters": "อำเภอห้วยเม็ก",
     "contactPhone": "02-107-1007",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-149",
@@ -388,10 +388,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาฬสินธุ์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/149",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/149/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/149",
@@ -401,7 +401,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุฉินารายณ์ เขาวง คำม่วง นาคู นามน สมเด็จ และ ห้วยผึ้ง",
     "headquarters": "อำเภอห้วยผึ้ง",
     "contactPhone": "03-108-1008",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-186",
@@ -410,10 +410,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กำแพงเพชร",
     "region": "north",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/186",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/186/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/186",
@@ -423,7 +423,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองกำแพงเพชร โกสัมพีนคร ไทรงาม พรานกระต่าย และ ลานกระบือ",
     "headquarters": "อำเภอเมืองกำแพงเพชร",
     "contactPhone": "04-109-1009",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-187",
@@ -432,10 +432,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กำแพงเพชร",
     "region": "north",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/187",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/187/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/187",
@@ -445,7 +445,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขาณุวรลักษบุรี คลองขลุง คลองลาน ทรายทองวัฒนา บึงสามัคคี และ ปางศิลาทอง",
     "headquarters": "อำเภอคลองขลุง",
     "contactPhone": "05-110-1010",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-127",
@@ -454,10 +454,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/127",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/127/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/127",
@@ -467,7 +467,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองขอนแก่น บ้านฝาง และ พระยืน",
     "headquarters": "อำเภอเมืองขอนแก่น",
     "contactPhone": "06-111-1011",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-128",
@@ -476,10 +476,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/128",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/128/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/128",
@@ -489,7 +489,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โคกโพธิ์ไชย ชนบท บ้านไผ่ บ้านแฮด เปือยน้อย และ มัญจาคีรี",
     "headquarters": "อำเภอบ้านไผ่",
     "contactPhone": "07-112-1012",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-129",
@@ -498,10 +498,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/129",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/129/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/129",
@@ -511,7 +511,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โนนศิลา พล แวงน้อย แวงใหญ่ และ หนองสองห้อง",
     "headquarters": "อำเภอพล",
     "contactPhone": "08-113-1013",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-130",
@@ -520,10 +520,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/130",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/130/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/130",
@@ -533,7 +533,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กระนวน เขาสวนกวาง ซำสูง น้ำพอง และ อุบลรัตน์",
     "headquarters": "อำเภอน้ำพอง",
     "contactPhone": "02-114-1014",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-131",
@@ -542,10 +542,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/131",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/131/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/131",
@@ -555,7 +555,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ชุมแพ ภูผาม่าน ภูเวียง เวียงเก่า สีชมพู หนองนาคำ และ หนองเรือ",
     "headquarters": "อำเภอชุมแพ",
     "contactPhone": "03-115-1015",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-85",
@@ -564,10 +564,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "จันทบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/85",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/85/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/85",
@@ -577,7 +577,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองจันทบุรี แก่งหางแมว ท่าใหม่ และ นายายอาม",
     "headquarters": "อำเภอเมืองจันทบุรี",
     "contactPhone": "04-116-1016",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-86",
@@ -586,10 +586,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "จันทบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/86",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/86/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/86",
@@ -599,7 +599,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขลุง เขาคิชฌกูฏ โป่งน้ำร้อน มะขาม สอยดาว และ แหลมสิงห์",
     "headquarters": "อำเภอมะขาม",
     "contactPhone": "05-117-1017",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-88",
@@ -608,10 +608,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ฉะเชิงเทรา",
     "region": "east",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/88",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/88/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/88",
@@ -621,7 +621,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองฉะเชิงเทรา บางน้ำเปรี้ยว บางปะกง และ บ้านโพธิ์",
     "headquarters": "อำเภอเมืองฉะเชิงเทรา",
     "contactPhone": "06-118-1018",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-89",
@@ -630,10 +630,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ฉะเชิงเทรา",
     "region": "east",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/89",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/89/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/89",
@@ -643,7 +643,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ คลองเขื่อน ท่าตะเกียบ บางคล้า แปลงยาว พนมสารคาม ราชสาส์น และ สนามชัยเขต",
     "headquarters": "อำเภอพนมสารคาม",
     "contactPhone": "07-119-1019",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-80",
@@ -652,10 +652,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชลบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/80",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/80/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/80",
@@ -665,7 +665,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองชลบุรี บ้านบึง และ หนองใหญ่",
     "headquarters": "อำเภอเมืองชลบุรี",
     "contactPhone": "08-120-1020",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-81",
@@ -674,10 +674,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชลบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/81",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/81/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/81",
@@ -687,7 +687,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เกาะจันทร์ บ่อทอง พนัสนิคม และ พานทอง",
     "headquarters": "อำเภอพนัสนิคม",
     "contactPhone": "02-121-1021",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-82",
@@ -696,10 +696,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชลบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/82",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/82/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/82",
@@ -709,7 +709,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เกาะสีชัง บางละมุง ศรีราชา และ สัตหีบ",
     "headquarters": "อำเภอบางละมุง",
     "contactPhone": "03-122-1022",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-77",
@@ -718,10 +718,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชัยนาท",
     "region": "central",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/77",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/77/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/77",
@@ -731,7 +731,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดชัยนาท",
     "headquarters": "",
     "contactPhone": "04-123-1023",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-120",
@@ -740,10 +740,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชัยภูมิ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/120",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/120/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/120",
@@ -753,7 +753,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองชัยภูมิ คอนสวรรค์ บ้านเขว้า ภักดีชุมพล และ หนองบัวแดง",
     "headquarters": "อำเภอเมืองชัยภูมิ",
     "contactPhone": "05-124-1024",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-121",
@@ -762,10 +762,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชัยภูมิ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/121",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/121/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/121",
@@ -775,7 +775,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เกษตรสมบูรณ์ แก้งคร้อ คอนสาร บ้านแท่น ภูเขียว",
     "headquarters": "อำเภอภูเขียว",
     "contactPhone": "06-125-1025",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-122",
@@ -784,10 +784,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชัยภูมิ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/122",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/122/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/122",
@@ -797,7 +797,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จัตุรัส ซับใหญ่ เทพสถิต เนินสง่า บำเหน็จณรงค์ และ หนองบัวระเหว",
     "headquarters": "อำเภอจัตุรัส",
     "contactPhone": "07-126-1026",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-228",
@@ -806,10 +806,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชุมพร",
     "region": "south",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/228",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/228/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/228",
@@ -819,7 +819,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองชุมพร ท่าแซะ และ ปะทิว",
     "headquarters": "อำเภอเมืองชุมพร",
     "contactPhone": "08-127-1027",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-229",
@@ -828,10 +828,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชุมพร",
     "region": "south",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/229",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/229/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/229",
@@ -841,7 +841,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ทุ่งตะโก พะโต๊ะ ละแม สวี และ หลังสวน",
     "headquarters": "อำเภอหลังสวน",
     "contactPhone": "02-128-1028",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-175",
@@ -850,10 +850,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงราย",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/175",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/175/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/175",
@@ -863,7 +863,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองเชียงราย เวียงชัย และ เวียงเชียงรุ้ง",
     "headquarters": "อำเภอเมืองเชียงราย",
     "contactPhone": "03-129-1029",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-176",
@@ -872,10 +872,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงราย",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/176",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/176/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/176",
@@ -885,7 +885,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ป่าแดด พาน แม่ลาว แม่สรวย และ เวียงป่าเป้า",
     "headquarters": "อำเภอแม่ลาว",
     "contactPhone": "04-130-1030",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-177",
@@ -894,10 +894,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงราย",
     "region": "north",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/177",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/177/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/177",
@@ -907,7 +907,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เชียงแสน ดอยหลวง แม่จัน แม่ฟ้าหลวง และ แม่สาย",
     "headquarters": "อำเภอแม่จัน",
     "contactPhone": "05-131-1031",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-178",
@@ -916,10 +916,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงราย",
     "region": "north",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/178",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/178/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/178",
@@ -929,7 +929,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขุนตาล เชียงของ เทิง พญาเม็งราย และ เวียงแก่น",
     "headquarters": "อำเภอเทิง",
     "contactPhone": "06-132-1032",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-156",
@@ -938,10 +938,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/156",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/156/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/156",
@@ -951,7 +951,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองเชียงใหม่ ดอยสะเก็ด แม่ออน และ สันกำแพง",
     "headquarters": "อำเภอเมืองเชียงใหม่",
     "contactPhone": "07-133-1033",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-157",
@@ -960,10 +960,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/157",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/157/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/157",
@@ -973,7 +973,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ พร้าว แม่แตง แม่ริม สะเมิง และ สันทราย",
     "headquarters": "อำเภอแม่ริม",
     "contactPhone": "08-134-1034",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-158",
@@ -982,10 +982,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/158",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/158/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/158",
@@ -995,7 +995,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เชียงดาว ไชยปราการ ฝาง แม่อาย และ เวียงแหง",
     "headquarters": "อำเภอฝาง",
     "contactPhone": "02-135-1035",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-159",
@@ -1004,10 +1004,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/159",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/159/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/159",
@@ -1017,7 +1017,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ดอยหล่อ แม่วาง สันป่าตอง สารภี และ หางดง",
     "headquarters": "อำเภอสันป่าตอง",
     "contactPhone": "03-136-1036",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-160",
@@ -1026,10 +1026,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/160",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/160/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/160",
@@ -1039,7 +1039,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ดอยเต่า อมก๋อย และ ฮอด",
     "headquarters": "อำเภอฮอด",
     "contactPhone": "04-137-1037",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-161",
@@ -1048,10 +1048,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/161",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/161/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/161",
@@ -1061,7 +1061,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กัลยาณิวัฒนา จอมทอง และ แม่แจ่ม",
     "headquarters": "อำเภอจอมทอง",
     "contactPhone": "05-138-1038",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-234",
@@ -1070,10 +1070,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตรัง",
     "region": "south",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/234",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/234/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/234",
@@ -1083,7 +1083,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองตรัง นาโยง ปะเหลียน ย่านตาขาว และ หาดสำราญ",
     "headquarters": "อำเภอเมืองตรัง",
     "contactPhone": "06-139-1039",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-235",
@@ -1092,10 +1092,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตรัง",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/235",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/235/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/235",
@@ -1105,7 +1105,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กันตัง รัษฎา วังวิเศษ สิเกา และ ห้วยยอด",
     "headquarters": "อำเภอห้วยยอด",
     "contactPhone": "07-140-1040",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-87",
@@ -1114,10 +1114,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตราด",
     "region": "east",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/87",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/87/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/87",
@@ -1127,7 +1127,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดตราด",
     "headquarters": "",
     "contactPhone": "08-141-1041",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-188",
@@ -1136,10 +1136,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตาก",
     "region": "north",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/188",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/188/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/188",
@@ -1149,7 +1149,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองตาก บ้านตาก วังเจ้า และ สามเงา",
     "headquarters": "อำเภอเมืองตาก",
     "contactPhone": "02-142-1042",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-189",
@@ -1158,10 +1158,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตาก",
     "region": "north",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/189",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/189/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/189",
@@ -1171,7 +1171,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ท่าสองยาง พบพระ แม่ระมาด แม่สอด และ อุ้มผาง",
     "headquarters": "อำเภอแม่สอด",
     "contactPhone": "03-143-1043",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-92",
@@ -1180,10 +1180,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครนายก",
     "region": "central",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/92",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/92/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/92",
@@ -1193,7 +1193,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดนครนายก",
     "headquarters": "",
     "contactPhone": "04-144-1044",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-209",
@@ -1202,10 +1202,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครปฐม",
     "region": "central",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/209",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/209/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/209",
@@ -1215,7 +1215,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนครปฐม กำแพงแสน และ ดอนตูม",
     "headquarters": "อำเภอเมืองนครปฐม",
     "contactPhone": "05-145-1045",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-210",
@@ -1224,10 +1224,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครปฐม",
     "region": "central",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/210",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/210/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/210",
@@ -1237,7 +1237,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ นครชัยศรี บางเลน พุทธมณฑล และ สามพราน",
     "headquarters": "อำเภอนครชัยศรี",
     "contactPhone": "06-146-1046",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-153",
@@ -1246,10 +1246,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครพนม",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/153",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/153/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/153",
@@ -1259,7 +1259,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนครพนม ธาตุพนม นาแก ปลาปาก เรณูนคร และ วังยาง",
     "headquarters": "อำเภอเมืองนครพนม",
     "contactPhone": "07-147-1047",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-154",
@@ -1268,10 +1268,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครพนม",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/154",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/154/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/154",
@@ -1281,7 +1281,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ท่าอุเทน นาทม นาหว้า บ้านแพง โพนสวรรค์ และ ศรีสงคราม",
     "headquarters": "อำเภอศรีสงคราม",
     "contactPhone": "08-148-1048",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-95",
@@ -1290,10 +1290,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/95",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/95/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/95",
@@ -1303,7 +1303,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนครราชสีมา และ โนนสูง",
     "headquarters": "อำเภอเมืองนครราชสีมา",
     "contactPhone": "02-149-1049",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-96",
@@ -1312,10 +1312,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/96",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/96/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/96",
@@ -1325,7 +1325,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จักราช อำเภอเฉลิมพระเกียรติ โชคชัย หนองบุญมาก และ ห้วยแถลง",
     "headquarters": "อำเภอจักราช",
     "contactPhone": "03-150-1050",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-97",
@@ -1334,10 +1334,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/97",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/97/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/97",
@@ -1347,7 +1347,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ครบุรี ปักธงชัย วังน้ำเขียว และ เสิงสาง",
     "headquarters": "อำเภอครบุรี",
     "contactPhone": "04-151-1051",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-98",
@@ -1356,10 +1356,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/98",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/98/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/98",
@@ -1369,7 +1369,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ปากช่อง สีคิ้ว และ สูงเนิน",
     "headquarters": "อำเภอสีคิ้ว",
     "contactPhone": "05-152-1052",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-99",
@@ -1378,10 +1378,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/99",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/99/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/99",
@@ -1391,7 +1391,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขามทะเลสอ ขามสะแกแสง ด่านขุนทด เทพารักษ์ โนนไทย และ พระทองคำ",
     "headquarters": "อำเภอด่านขุนทด",
     "contactPhone": "06-153-1053",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-100",
@@ -1400,10 +1400,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/100",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/100/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/100",
@@ -1413,7 +1413,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แก้งสนามนาง คง บัวลาย บัวใหญ่ บ้านเหลื่อม และ สีดา",
     "headquarters": "อำเภอบัวใหญ่",
     "contactPhone": "07-154-1054",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-101",
@@ -1422,10 +1422,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/101",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/101/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/101",
@@ -1435,7 +1435,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ชุมพวง โนนแดง ประทาย พิมาย เมืองยาง และ ลำทะเมนชัย",
     "headquarters": "อำเภอชุมพวง",
     "contactPhone": "08-155-1055",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-217",
@@ -1444,10 +1444,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครศรีธรรมราช",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/217",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/217/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/217",
@@ -1457,7 +1457,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนครศรีธรรมราช อำเภอเฉลิมพระเกียรติ พระพรหม และ ลานสกา",
     "headquarters": "อำเภอเมืองนครศรีธรรมราช",
     "contactPhone": "02-156-1056",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-218",
@@ -1466,10 +1466,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครศรีธรรมราช",
     "region": "south",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/218",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/218/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/218",
@@ -1479,7 +1479,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ฉวาง ช้างกลาง ถ้ำพรรณรา ทุ่งสง ทุ่งใหญ่ นาบอน บางขัน และ พิปูน",
     "headquarters": "อำเภอทุ่งสง",
     "contactPhone": "03-157-1057",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-219",
@@ -1488,10 +1488,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครศรีธรรมราช",
     "region": "south",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/219",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/219/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/219",
@@ -1501,7 +1501,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จุฬาภรณ์ ชะอวด เชียรใหญ่ ปากพนัง ร่อนพิบูลย์ และ หัวไทร",
     "headquarters": "อำเภอเชียรใหญ่",
     "contactPhone": "04-158-1058",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-220",
@@ -1510,10 +1510,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครศรีธรรมราช",
     "region": "south",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/220",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/220/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/220",
@@ -1523,7 +1523,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขนอม ท่าศาลา นบพิตำ พรหมคีรี และ สิชล",
     "headquarters": "อำเภอท่าศาลา",
     "contactPhone": "05-159-1059",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-181",
@@ -1532,10 +1532,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครสวรรค์",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/181",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/181/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/181",
@@ -1544,7 +1544,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนครสวรรค์ เก้าเลี้ยว โกรกพระ ชุมแสง และ พยุหะคีรี",
     "headquarters": "อำเภอเมืองนครสวรรค์",
     "contactPhone": "06-160-1060",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-182",
@@ -1553,10 +1553,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครสวรรค์",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/182",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/182/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/182",
@@ -1565,7 +1565,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ชุมตาบง บรรพตพิสัย แม่เปิน แม่วงก์ และ ลาดยาว",
     "headquarters": "อำเภอลาดยาว",
     "contactPhone": "07-161-1061",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-183",
@@ -1574,10 +1574,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครสวรรค์",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/183",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/183/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/183",
@@ -1586,7 +1586,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ตากฟ้า ตาคลี ท่าตะโก ไพศาลี และ หนองบัว",
     "headquarters": "อำเภอไพศาลี",
     "contactPhone": "08-162-1062",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-67",
@@ -1595,10 +1595,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นนทบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/67",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/67/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/67",
@@ -1608,7 +1608,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนนทบุรี และ บางกรวย",
     "headquarters": "อำเภอเมืองนนทบุรี",
     "contactPhone": "02-163-1063",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-68",
@@ -1617,10 +1617,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นนทบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/68",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/68/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/68",
@@ -1630,7 +1630,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ไทรน้อย บางบัวทอง บางใหญ่ ปากเกร็ด",
     "headquarters": "อำเภอบางใหญ่",
     "contactPhone": "03-164-1064",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-244",
@@ -1639,10 +1639,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นราธิวาส",
     "region": "south",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/244",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/244/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/244",
@@ -1652,7 +1652,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองนราธิวาส บาเจาะ ยี่งอ รือเสาะ และ ศรีสาคร",
     "headquarters": "อำเภอเมืองนราธิวาส",
     "contactPhone": "04-165-1065",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-245",
@@ -1661,10 +1661,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นราธิวาส",
     "region": "south",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/245",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/245/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/245",
@@ -1674,7 +1674,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ตากใบ แว้ง สุคิริน สุไหงโก-ลก และ สุไหงปาดี",
     "headquarters": "อำเภอสุไหงโก-ลก",
     "contactPhone": "05-166-1066",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-246",
@@ -1683,10 +1683,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นราธิวาส",
     "region": "south",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/246",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/246/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/246",
@@ -1696,7 +1696,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จะแนะ เจาะไอร้อง และ ระแงะ",
     "headquarters": "อำเภอระแงะ",
     "contactPhone": "06-167-1067",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-171",
@@ -1705,10 +1705,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "น่าน",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/171",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/171/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/171",
@@ -1718,7 +1718,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองน่าน นาน้อย นาหมื่น บ้านหลวง ภูเพียง แม่จริม เวียงสา และ สันติสุข",
     "headquarters": "อำเภอเมืองน่าน",
     "contactPhone": "07-168-1068",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-172",
@@ -1727,10 +1727,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "น่าน",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/172",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/172/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/172",
@@ -1740,7 +1740,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เฉลิมพระเกียรติ เชียงกลาง ท่าวังผา ทุ่งช้าง บ่อเกลือ ปัว และ สองแคว",
     "headquarters": "อำเภอปัว",
     "contactPhone": "08-169-1069",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-124",
@@ -1749,10 +1749,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บึงกาฬ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/124",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/124/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/124",
@@ -1762,7 +1762,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดบึงกาฬ",
     "headquarters": "",
     "contactPhone": "02-170-1070",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-102",
@@ -1771,10 +1771,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บุรีรัมย์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/102",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/102/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/102",
@@ -1784,7 +1784,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองบุรีรัมย์ ชำนิ บ้านด่าน และ ลำปลายมาศ",
     "headquarters": "อำเภอเมืองบุรีรัมย์",
     "contactPhone": "03-171-1071",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-103",
@@ -1793,10 +1793,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บุรีรัมย์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/103",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/103/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/103",
@@ -1806,7 +1806,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กระสัง บ้านกรวด ประโคนชัย พลับพลาชัย และ ห้วยราช",
     "headquarters": "อำเภอประโคนชัย",
     "contactPhone": "04-172-1072",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-104",
@@ -1815,10 +1815,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บุรีรัมย์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/104",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/104/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/104",
@@ -1828,7 +1828,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ อำเภอเฉลิมพระเกียรติ นางรอง โนนดินแดง โนนสุวรรณ ปะคำ ละหานทราย หนองกี่ และ หนองหงส์",
     "headquarters": "อำเภอนางรอง",
     "contactPhone": "05-173-1073",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-105",
@@ -1837,10 +1837,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บุรีรัมย์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/105",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/105/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/105",
@@ -1850,7 +1850,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ คูเมือง แคนดง นาโพธิ์ บ้านใหม่ไชยพจน์ พุทไธสง และ สตึก",
     "headquarters": "อำเภอพุทไธสง",
     "contactPhone": "06-174-1074",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-69",
@@ -1859,10 +1859,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปทุมธานี",
     "region": "central",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/69",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/69/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/69",
@@ -1872,7 +1872,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองปทุมธานี คลองหลวง ลาดหลุมแก้ว และ สามโคก",
     "headquarters": "อำเภอเมืองปทุมธานี",
     "contactPhone": "07-175-1075",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-70",
@@ -1881,10 +1881,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปทุมธานี",
     "region": "central",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/70",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/70/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/70",
@@ -1894,7 +1894,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ธัญบุรี ลำลูกกา และ หนองเสือ",
     "headquarters": "อำเภอลำลูกกา",
     "contactPhone": "08-176-1076",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-215",
@@ -1903,10 +1903,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ประจวบคีรีขันธ์",
     "region": "west",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/215",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/215/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/215",
@@ -1916,7 +1916,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองประจวบคีรีขันธ์ ทับสะแก บางสะพาน และ บางสะพานน้อย",
     "headquarters": "อำเภอเมืองประจวบคีรีขันธ์",
     "contactPhone": "02-177-1077",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-216",
@@ -1925,10 +1925,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ประจวบคีรีขันธ์",
     "region": "west",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/216",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/216/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/216",
@@ -1938,7 +1938,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุยบุรี ปราณบุรี สามร้อยยอด และ หัวหิน",
     "headquarters": "อำเภอปราณบุรี",
     "contactPhone": "03-178-1078",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-90",
@@ -1947,10 +1947,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปราจีนบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/90",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/90/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/90",
@@ -1960,7 +1960,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองปราจีนบุรี บ้านสร้าง ประจันตคาม ศรีมหาโพธิ และ ศรีมโหสถ",
     "headquarters": "อำเภอเมืองปราจีนบุรี",
     "contactPhone": "04-179-1079",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-91",
@@ -1969,10 +1969,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปราจีนบุรี",
     "region": "east",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/91",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/91/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/91",
@@ -1982,7 +1982,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กบินทร์บุรี และ นาดี",
     "headquarters": "อำเภอกบินทร์บุรี",
     "contactPhone": "05-180-1080",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-238",
@@ -1991,10 +1991,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปัตตานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/238",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/238/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/238",
@@ -2004,7 +2004,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองปัตตานี ปะนาเระ ยะหริ่ง และ หนองจิก",
     "headquarters": "อำเภอเมืองปัตตานี",
     "contactPhone": "06-181-1081",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-239",
@@ -2013,10 +2013,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปัตตานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/239",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/239/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/239",
@@ -2026,7 +2026,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โคกโพธิ์ มายอ แม่ลาน และ ยะรัง",
     "headquarters": "อำเภอโคกโพธิ์",
     "contactPhone": "07-182-1082",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-240",
@@ -2035,10 +2035,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปัตตานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/240",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/240/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/240",
@@ -2048,7 +2048,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กะพ้อ ทุ่งยางแดง ไม้แก่น และ สายบุรี",
     "headquarters": "อำเภอสายบุรี",
     "contactPhone": "08-183-1083",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-71",
@@ -2057,10 +2057,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พระนครศรีอยุธยา",
     "region": "central",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/71",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/71/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/71",
@@ -2070,7 +2070,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ พระนครศรีอยุธยา ท่าเรือ นครหลวง บางปะหัน บ้านแพรก ภาชี มหาราช วังน้อย และ อุทัย",
     "headquarters": "อำเภอพระนครศรีอยุธยา",
     "contactPhone": "02-184-1084",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-72",
@@ -2079,10 +2079,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พระนครศรีอยุธยา",
     "region": "central",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/72",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/72/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/72",
@@ -2092,7 +2092,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บางซ้าย บางไทร บางบาล บางปะอิน ผักไห่ ลาดบัวหลวง และ เสนา",
     "headquarters": "อำเภอเสนา",
     "contactPhone": "03-185-1085",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-173",
@@ -2101,10 +2101,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พะเยา",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/173",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/173/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/173",
@@ -2114,7 +2114,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองพะเยา ดอกคำใต้ ภูกามยาว และ แม่ใจ",
     "headquarters": "อำเภอเมืองพะเยา",
     "contactPhone": "04-186-1086",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-174",
@@ -2123,10 +2123,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พะเยา",
     "region": "north",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/174",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/174/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/174",
@@ -2136,7 +2136,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จุน เชียงคำ เชียงม่วน ปง และ ภูซาง",
     "headquarters": "อำเภอจุน",
     "contactPhone": "05-187-1087",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-222",
@@ -2145,10 +2145,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พังงา",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/222",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/222/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/222",
@@ -2158,7 +2158,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดพังงา",
     "headquarters": "",
     "contactPhone": "06-188-1088",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-236",
@@ -2167,10 +2167,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พัทลุง",
     "region": "south",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/236",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/236/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/236",
@@ -2180,7 +2180,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองพัทลุง ควนขนุน ป่าพะยอม ศรีนครินทร์ และ ศรีบรรพต",
     "headquarters": "อำเภอเมืองพัทลุง",
     "contactPhone": "07-189-1089",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-237",
@@ -2189,10 +2189,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พัทลุง",
     "region": "south",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/237",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/237/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/237",
@@ -2202,7 +2202,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กงหรา เขาชัยสน ตะโหมด บางแก้ว ปากพะยูน และ ป่าบอน",
     "headquarters": "อำเภอตะโหมด",
     "contactPhone": "08-190-1090",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-195",
@@ -2211,10 +2211,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิจิตร",
     "region": "north",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/195",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/195/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/195",
@@ -2224,7 +2224,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองพิจิตร โพธิ์ประทับช้าง วชิรบารมี วังทรายพูน สากเหล็ก และ สามง่าม",
     "headquarters": "อำเภอเมืองพิจิตร",
     "contactPhone": "02-191-1091",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-196",
@@ -2233,10 +2233,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิจิตร",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/196",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/196/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/196",
@@ -2246,7 +2246,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ดงเจริญ ตะพานหิน ทับคล้อ บางมูลนาก บึงนาราง และ โพทะเล",
     "headquarters": "อำเภอตะพานหิน",
     "contactPhone": "03-192-1092",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-192",
@@ -2255,10 +2255,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิษณุโลก",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/192",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/192/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/192",
@@ -2268,7 +2268,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองพิษณุโลก และ บางระกำ",
     "headquarters": "อำเภอเมืองพิษณุโลก",
     "contactPhone": "04-193-1093",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-193",
@@ -2277,10 +2277,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิษณุโลก",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/193",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/193/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/193",
@@ -2290,7 +2290,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เนินมะปราง บางกระทุ่ม และ วังทอง",
     "headquarters": "อำเภอวังทอง",
     "contactPhone": "05-194-1094",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-194",
@@ -2299,10 +2299,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิษณุโลก",
     "region": "north",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/194",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/194/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/194",
@@ -2312,7 +2312,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ชาติตระการ นครไทย พรหมพิราม และ วัดโบสถ์",
     "headquarters": "อำเภอวัดโบสถ์",
     "contactPhone": "06-195-1095",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-213",
@@ -2321,10 +2321,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/213",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/213/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/213",
@@ -2334,7 +2334,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองเพชรบุรี เขาย้อย บ้านแหลม และ หนองหญ้าปล้อง",
     "headquarters": "อำเภอเมืองเพชรบุรี",
     "contactPhone": "07-196-1096",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-214",
@@ -2343,10 +2343,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/214",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/214/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/214",
@@ -2356,7 +2356,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แก่งกระจาน ชะอำ ท่ายาง และ บ้านลาด",
     "headquarters": "อำเภอท่ายาง",
     "contactPhone": "08-197-1097",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-197",
@@ -2365,10 +2365,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบูรณ์",
     "region": "north",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/197",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/197/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/197",
@@ -2378,7 +2378,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองเพชรบูรณ์ ชนแดน และ วังโป่ง",
     "headquarters": "อำเภอเมืองเพชรบูรณ์",
     "contactPhone": "02-198-1098",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-198",
@@ -2387,10 +2387,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบูรณ์",
     "region": "north",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/198",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/198/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/198",
@@ -2400,7 +2400,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เขาค้อ น้ำหนาว หล่มเก่า และ หล่มสัก",
     "headquarters": "อำเภอหล่มสัก",
     "contactPhone": "03-199-1099",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-199",
@@ -2409,10 +2409,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบูรณ์",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/199",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/199/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/199",
@@ -2422,7 +2422,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บึงสามพัน วิเชียรบุรี ศรีเทพ และ หนองไผ่",
     "headquarters": "อำเภอบึงสามพัน",
     "contactPhone": "04-200-1100",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-169",
@@ -2431,10 +2431,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แพร่",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/169",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/169/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/169",
@@ -2444,7 +2444,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองแพร่ ร้องกวาง สอง และ หนองม่วงไข่",
     "headquarters": "อำเภอเมืองแพร่",
     "contactPhone": "05-201-1101",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-170",
@@ -2453,10 +2453,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แพร่",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/170",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/170/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/170",
@@ -2466,7 +2466,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เด่นชัย ลอง วังชิ้น และ สูงเม่น",
     "headquarters": "อำเภอลอง",
     "contactPhone": "06-202-1102",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-223",
@@ -2475,10 +2475,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ภูเก็ต",
     "region": "south",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/223",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/223/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/223",
@@ -2488,7 +2488,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดภูเก็ต",
     "headquarters": "",
     "contactPhone": "07-203-1103",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-141",
@@ -2497,10 +2497,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มหาสารคาม",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/141",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/141/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/141",
@@ -2510,7 +2510,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองมหาสารคาม กันทรวิชัย แกดำ และ บรบือ",
     "headquarters": "อำเภอเมืองมหาสารคาม",
     "contactPhone": "08-204-1104",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-142",
@@ -2519,10 +2519,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มหาสารคาม",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/142",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/142/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/142",
@@ -2532,7 +2532,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ นาเชือก นาดูน พยัคฆภูมิพิสัย ยางสีสุราช และ วาปีปทุม",
     "headquarters": "อำเภอวาปีปทุม",
     "contactPhone": "02-205-1105",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-143",
@@ -2541,10 +2541,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มหาสารคาม",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/143",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/143/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/143",
@@ -2554,7 +2554,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุดรัง โกสุมพิสัย ชื่นชม และ เชียงยืน",
     "headquarters": "อำเภอโกสุมพิสัย",
     "contactPhone": "03-206-1106",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-155",
@@ -2563,10 +2563,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มุกดาหาร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/155",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/155/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/155",
@@ -2576,7 +2576,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดมุกดาหาร",
     "headquarters": "",
     "contactPhone": "04-207-1107",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-179",
@@ -2585,10 +2585,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แม่ฮ่องสอน",
     "region": "north",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/179",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/179/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/179",
@@ -2598,7 +2598,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองแม่ฮ่องสอน ขุนยวม ปางมะผ้า และ ปาย",
     "headquarters": "อำเภอเมืองแม่ฮ่องสอน",
     "contactPhone": "05-208-1108",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-180",
@@ -2607,10 +2607,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แม่ฮ่องสอน",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/180",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/180/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/180",
@@ -2620,7 +2620,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แม่ลาน้อย แม่สะเรียง และ สบเมย",
     "headquarters": "อำเภอแม่สะเรียง",
     "contactPhone": "06-209-1109",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-118",
@@ -2629,10 +2629,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยโสธร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/118",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/118/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/118",
@@ -2642,7 +2642,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองยโสธร ค้อวัง คำเขื่อนแก้ว และ มหาชนะชัย",
     "headquarters": "อำเภอเมืองยโสธร",
     "contactPhone": "07-210-1110",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-119",
@@ -2651,10 +2651,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยโสธร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/119",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/119/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/119",
@@ -2664,7 +2664,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุดชุม ทรายมูล ไทยเจริญ ป่าติ้ว และ เลิงนกทา",
     "headquarters": "อำเภอกุดชุม",
     "contactPhone": "08-211-1111",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-241",
@@ -2673,10 +2673,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยะลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/241",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/241/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/241",
@@ -2686,7 +2686,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองยะลา กรงปินัง และ รามัน",
     "headquarters": "อำเภอเมืองยะลา",
     "contactPhone": "02-212-1112",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-242",
@@ -2695,10 +2695,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยะลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/242",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/242/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/242",
@@ -2708,7 +2708,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กาบัง บันนังสตา และ ยะหา",
     "headquarters": "อำเภอบันนังสตา",
     "contactPhone": "03-213-1113",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-243",
@@ -2717,10 +2717,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยะลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/243",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/243/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/243",
@@ -2730,7 +2730,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ธารโต และ เบตง",
     "headquarters": "อำเภอเบตง",
     "contactPhone": "04-214-1114",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-144",
@@ -2739,10 +2739,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ร้อยเอ็ด",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/144",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/144/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/144",
@@ -2752,7 +2752,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองร้อยเอ็ด จตุรพักตรพิมาน จังหาร เชียงขวัญ ทุ่งเขาหลวง ธวัชบุรี และ ศรีสมเด็จ",
     "headquarters": "อำเภอเมืองร้อยเอ็ด",
     "contactPhone": "05-215-1115",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-145",
@@ -2761,10 +2761,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ร้อยเอ็ด",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/145",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/145/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/145",
@@ -2774,7 +2774,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เกษตรวิสัย ปทุมรัตต์ พนมไพร โพนทราย เมืองสรวง สุวรรณภูมิ หนองฮี อาจสามารถ",
     "headquarters": "อำเภอสุวรรณภูมิ",
     "contactPhone": "06-216-1116",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-146",
@@ -2783,10 +2783,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ร้อยเอ็ด",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/146",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/146/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/146",
@@ -2796,7 +2796,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โพธิ์ชัย โพนทอง เมยวดี เสลภูมิ และ หนองพอก",
     "headquarters": "อำเภอโพนทอง",
     "contactPhone": "07-217-1117",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-227",
@@ -2805,10 +2805,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ระนอง",
     "region": "south",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/227",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/227/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/227",
@@ -2818,7 +2818,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดระนอง",
     "headquarters": "",
     "contactPhone": "08-218-1118",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-83",
@@ -2827,10 +2827,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ระยอง",
     "region": "east",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/83",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/83/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/83",
@@ -2840,7 +2840,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองระยอง นิคมพัฒนา บ้านค่าย บ้านฉาง และ ปลวกแดง",
     "headquarters": "อำเภอเมืองระยอง",
     "contactPhone": "02-219-1119",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-84",
@@ -2849,10 +2849,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ระยอง",
     "region": "east",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/84",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/84/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/84",
@@ -2862,7 +2862,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แกลง เขาชะเมา และ วังจันทร์",
     "headquarters": "อำเภอแกลง",
     "contactPhone": "03-220-1120",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-200",
@@ -2871,10 +2871,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ราชบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/200",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/200/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/200",
@@ -2884,7 +2884,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองราชบุรี จอมบึง บ้านคา ปากท่อ วัดเพลง และ สวนผึ้ง",
     "headquarters": "อำเภอเมืองราชบุรี",
     "contactPhone": "04-221-1121",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-201",
@@ -2893,10 +2893,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ราชบุรี",
     "region": "west",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/201",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/201/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/201",
@@ -2906,7 +2906,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ดำเนินสะดวก บางแพ บ้านโป่ง และ โพธาราม",
     "headquarters": "อำเภอโพธาราม",
     "contactPhone": "05-222-1122",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-74",
@@ -2915,10 +2915,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลพบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/74",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/74/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/74",
@@ -2928,7 +2928,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองลพบุรี โคกสำโรง ท่าวุ้ง และ บ้านหมี่",
     "headquarters": "อำเภอเมืองลพบุรี",
     "contactPhone": "06-223-1123",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-75",
@@ -2937,10 +2937,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลพบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/75",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/75/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/75",
@@ -2950,7 +2950,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โคกเจริญ ชัยบาดาล ท่าหลวง พัฒนานิคม ลำสนธิ สระโบสถ์ และ หนองม่วง",
     "headquarters": "อำเภอชัยบาดาล",
     "contactPhone": "07-224-1124",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-164",
@@ -2959,10 +2959,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำปาง",
     "region": "north",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/164",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/164/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/164",
@@ -2972,7 +2972,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองลำปาง งาว แม่เมาะ และ ห้างฉัตร",
     "headquarters": "อำเภอเมืองลำปาง",
     "contactPhone": "08-225-1125",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-165",
@@ -2981,10 +2981,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำปาง",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/165",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/165/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/165",
@@ -2994,7 +2994,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เกาะคา เถิน แม่ทะ แม่พริก สบปราบ และ เสริมงาม",
     "headquarters": "อำเภอเกาะคา",
     "contactPhone": "02-226-1126",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-166",
@@ -3003,10 +3003,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำปาง",
     "region": "north",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/166",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/166/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/166",
@@ -3016,7 +3016,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แจ้ห่ม เมืองปาน และ วังเหนือ",
     "headquarters": "อำเภอแจ้ห่ม",
     "contactPhone": "03-227-1127",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-162",
@@ -3025,10 +3025,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำพูน",
     "region": "north",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/162",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/162/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/162",
@@ -3038,7 +3038,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองลำพูน บ้านธิ ป่าซาง และ แม่ทา",
     "headquarters": "อำเภอเมืองลำพูน",
     "contactPhone": "04-228-1128",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-163",
@@ -3047,10 +3047,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำพูน",
     "region": "north",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/163",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/163/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/163",
@@ -3060,7 +3060,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ทุ่งหัวช้าง บ้านโฮ่ง ลี้ และ เวียงหนองล่อง",
     "headquarters": "อำเภอบ้านโฮ่ง",
     "contactPhone": "05-229-1129",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-136",
@@ -3069,10 +3069,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เลย",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/136",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/136/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/136",
@@ -3082,7 +3082,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองเลย ท่าลี่ นาด้วง และ ปากชม",
     "headquarters": "อำเภอเมืองเลย",
     "contactPhone": "06-230-1130",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-137",
@@ -3091,10 +3091,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เลย",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/137",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/137/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/137",
@@ -3104,7 +3104,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ผาขาว ภูกระดึง ภูหลวง วังสะพุง หนองหิน และ เอราวัณ",
     "headquarters": "อำเภอวังสะพุง",
     "contactPhone": "07-231-1131",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-138",
@@ -3113,10 +3113,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เลย",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/138",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/138/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/138",
@@ -3126,7 +3126,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ด่านซ้าย นาแห้ว และ ภูเรือ",
     "headquarters": "อำเภอด่านซ้าย",
     "contactPhone": "08-232-1132",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-109",
@@ -3135,10 +3135,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ศรีสะเกษ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/109",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/109/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/109",
@@ -3148,7 +3148,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองศรีสะเกษ กันทรารมย์ น้ำเกลี้ยง โนนคูณ พยุห์ ยางชุมน้อย และ วังหิน",
     "headquarters": "อำเภอเมืองศรีสะเกษ",
     "contactPhone": "02-233-1133",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-110",
@@ -3157,10 +3157,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ศรีสะเกษ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/110",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/110/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/110",
@@ -3170,7 +3170,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บึงบูรพ์ โพธิ์ศรีสุวรรณ เมืองจันทร์ ราษีไศล ศิลาลาด ห้วยทับทัน และ อุทุมพรพิสัย",
     "headquarters": "อำเภออุทุมพรพิสัย",
     "contactPhone": "03-234-1134",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-111",
@@ -3179,10 +3179,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ศรีสะเกษ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/111",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/111/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/111",
@@ -3192,7 +3192,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ขุขันธ์ ปรางค์กู่ ไพรบึง และ ภูสิงห์",
     "headquarters": "อำเภอขุขันธ์",
     "contactPhone": "04-235-1135",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-112",
@@ -3201,10 +3201,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ศรีสะเกษ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/112",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/112/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/112",
@@ -3214,7 +3214,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กันทรลักษ์ ขุนหาญ เบญจลักษ์ และ ศรีรัตนะ",
     "headquarters": "อำเภอกันทรลักษ์",
     "contactPhone": "05-236-1136",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-150",
@@ -3223,10 +3223,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สกลนคร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/150",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/150/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/150",
@@ -3236,7 +3236,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสกลนคร กุสุมาลย์ กุดบาก โคกศรีสุพรรณ เต่างอย โพนนาแก้ว และ ภูพาน",
     "headquarters": "อำเภอเมืองสกลนคร",
     "contactPhone": "06-237-1137",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-151",
@@ -3245,10 +3245,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สกลนคร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/151",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/151/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/151",
@@ -3258,7 +3258,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เจริญศิลป์ นิคมน้ำอูน พรรณานิคม พังโคน วาริชภูมิ สว่างแดนดิน และ ส่องดาว",
     "headquarters": "อำเภอสว่างแดนดิน",
     "contactPhone": "07-238-1138",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-152",
@@ -3267,10 +3267,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สกลนคร",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/152",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/152/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/152",
@@ -3280,7 +3280,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ คำตากล้า บ้านม่วง วานรนิวาส และ อากาศอำนวย",
     "headquarters": "อำเภอวานรนิวาส",
     "contactPhone": "08-239-1139",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-230",
@@ -3289,10 +3289,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สงขลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/230",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/230/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/230",
@@ -3302,7 +3302,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสงขลา กระแสสินธุ์ นาหม่อม ระโนด สทิงพระ และ สิงหนคร",
     "headquarters": "อำเภอเมืองสงขลา",
     "contactPhone": "02-240-1140",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-231",
@@ -3311,10 +3311,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สงขลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/231",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/231/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/231",
@@ -3324,7 +3324,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ คลองหอยโข่ง ควนเนียง บางกล่ำ รัตภูมิ และ หาดใหญ่",
     "headquarters": "อำเภอหาดใหญ่",
     "contactPhone": "03-241-1141",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-232",
@@ -3333,10 +3333,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สงขลา",
     "region": "south",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/232",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/232/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/232",
@@ -3346,7 +3346,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ จะนะ เทพา นาทวี สะเดา และ สะบ้าย้อย",
     "headquarters": "อำเภอนาทวี",
     "contactPhone": "04-242-1142",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-233",
@@ -3355,10 +3355,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สตูล",
     "region": "south",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/233",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/233/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/233",
@@ -3368,7 +3368,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดสตูล",
     "headquarters": "",
     "contactPhone": "05-243-1143",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-65",
@@ -3377,10 +3377,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรปราการ",
     "region": "central",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/65",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/65/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/65",
@@ -3390,7 +3390,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสมุทรปราการ พระประแดง และ พระสมุทรเจดีย์",
     "headquarters": "อำเภอเมืองสมุทรปราการ",
     "contactPhone": "06-244-1144",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-66",
@@ -3399,10 +3399,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรปราการ",
     "region": "central",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/66",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/66/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/66",
@@ -3412,7 +3412,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บางบ่อ บางพลี และ บางเสาธง",
     "headquarters": "อำเภอบางพลี",
     "contactPhone": "07-245-1145",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-212",
@@ -3421,10 +3421,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรสงคราม",
     "region": "west",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/212",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/212/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/212",
@@ -3434,7 +3434,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดสมุทรสงคราม",
     "headquarters": "",
     "contactPhone": "08-246-1146",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-211",
@@ -3443,10 +3443,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรสาคร",
     "region": "central",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/211",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/211/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/211",
@@ -3456,7 +3456,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดสมุทรสาคร",
     "headquarters": "",
     "contactPhone": "02-247-1147",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-93",
@@ -3465,10 +3465,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระแก้ว",
     "region": "east",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/93",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/93/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/93",
@@ -3478,7 +3478,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสระแก้ว เขาฉกรรจ์ คลองหาด วังน้ำเย็น และ วังสมบูรณ์",
     "headquarters": "อำเภอเมืองสระแก้ว",
     "contactPhone": "03-248-1148",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-94",
@@ -3487,10 +3487,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระแก้ว",
     "region": "east",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/94",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/94/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/94",
@@ -3500,7 +3500,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โคกสูง ตาพระยา วัฒนานคร และ อรัญประเทศ",
     "headquarters": "อำเภออรัญประเทศ",
     "contactPhone": "04-249-1149",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-78",
@@ -3509,10 +3509,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/78",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/78/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/78",
@@ -3522,7 +3522,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสระบุรี เฉลิมพระเกียรติ ดอนพุด บ้านหมอ พระพุทธบาท เสาไห้ หนองโดน และ หนองแซง",
     "headquarters": "อำเภอเมืองสระบุรี",
     "contactPhone": "05-250-1150",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-79",
@@ -3531,10 +3531,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/79",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/79/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/79",
@@ -3544,7 +3544,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ แก่งคอย มวกเหล็ก วังม่วง วิหารแดง และ หนองแค",
     "headquarters": "อำเภอแก่งคอย",
     "contactPhone": "06-251-1151",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-76",
@@ -3553,10 +3553,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สิงห์บุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/76",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/76/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/76",
@@ -3566,7 +3566,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดสิงห์บุรี",
     "headquarters": "",
     "contactPhone": "07-252-1152",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-190",
@@ -3575,10 +3575,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุโขทัย",
     "region": "north",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/190",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/190/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/190",
@@ -3588,7 +3588,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสุโขทัย กงไกรลาศ คีรีมาศ และ บ้านด่านลานหอย",
     "headquarters": "อำเภอเมืองสุโขทัย",
     "contactPhone": "08-253-1153",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-191",
@@ -3597,10 +3597,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุโขทัย",
     "region": "north",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/191",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/191/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/191",
@@ -3610,7 +3610,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ทุ่งเสลี่ยม สวรรคโลก ศรีนคร ศรีสัชนาลัย และ ศรีสำโรง",
     "headquarters": "อำเภอสวรรคโลก",
     "contactPhone": "02-254-1154",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-206",
@@ -3619,10 +3619,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุพรรณบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/206",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/206/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/206",
@@ -3631,7 +3631,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสุพรรณบุรี บางปลาม้า และ ศรีประจันต์",
     "headquarters": "อำเภอเมืองสุพรรณบุรี",
     "contactPhone": "03-255-1155",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-207",
@@ -3640,10 +3640,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุพรรณบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/207",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/207/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/207",
@@ -3652,7 +3652,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ดอนเจดีย์ สองพี่น้อง และ อู่ทอง",
     "headquarters": "อำเภออู่ทอง",
     "contactPhone": "04-256-1156",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-208",
@@ -3661,10 +3661,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุพรรณบุรี",
     "region": "central",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/208",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/208/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/208",
@@ -3673,7 +3673,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ด่านช้าง เดิมบางนางบวช สามชุก และ หนองหญ้าไซ",
     "headquarters": "อำเภอเดิมบางนางบวช",
     "contactPhone": "05-257-1157",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-224",
@@ -3682,10 +3682,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุราษฎร์ธานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/224",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/224/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/224",
@@ -3695,7 +3695,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสุราษฎร์ธานี กาญจนดิษฐ์ เกาะพะงัน เกาะสมุย และ ดอนสัก",
     "headquarters": "อำเภอเมืองสุราษฎร์ธานี",
     "contactPhone": "06-258-1158",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-225",
@@ -3704,10 +3704,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุราษฎร์ธานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/225",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/225/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/225",
@@ -3717,7 +3717,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ คีรีรัฐนิคม ไชยา ท่าฉาง ท่าชนะ บ้านตาขุน พนม พุนพิน และ วิภาวดี",
     "headquarters": "อำเภอพุนพิน",
     "contactPhone": "07-259-1159",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-226",
@@ -3726,10 +3726,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุราษฎร์ธานี",
     "region": "south",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/226",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/226/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/226",
@@ -3739,7 +3739,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เคียนซา ชัยบุรี บ้านนาเดิม บ้านนาสาร พระแสง และ เวียงสระ",
     "headquarters": "อำเภอเวียงสระ",
     "contactPhone": "08-260-1160",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-106",
@@ -3748,10 +3748,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุรินทร์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/106",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/106/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/106",
@@ -3761,7 +3761,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองสุรินทร์ เขวาสินรินทร์ จอมพระ ลำดวน ศีขรภูมิ และ สำโรงทาบ",
     "headquarters": "อำเภอเมืองสุรินทร์",
     "contactPhone": "02-261-1161",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-107",
@@ -3770,10 +3770,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุรินทร์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/107",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/107/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/107",
@@ -3783,7 +3783,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ชุมพลบุรี ท่าตูม โนนนารายณ์ รัตนบุรี และ สนม",
     "headquarters": "อำเภอรัตนบุรี",
     "contactPhone": "03-262-1162",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-108",
@@ -3792,10 +3792,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุรินทร์",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/108",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/108/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/108",
@@ -3805,7 +3805,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กาบเชิง บัวเชด ปราสาท พนมดงรัก ศรีณรงค์ และ สังขะ",
     "headquarters": "อำเภอปราสาท",
     "contactPhone": "04-263-1163",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-139",
@@ -3814,10 +3814,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "หนองคาย",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/139",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/139/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/139",
@@ -3827,7 +3827,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองหนองคาย ท่าบ่อ โพธิ์ตาก ศรีเชียงใหม่ สระใคร และ สังคม",
     "headquarters": "อำเภอเมืองหนองคาย",
     "contactPhone": "05-264-1164",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-140",
@@ -3836,10 +3836,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "หนองคาย",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/140",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/140/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/140",
@@ -3849,7 +3849,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เฝ้าไร่ โพนพิสัย และ รัตนวาปี",
     "headquarters": "อำเภอโพนพิสัย",
     "contactPhone": "06-265-1165",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-125",
@@ -3858,10 +3858,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "หนองบัวลำภู",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/125",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/125/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/125",
@@ -3871,7 +3871,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองหนองบัวลำภู โนนสัง และ ศรีบุญเรือง",
     "headquarters": "อำเภอเมืองหนองบัวลำภู",
     "contactPhone": "07-266-1166",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-126",
@@ -3880,10 +3880,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "หนองบัวลำภู",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/126",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/126/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/126",
@@ -3893,7 +3893,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ นากลาง นาวัง และ สุวรรณคูหา",
     "headquarters": "อำเภอนากลาง",
     "contactPhone": "08-267-1167",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-73",
@@ -3902,10 +3902,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อ่างทอง",
     "region": "central",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/73",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/73/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/73",
@@ -3915,7 +3915,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดอ่างทอง",
     "headquarters": "",
     "contactPhone": "02-268-1168",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-123",
@@ -3924,10 +3924,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อำนาจเจริญ",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/123",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/123/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/123",
@@ -3937,7 +3937,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "ทุกอำเภอในจังหวัดในอำนาจเจริญ",
     "headquarters": "",
     "contactPhone": "03-269-1169",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-udon-1",
@@ -3946,7 +3946,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุดรธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 56,
+    "positions": 25,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -3959,7 +3959,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองอุดรธานี เพ็ญ สร้างคอม และ หนองวัวซอ",
     "headquarters": "อำเภอเมืองอุดรธานี",
     "contactPhone": "04-270-1170",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 56 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 25 อัตรา"
   },
   {
     "id": "spp-udon-2",
@@ -3968,10 +3968,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุดรธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 38,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://www.udon2.go.th",
     "officialAnnouncementUrl": "https://www.udon2.go.th/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/133",
@@ -3981,7 +3981,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุมภวาปี โนนสะอาด ประจักษ์ศิลปาคม วังสามหมอ ศรีธาตุ และ หนองแสง",
     "headquarters": "อำเภอกุมภวาปี",
     "contactPhone": "05-271-1171",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 38 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-udon-3",
@@ -3990,10 +3990,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุดรธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 42,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://www.udon3.go.th",
     "officialAnnouncementUrl": "https://www.udon3.go.th/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/134",
@@ -4003,7 +4003,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กู่แก้ว ไชยวาน ทุ่งฝน บ้านดุง พิบูลย์รักษ์ และ หนองหาน",
     "headquarters": "อำเภอหนองหาน",
     "contactPhone": "06-272-1172",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 42 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-udon-4",
@@ -4012,7 +4012,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุดรธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 34,
+    "positions": 36,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -4025,7 +4025,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุดจับ นายูง น้ำโสม และ บ้านผือ",
     "headquarters": "อำเภอบ้านผือ",
     "contactPhone": "07-273-1173",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 34 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 36 อัตรา"
   },
   {
     "id": "spp-area-167",
@@ -4034,10 +4034,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุตรดิตถ์",
     "region": "north",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/167",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/167/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/167",
@@ -4047,7 +4047,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองอุตรดิตถ์ ตรอน ทองแสนขัน พิชัย และ ลับแล",
     "headquarters": "อำเภอเมืองอุตรดิตถ์",
     "contactPhone": "08-274-1174",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-168",
@@ -4056,10 +4056,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุตรดิตถ์",
     "region": "north",
     "type": "สพป.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/168",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/168/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/168",
@@ -4069,7 +4069,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ ท่าปลา น้ำปาด บ้านโคก และ ฟากท่า",
     "headquarters": "อำเภอน้ำปาด",
     "contactPhone": "02-275-1175",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-184",
@@ -4078,10 +4078,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุทัยธานี",
     "region": "north",
     "type": "สพป.",
-    "positions": 25,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/184",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/184/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/184",
@@ -4091,7 +4091,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองอุทัยธานี ทัพทัน สว่างอารมณ์ และ หนองขาหย่าง",
     "headquarters": "อำเภอเมืองอุทัยธานี",
     "contactPhone": "03-276-1176",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 25 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-185",
@@ -4100,10 +4100,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุทัยธานี",
     "region": "north",
     "type": "สพป.",
-    "positions": 30,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/185",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/185/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/185",
@@ -4113,7 +4113,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ บ้านไร่ ลานสัก หนองฉาง และ ห้วยคต",
     "headquarters": "อำเภอหนองฉาง",
     "contactPhone": "04-277-1177",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 30 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-113",
@@ -4122,10 +4122,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/113",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/113/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/113",
@@ -4135,7 +4135,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เมืองอุบลราชธานี เขื่องใน ดอนมดแดง ม่วงสามสิบ และ เหล่าเสือโก้ก",
     "headquarters": "อำเภอเมืองอุบลราชธานี",
     "contactPhone": "05-278-1178",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-114",
@@ -4144,10 +4144,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/114",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/114/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/114",
@@ -4157,7 +4157,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ กุดข้าวปุ้น เขมราฐ ตระการพืชผล นาตาล และ โพธิ์ไทร",
     "headquarters": "อำเภอตระการพืชผล",
     "contactPhone": "06-279-1179",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-115",
@@ -4166,10 +4166,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/115",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/115/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/115",
@@ -4179,7 +4179,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ โขงเจียม ตาลสุม พิบูลมังสาหาร ศรีเมืองใหม่ และ สิรินธร",
     "headquarters": "อำเภอพิบูลมังสาหาร",
     "contactPhone": "07-280-1180",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-116",
@@ -4188,10 +4188,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/116",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/116/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/116",
@@ -4201,7 +4201,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ นาเยีย วารินชำราบ สว่างวีระวงศ์ และ สำโรง",
     "headquarters": "อำเภอวารินชำราบ",
     "contactPhone": "08-281-1181",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spp-area-117",
@@ -4210,10 +4210,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี",
     "region": "northeast",
     "type": "สพป.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/117",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/117/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/117",
@@ -4223,7 +4223,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "อำเภอ เดชอุดม ทุ่งศรีอุดม นาจะหลวย น้ำขุ่น น้ำยืน และ บุณฑริก",
     "headquarters": "อำเภอเดชอุดม",
     "contactPhone": "02-282-1182",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-bkk-1",
@@ -4232,7 +4232,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กรุงเทพมหานคร",
     "region": "central",
     "type": "สพม.",
-    "positions": 76,
+    "positions": 49,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -4246,7 +4246,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองกรุงเทพมหานคร",
     "formerCode": "สพม.1 เดิม",
     "contactPhone": "03-283-1183",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 76 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 49 อัตรา"
   },
   {
     "id": "spm-bkk-2",
@@ -4255,7 +4255,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กรุงเทพมหานคร",
     "region": "central",
     "type": "สพม.",
-    "positions": 84,
+    "positions": 82,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -4269,7 +4269,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองกรุงเทพมหานคร",
     "formerCode": "สพม.2 เดิม",
     "contactPhone": "04-284-1184",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 84 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 82 อัตรา"
   },
   {
     "id": "spm-area-49",
@@ -4278,10 +4278,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาญจนบุรี",
     "region": "west",
     "type": "สพม.",
-    "positions": 70,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/49",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/49/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/49",
@@ -4292,7 +4292,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองกาญจนบุรี",
     "formerCode": "แยกมาจาก สพม.8 เดิม",
     "contactPhone": "05-285-1185",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 70 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-29",
@@ -4301,10 +4301,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กาฬสินธุ์",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 77,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/29",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/29/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/29",
@@ -4315,7 +4315,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองกาฬสินธุ์",
     "formerCode": "สพม.24 เดิม",
     "contactPhone": "06-286-1186",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 77 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-42",
@@ -4324,10 +4324,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "กำแพงเพชร",
     "region": "north",
     "type": "สพม.",
-    "positions": 39,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/42",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/42/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/42",
@@ -4338,7 +4338,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองกำแพงเพชร",
     "formerCode": "แยกมาจาก สพม.41 เดิม",
     "contactPhone": "07-287-1187",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 39 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-23",
@@ -4347,10 +4347,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ขอนแก่น",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 46,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/23",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/23/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/23",
@@ -4361,7 +4361,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองขอนแก่น",
     "formerCode": "สพม.25 เดิม",
     "contactPhone": "08-288-1188",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 46 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-12",
@@ -4370,10 +4370,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "จันทบุรี ตราด",
     "region": "east",
     "type": "สพม.",
-    "positions": 53,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/12",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/12/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/12",
@@ -4384,7 +4384,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองจันทบุรี",
     "formerCode": "สพม.17 เดิม",
     "contactPhone": "02-289-1189",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 53 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-13",
@@ -4393,10 +4393,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ฉะเชิงเทรา",
     "region": "east",
     "type": "สพม.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/13",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/13/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/13",
@@ -4407,7 +4407,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองฉะเชิงเทรา",
     "formerCode": "แยกมาจาก สพม.6 เดิม",
     "contactPhone": "03-290-1190",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-11",
@@ -4416,10 +4416,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชลบุรี ระยอง",
     "region": "east",
     "type": "สพม.",
-    "positions": 67,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/11",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/11/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/11",
@@ -4430,7 +4430,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองชลบุรี",
     "formerCode": "สพม.18 เดิม",
     "contactPhone": "04-291-1191",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 67 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-21",
@@ -4439,10 +4439,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ชัยภูมิ",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 74,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/21",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/21/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/21",
@@ -4453,7 +4453,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองชัยภูมิ",
     "formerCode": "สพม.30 เดิม",
     "contactPhone": "05-292-1192",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 74 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-38",
@@ -4462,10 +4462,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงราย",
     "region": "north",
     "type": "สพม.",
-    "positions": 36,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/38",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/38/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/38",
@@ -4476,7 +4476,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองเชียงราย",
     "formerCode": "แยกมาจาก สพม.36 เดิม",
     "contactPhone": "06-293-1193",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 36 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-33",
@@ -4485,10 +4485,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เชียงใหม่",
     "region": "north",
     "type": "สพม.",
-    "positions": 43,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/33",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/33/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/33",
@@ -4499,7 +4499,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองเชียงใหม่",
     "formerCode": "แยกมาจาก สพม.34 เดิม",
     "contactPhone": "07-294-1194",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 43 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-59",
@@ -4508,10 +4508,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตรัง กระบี่",
     "region": "south",
     "type": "สพม.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/59",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/59/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/59",
@@ -4522,7 +4522,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองตรัง",
     "formerCode": "สพม.13 เดิม",
     "contactPhone": "08-295-1195",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-43",
@@ -4531,10 +4531,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ตาก",
     "region": "north",
     "type": "สพม.",
-    "positions": 57,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/43",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/43/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/43",
@@ -4545,7 +4545,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองตาก",
     "formerCode": "แยกมาจาก สพม.38 เดิม",
     "contactPhone": "02-296-1196",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 57 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-51",
@@ -4554,10 +4554,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครปฐม",
     "region": "central",
     "type": "สพม.",
-    "positions": 64,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/51",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/51/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/51",
@@ -4568,7 +4568,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนครปฐม",
     "formerCode": "แยกมาจาก สพม.9 เดิม",
     "contactPhone": "03-297-1197",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 64 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-31",
@@ -4577,10 +4577,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครพนม",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 71,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/31",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/31/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/31",
@@ -4591,7 +4591,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนครพนม",
     "formerCode": "แยกมาจาก สพม.22 เดิม",
     "contactPhone": "04-298-1198",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 71 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-16",
@@ -4600,10 +4600,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครราชสีมา",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 78,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/16",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/16/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/16",
@@ -4614,7 +4614,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนครราชสีมา",
     "formerCode": "สพม.31 เดิม",
     "contactPhone": "05-299-1199",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 78 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-55",
@@ -4623,10 +4623,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครศรีธรรมราช",
     "region": "south",
     "type": "สพม.",
-    "positions": 40,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/55",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/55/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/55",
@@ -4637,7 +4637,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนครศรีธรรมราช",
     "formerCode": "แยกมาจาก สพม.12 เดิม",
     "contactPhone": "06-300-1200",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 40 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-40",
@@ -4646,10 +4646,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นครสวรรค์",
     "region": "north",
     "type": "สพม.",
-    "positions": 47,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/40",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/40/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/40",
@@ -4660,7 +4660,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนครสวรรค์",
     "formerCode": "แยกมาจาก สพม.42 เดิม",
     "contactPhone": "07-301-1201",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 47 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-5",
@@ -4669,10 +4669,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นนทบุรี",
     "region": "central",
     "type": "สพม.",
-    "positions": 54,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/5",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/5/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/5",
@@ -4683,7 +4683,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนนทบุรี",
     "formerCode": "แยกมาจาก สพม.3 เดิม",
     "contactPhone": "08-302-1202",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 54 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-63",
@@ -4692,10 +4692,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "นราธิวาส",
     "region": "south",
     "type": "สพม.",
-    "positions": 61,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/63",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/63/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/63",
@@ -4706,7 +4706,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองนราธิวาส",
     "formerCode": "แยกมาจาก สพม.15 เดิม",
     "contactPhone": "02-303-1203",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 61 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-36",
@@ -4715,10 +4715,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "น่าน",
     "region": "north",
     "type": "สพม.",
-    "positions": 68,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/36",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/36/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/36",
@@ -4729,7 +4729,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองน่าน",
     "formerCode": "แยกมาจาก สพม.37 เดิม",
     "contactPhone": "03-304-1204",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 68 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-22",
@@ -4738,10 +4738,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บึงกาฬ",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 75,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/22",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/22/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/22",
@@ -4752,7 +4752,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองบึงกาฬ",
     "formerCode": "แยกมาจาก สพม.21 เดิม",
     "contactPhone": "04-305-1205",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 75 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-17",
@@ -4761,10 +4761,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "บุรีรัมย์",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 37,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/17",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/17/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/17",
@@ -4775,7 +4775,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองบุรีรัมย์",
     "formerCode": "สพม.32 เดิม",
     "contactPhone": "05-306-1206",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 37 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-6",
@@ -4784,10 +4784,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปทุมธานี",
     "region": "central",
     "type": "สพม.",
-    "positions": 44,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/6",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/6/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/6",
@@ -4798,7 +4798,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองปทุมธานี",
     "formerCode": "แยกมาจาก สพม.4 เดิม",
     "contactPhone": "06-307-1207",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 44 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-54",
@@ -4807,10 +4807,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ประจวบคีรีขันธ์",
     "region": "west",
     "type": "สพม.",
-    "positions": 51,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/54",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/54/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/54",
@@ -4821,7 +4821,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองประจวบคีรีขันธ์",
     "formerCode": "แยกมาจาก สพม.10 เดิม",
     "contactPhone": "07-308-1208",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 51 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-14",
@@ -4830,10 +4830,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปราจีนบุรี นครนายก",
     "region": "east",
     "type": "สพม.",
-    "positions": 58,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/14",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/14/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/14",
@@ -4844,7 +4844,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองปราจีนบุรี",
     "formerCode": "แยกมาจาก สพม.7 เดิม",
     "contactPhone": "08-309-1209",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 58 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-61",
@@ -4853,10 +4853,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ปัตตานี",
     "region": "south",
     "type": "สพม.",
-    "positions": 65,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/61",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/61/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/61",
@@ -4867,7 +4867,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองปัตตานี",
     "formerCode": "แยกมาจาก สพม.15 เดิม",
     "contactPhone": "02-310-1210",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 65 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-7",
@@ -4876,10 +4876,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พระนครศรีอยุธยา",
     "region": "central",
     "type": "สพม.",
-    "positions": 72,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/7",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/7/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/7",
@@ -4890,7 +4890,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพระนครศรีอยุธยา",
     "formerCode": "แยกมาจาก สพม.3 เดิม",
     "contactPhone": "03-311-1211",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 72 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-37",
@@ -4899,10 +4899,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พะเยา",
     "region": "north",
     "type": "สพม.",
-    "positions": 79,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/37",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/37/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/37",
@@ -4913,7 +4913,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพะเยา",
     "formerCode": "แยกมาจาก สพม.36 เดิม",
     "contactPhone": "04-312-1212",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 79 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-56",
@@ -4922,10 +4922,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พังงา ภูเก็ต ระนอง",
     "region": "south",
     "type": "สพม.",
-    "positions": 41,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/56",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/56/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/56",
@@ -4936,7 +4936,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพังงา",
     "formerCode": "สพม.14 เดิม",
     "contactPhone": "05-313-1213",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 41 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-60",
@@ -4945,10 +4945,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พัทลุง",
     "region": "south",
     "type": "สพม.",
-    "positions": 48,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/60",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/60/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/60",
@@ -4959,7 +4959,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพัทลุง",
     "formerCode": "แยกมาจาก สพม.12 เดิม",
     "contactPhone": "06-314-1214",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 48 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-46",
@@ -4968,10 +4968,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิจิตร",
     "region": "north",
     "type": "สพม.",
-    "positions": 55,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/46",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/46/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/46",
@@ -4982,7 +4982,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพิจิตร",
     "formerCode": "แยกมาจาก สพม.41 เดิม",
     "contactPhone": "07-315-1215",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 55 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-45",
@@ -4991,10 +4991,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "พิษณุโลก อุตรดิตถ์",
     "region": "north",
     "type": "สพม.",
-    "positions": 62,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/45",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/45/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/45",
@@ -5005,7 +5005,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองพิษณุโลก",
     "formerCode": "สพม.39 เดิม",
     "contactPhone": "08-316-1216",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 62 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-53",
@@ -5014,10 +5014,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบุรี",
     "region": "west",
     "type": "สพม.",
-    "positions": 69,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/53",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/53/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/53",
@@ -5028,7 +5028,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองเพชรบุรี",
     "formerCode": "แยกมาจาก สพม.10 เดิม",
     "contactPhone": "02-317-1217",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 69 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-47",
@@ -5037,10 +5037,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เพชรบูรณ์",
     "region": "north",
     "type": "สพม.",
-    "positions": 76,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/47",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/47/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/47",
@@ -5051,7 +5051,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองเพชรบูรณ์",
     "formerCode": "สพม.40 เดิม",
     "contactPhone": "03-318-1218",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 76 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-35",
@@ -5060,10 +5060,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แพร่",
     "region": "north",
     "type": "สพม.",
-    "positions": 38,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/35",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/35/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/35",
@@ -5074,7 +5074,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองแพร่",
     "formerCode": "แยกมาจาก สพม.37 เดิม",
     "contactPhone": "04-319-1219",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 38 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-27",
@@ -5083,10 +5083,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มหาสารคาม",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 45,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/27",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/27/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/27",
@@ -5097,7 +5097,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองมหาสารคาม",
     "formerCode": "สพม.26 เดิม",
     "contactPhone": "05-320-1220",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 45 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-32",
@@ -5106,10 +5106,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "มุกดาหาร",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 52,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/32",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/32/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/32",
@@ -5120,7 +5120,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองมุกดาหาร",
     "formerCode": "แยกมาจาก สพม.22 เดิม",
     "contactPhone": "06-321-1221",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 52 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-39",
@@ -5129,10 +5129,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "แม่ฮ่องสอน",
     "region": "north",
     "type": "สพม.",
-    "positions": 59,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/39",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/39/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/39",
@@ -5143,7 +5143,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองแม่ฮ่องสอน",
     "formerCode": "แยกมาจาก สพม.34 เดิม",
     "contactPhone": "07-322-1222",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 59 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-62",
@@ -5152,10 +5152,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ยะลา",
     "region": "south",
     "type": "สพม.",
-    "positions": 66,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/62",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/62/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/62",
@@ -5166,7 +5166,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองยะลา",
     "formerCode": "แยกมาจาก สพม.15 เดิม",
     "contactPhone": "08-323-1223",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 66 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-28",
@@ -5175,10 +5175,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ร้อยเอ็ด",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 73,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/28",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/28/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/28",
@@ -5189,7 +5189,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองร้อยเอ็ด",
     "formerCode": "สพม.27 เดิม",
     "contactPhone": "02-324-1224",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 73 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-48",
@@ -5198,10 +5198,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ราชบุรี",
     "region": "west",
     "type": "สพม.",
-    "positions": 35,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/48",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/48/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/48",
@@ -5212,7 +5212,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองราชบุรี",
     "formerCode": "แยกมาจาก สพม.8 เดิม",
     "contactPhone": "03-325-1225",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 35 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-8",
@@ -5221,10 +5221,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลพบุรี",
     "region": "central",
     "type": "สพม.",
-    "positions": 42,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/8",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/8/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/8",
@@ -5235,7 +5235,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองลพบุรี",
     "formerCode": "แยกมาจาก สพม.5 เดิม",
     "contactPhone": "04-326-1226",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 42 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-34",
@@ -5244,10 +5244,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ลำปาง ลำพูน",
     "region": "north",
     "type": "สพม.",
-    "positions": 49,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/34",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/34/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/34",
@@ -5258,7 +5258,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองลำปาง",
     "formerCode": "สพม.35 เดิม",
     "contactPhone": "05-327-1227",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 49 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-25",
@@ -5267,10 +5267,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "เลย หนองบัวลำภู",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 56,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/25",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/25/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/25",
@@ -5281,7 +5281,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองเลย",
     "formerCode": "สพม.19 เดิม",
     "contactPhone": "06-328-1228",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 56 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-19",
@@ -5290,10 +5290,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ศรีสะเกษ ยโสธร",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 63,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/19",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/19/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/19",
@@ -5304,7 +5304,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองศรีสะเกษ",
     "formerCode": "สพม.28 เดิม",
     "contactPhone": "07-329-1229",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 63 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-30",
@@ -5313,10 +5313,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สกลนคร",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 70,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/30",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/30/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/30",
@@ -5327,7 +5327,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสกลนคร",
     "formerCode": "สพม.23 เดิม",
     "contactPhone": "08-330-1230",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 70 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-58",
@@ -5336,10 +5336,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สงขลา สตูล",
     "region": "south",
     "type": "สพม.",
-    "positions": 77,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/58",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/58/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/58",
@@ -5350,7 +5350,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสงขลา",
     "formerCode": "สพม.16 เดิม",
     "contactPhone": "02-331-1231",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 77 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-4",
@@ -5359,10 +5359,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรปราการ",
     "region": "central",
     "type": "สพม.",
-    "positions": 39,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/4",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/4/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/4",
@@ -5373,7 +5373,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสมุทรปราการ",
     "formerCode": "แยกมาจาก สพม.6 เดิม",
     "contactPhone": "03-332-1232",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 39 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-52",
@@ -5382,10 +5382,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สมุทรสาคร สมุทรสงคราม",
     "region": "west",
     "type": "สพม.",
-    "positions": 46,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/52",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/52/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/52",
@@ -5396,7 +5396,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสมุทรสาคร",
     "formerCode": "แยกมาจาก สพม.10 เดิม",
     "contactPhone": "04-333-1233",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 46 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-15",
@@ -5405,10 +5405,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระแก้ว",
     "region": "east",
     "type": "สพม.",
-    "positions": 53,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/15",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/15/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/15",
@@ -5419,7 +5419,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสระแก้ว",
     "formerCode": "แยกมาจาก สพม.7 เดิม",
     "contactPhone": "05-334-1234",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 53 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-10",
@@ -5428,10 +5428,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สระบุรี",
     "region": "central",
     "type": "สพม.",
-    "positions": 60,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/10",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/10/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/10",
@@ -5442,7 +5442,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสระบุรี",
     "formerCode": "แยกมาจาก สพม.4 เดิม",
     "contactPhone": "06-335-1235",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 60 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-9",
@@ -5451,10 +5451,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สิงห์บุรี อ่างทอง",
     "region": "central",
     "type": "สพม.",
-    "positions": 67,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/9",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/9/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/9",
@@ -5465,7 +5465,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสิงห์บุรี",
     "formerCode": "แยกมาจาก สพม.5 เดิม",
     "contactPhone": "07-336-1236",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 67 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-44",
@@ -5474,10 +5474,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุโขทัย",
     "region": "north",
     "type": "สพม.",
-    "positions": 74,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/44",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/44/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/44",
@@ -5488,7 +5488,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสุโขทัย",
     "formerCode": "แยกมาจาก สพม.38 เดิม",
     "contactPhone": "08-337-1237",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 74 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-50",
@@ -5497,10 +5497,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุพรรณบุรี",
     "region": "central",
     "type": "สพม.",
-    "positions": 36,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/50",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/50/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/50",
@@ -5511,7 +5511,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสุพรรณบุรี",
     "formerCode": "แยกมาจาก สพม.9 เดิม",
     "contactPhone": "02-338-1238",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 36 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-57",
@@ -5520,10 +5520,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุราษฎร์ธานี ชุมพร",
     "region": "south",
     "type": "สพม.",
-    "positions": 43,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/57",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/57/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/57",
@@ -5534,7 +5534,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสุราษฎร์ธานี",
     "formerCode": "สพม.11 เดิม",
     "contactPhone": "03-339-1239",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 43 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-18",
@@ -5543,10 +5543,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "สุรินทร์",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/18",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/18/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/18",
@@ -5557,7 +5557,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองสุรินทร์",
     "formerCode": "สพม.33 เดิม",
     "contactPhone": "04-340-1240",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-26",
@@ -5566,10 +5566,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "หนองคาย",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 57,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/26",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/26/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/26",
@@ -5580,7 +5580,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองหนองคาย",
     "formerCode": "แยกมาจาก สพม.21 เดิม",
     "contactPhone": "05-341-1241",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 57 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-udon",
@@ -5589,7 +5589,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุดรธานี",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 48,
+    "positions": 32,
     "applicants": null,
     "ratio": null,
     "status": "announced",
@@ -5603,7 +5603,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองอุดรธานี",
     "formerCode": "สพม.20 เดิม",
     "contactPhone": "06-342-1242",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 48 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "ประกาศตำแหน่งว่างอย่างเป็นทางการแล้ว 32 อัตรา"
   },
   {
     "id": "spm-area-41",
@@ -5612,10 +5612,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุทัยธานี ชัยนาท",
     "region": "north",
     "type": "สพม.",
-    "positions": 71,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/41",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/41/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/41",
@@ -5626,7 +5626,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองอุทัยธานี",
     "formerCode": "แยกจาก สพม.42 และ สพม.5 เดิม",
     "contactPhone": "07-343-1243",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 71 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-area-20",
@@ -5635,10 +5635,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "อุบลราชธานี อำนาจเจริญ",
     "region": "northeast",
     "type": "สพม.",
-    "positions": 78,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "https://info.bopp.go.th/area/20",
     "officialAnnouncementUrl": "https://info.bopp.go.th/area/20/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/20",
@@ -5649,7 +5649,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "headquarters": "อำเภอเมืองอุบลราชธานี",
     "formerCode": "สพม.29 เดิม",
     "contactPhone": "08-344-1244",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 78 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   },
   {
     "id": "spm-special-edu",
@@ -5658,10 +5658,10 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "province": "ส่วนกลาง (ทั่วประเทศ)",
     "region": "central",
     "type": "สศศ.",
-    "positions": 50,
+    "positions": null,
     "applicants": null,
     "ratio": null,
-    "status": "announced",
+    "status": "pending_open",
     "websiteUrl": "http://special.obec.go.th/",
     "officialAnnouncementUrl": "http://special.obec.go.th/recruitment",
     "boppUrl": "https://info.bopp.go.th/area/3",
@@ -5671,7 +5671,7 @@ export const OFFICIAL_DISTRICTS: DistrictData[] = [
     "jurisdiction": "สถานศึกษาการศึกษาพิเศษ ศูนย์การศึกษาพิเศษ และโรงเรียนเฉพาะความพิการทั่วประเทศ",
     "headquarters": "กระทรวงศึกษาธิการ กรุงเทพมหานคร",
     "contactPhone": "02-345-1245",
-    "notes": "ประกาศตำแหน่งว่างแล้ว 50 อัตรา (สพฐ. รอบทั่วไป 2569)"
+    "notes": "รอ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศจำนวนตำแหน่งว่างและวิชาเอกอย่างเป็นทางการ"
   }
 ];
 
