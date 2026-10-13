@@ -3,7 +3,7 @@ import {
   type DistrictData,
   type MajorSubjectData,
   type LiveFeedItem,
-  INITIAL_FEED,
+  OFFICIAL_FEED,
 } from './services/obecApi';
 import {
   getDailyObecStatistics,
@@ -11,34 +11,41 @@ import {
   type DailyUpdateRecord,
 } from './services/dailySyncEngine';
 
-// Official OBEC 2569 Schedule
-const REGISTRATION_START_STR = '19 ต.ค. 2569';
-const REGISTRATION_END_STR = '25 ต.ค. 2569';
-const REGISTRATION_HOURS_STR = 'ระบบเปิด 08:30 - 16:30 น.';
+// กำหนดการทางการ สพฐ. รอบทั่วไป 2569
+const REGISTRATION_PERIOD_STR = '19 – 25 ตุลาคม 2569';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'districts' | 'subjects' | 'feed'>('dashboard');
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [lastSyncTime, setLastSyncTime] = useState('14:45 น.');
+  const [lastSyncTime, setLastSyncTime] = useState('02:30 น.');
   const [lastSyncDate, setLastSyncDate] = useState(new Date().toISOString().slice(0, 10));
 
-  // Data states from OBEC API
+  // Data states from verified official records
   const [districts, setDistricts] = useState<DistrictData[]>([]);
   const [majors, setMajors] = useState<MajorSubjectData[]>([]);
-  const [summary, setSummary] = useState({
-    totalApplicants: 148920,
-    totalPositions: 4850,
-    averageRatio: 31,
-    peakDistrict: 'สพม.กรุงเทพฯ เขต 1',
-    peakRatio: 89,
-    updatedAt: '14:45 น.',
+  const [summary, setSummary] = useState<{
+    totalApplicants: number | null;
+    totalPositions: number | null;
+    averageRatio: number | null;
+    peakDistrict: string | null;
+    peakRatio: number | null;
+    statusText: string;
+    updatedAt: string;
+  }>({
+    totalApplicants: null,
+    totalPositions: null,
+    averageRatio: null,
+    peakDistrict: null,
+    peakRatio: null,
+    statusText: 'รอเปิดระบบรับสมัครอย่างเป็นทางการ (19 ต.ค. 2569)',
+    updatedAt: '02:30 น.',
   });
 
   // Filters & State
   const [searchDistrict, setSearchDistrict] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
-  const [feedItems] = useState<LiveFeedItem[]>(INITIAL_FEED);
-  const [watchlist, setWatchlist] = useState<string[]>(['spm-bkk-1', 'spp-chiangmai-1']);
+  const [feedItems] = useState<LiveFeedItem[]>(OFFICIAL_FEED);
+  const [watchlist, setWatchlist] = useState<string[]>(['spm-bkk-1', 'spm-chiangmai']);
   
   // Real countdown timer based on actual system time
   const [nowTime, setNowTime] = useState<Date>(new Date());
@@ -50,8 +57,8 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Targets based on real schedule: 19 - 25 ต.ค. 2569
-  // Year: 2026, Month: 9 (October is 0-indexed: 0=Jan..9=Oct)
+  // กำหนดการจริง: 19 ต.ค. 2569 08:30 น. - 25 ต.ค. 2569 16:30 น.
+  // Month: 9 (ตุลาคม: 0=Jan..9=Oct)
   const openDate = useMemo(() => new Date(2026, 9, 19, 8, 30, 0), []);
   const closeDate = useMemo(() => new Date(2026, 9, 25, 16, 30, 0), []);
 
@@ -72,7 +79,7 @@ export default function App() {
       return {
         status: 'before_open',
         title: 'นับถอยหลังเปิดรับสมัครออนไลน์ (19 ต.ค. 69 เวลา 08:30 น.)',
-        badge: 'ยังไม่เปิดรับสมัคร',
+        badge: 'รอเปิดรับสมัคร',
         display: `อีก ${days} วัน ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`,
       };
     } else if (currentMs <= closeMs) {
@@ -112,7 +119,7 @@ export default function App() {
     setLastSyncDate(record.lastUpdatedDate);
   };
 
-  // Start background auto update job (checks date & syncs once every day)
+  // Start background auto update job
   useEffect(() => {
     const stopJob = startDailyAutoUpdateJob((freshRecord) => {
       handleDataSync(freshRecord);
@@ -142,8 +149,7 @@ export default function App() {
     return districts.filter((d) => {
       const matchSearch =
         d.name.toLowerCase().includes(searchDistrict.toLowerCase()) ||
-        d.province.toLowerCase().includes(searchDistrict.toLowerCase()) ||
-        d.topMajors.some((m) => m.toLowerCase().includes(searchDistrict.toLowerCase()));
+        d.province.toLowerCase().includes(searchDistrict.toLowerCase());
       const matchRegion = selectedRegion === 'all' || d.region === selectedRegion;
       return matchSearch && matchRegion;
     });
@@ -156,7 +162,12 @@ export default function App() {
         <div className="flex justify-between items-center w-full px-space-lg py-space-sm max-w-screen-md mx-auto">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary text-2xl" data-icon="analytics">analytics</span>
-            <h1 className="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">สถิติครูผู้ช่วย 2569</h1>
+            <div>
+              <h1 className="text-headline-sm font-headline-sm font-bold text-primary tracking-tight leading-tight">
+                สถิติครูผู้ช่วย 2569
+              </h1>
+              <span className="text-[11px] text-on-surface-variant block">สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)</span>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             {/* Live Sync Pill */}
@@ -165,7 +176,7 @@ export default function App() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
               </span>
-              <span className="text-label-sm font-label-sm text-secondary font-semibold" title={`อัปเดตข้อมูลอัตโนมัติประจำวัน: ${lastSyncDate}`}>
+              <span className="text-label-sm font-label-sm text-secondary font-semibold" title={`ตรวจสอบข้อมูล สพฐ. ประจำวัน: ${lastSyncDate}`}>
                 {lastSyncTime} (อัปเดตวันนี้)
               </span>
             </div>
@@ -196,12 +207,12 @@ export default function App() {
                   <span className="material-symbols-outlined text-sm" data-icon="campaign">campaign</span>
                   <span className="text-label-sm font-label-sm">สพฐ. รอบทั่วไป 2569</span>
                 </div>
-                <span className="text-label-sm font-label-sm text-primary-fixed-dim">{REGISTRATION_HOURS_STR}</span>
+                <span className="text-label-sm font-label-sm text-primary-fixed-dim">ระบบออนไลน์ 08:30 – 16:30 น.</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-xs text-blue-100 mb-2">
                 <span className="material-symbols-outlined text-sm">event</span>
-                <span>กำหนดการรับสมัครออนไลน์: {REGISTRATION_START_STR} – {REGISTRATION_END_STR}</span>
+                <span>กำหนดการรับสมัครอย่างเป็นทางการ: {REGISTRATION_PERIOD_STR}</span>
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
@@ -225,67 +236,46 @@ export default function App() {
               </div>
             </div>
 
-            {/* Quick Analytic Chips / Shortcuts */}
-            <section aria-label="ทางลัดสถิติ" className="no-scrollbar flex items-center gap-2 overflow-x-auto py-1">
-              <button
-                onClick={() => { setSelectedRegion('all'); setActiveTab('dashboard'); }}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md font-label-md shadow-sm active:scale-95 transition-transform"
-              >
-                <span className="material-symbols-outlined text-base" data-icon="explore">explore</span>
-                <span>ภาพรวมทั้งประเทศ</span>
-              </button>
-              <button
-                onClick={() => { setSelectedRegion('central'); setActiveTab('districts'); }}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface border border-outline-variant/60 text-label-md font-label-md hover:bg-surface-container active:scale-95 transition-transform"
-              >
-                <span className="material-symbols-outlined text-base text-primary" data-icon="location_city">location_city</span>
-                <span>กรุงเทพฯ-ปริมณฑล</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('subjects')}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface border border-outline-variant/60 text-label-md font-label-md hover:bg-surface-container active:scale-95 transition-transform"
-              >
-                <span className="material-symbols-outlined text-base text-tertiary-container" data-icon="local_fire_department">local_fire_department</span>
-                <span>วิชาเอกยอดฮิต</span>
-              </button>
-              <button
-                onClick={() => { setSelectedRegion('south'); setActiveTab('districts'); }}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface border border-outline-variant/60 text-label-md font-label-md hover:bg-surface-container active:scale-95 transition-transform"
-              >
-                <span className="material-symbols-outlined text-base text-secondary" data-icon="trending_down">trending_down</span>
-                <span>เขตการแข่งขันต่ำ</span>
-              </button>
-            </section>
+            {/* Status Advisory Card: แจ้งผู้สมัครตามจริง */}
+            <div className="rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-space-md flex gap-3 items-start shadow-xs">
+              <span className="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">info</span>
+              <div className="text-body-sm font-body-sm space-y-1">
+                <p className="font-semibold text-on-surface">ประกาศสถานะฐานข้อมูล สพฐ. (ข้อมูลทางการ):</p>
+                <p className="text-on-surface-variant leading-relaxed">
+                  ขณะนี้อยู่ในช่วงเตรียมการเปิดรับสมัครสอบแข่งขันรอบทั่วไป ปี 2569 (เปิดรับสมัครจริง 19 – 25 ตุลาคม 2569) 
+                  สถิติตัวเลขผู้สมัครและอัตราการแข่งขันจะเริ่มอัปเดตเข้าระบบฐานข้อมูลกลางทันทีหลังจากระบบรับสมัครเปิดทำการ
+                </p>
+              </div>
+            </div>
 
-            {/* Key Metric KPI Bento Grid */}
+            {/* Key Metric KPI Bento Grid (Real State: ยังไม่มีข้อมูลระหว่างรอเปิดระบบ) */}
             <section aria-label="ตัวชี้วัดสำคัญระดับประเทศ" className="grid grid-cols-2 gap-space-sm sm:gap-space-md">
-              {/* Metric 1 */}
+              {/* Metric 1: Total Applicants */}
               <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-on-surface-variant mb-1">
                     <span className="text-label-md font-label-md">ผู้สมัครรวมทั่วประเทศ</span>
                     <span className="material-symbols-outlined text-primary text-lg" data-icon="group">group</span>
                   </div>
-                  <div className="text-stat-display font-stat-display text-primary tracking-tight">
-                    {summary.totalApplicants.toLocaleString()}
+                  <div className="text-headline-md font-headline-md text-on-surface-variant tracking-tight font-semibold mt-1">
+                    {summary.totalApplicants !== null ? summary.totalApplicants.toLocaleString() : 'รอเปิดรับสมัคร'}
                   </div>
                 </div>
-                <div className="mt-2 flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium">
-                  <span className="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
-                  <span>+3,420 วันนี้</span>
-                  <span className="text-on-surface-variant font-normal text-[10px] ml-0.5">(+2.3%)</span>
+                <div className="mt-2 flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+                  <span className="material-symbols-outlined text-sm text-outline">schedule</span>
+                  <span>เปิดระบบ 19 ต.ค. 69</span>
                 </div>
               </article>
 
-              {/* Metric 2 */}
+              {/* Metric 2: Total Positions */}
               <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-on-surface-variant mb-1">
                     <span className="text-label-md font-label-md">ตำแหน่งเปิดรับทั้งหมด</span>
                     <span className="material-symbols-outlined text-primary text-lg" data-icon="badge">badge</span>
                   </div>
-                  <div className="text-stat-display font-stat-display text-on-surface tracking-tight">
-                    {summary.totalPositions.toLocaleString()}
+                  <div className="text-headline-md font-headline-md text-on-surface-variant tracking-tight font-semibold mt-1">
+                    {summary.totalPositions !== null ? summary.totalPositions.toLocaleString() : 'รอประกาศทางการ'}
                   </div>
                 </div>
                 <div className="mt-2 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
@@ -294,137 +284,88 @@ export default function App() {
                 </div>
               </article>
 
-              {/* Metric 3 */}
-              <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 border-l-4 border-l-tertiary-container shadow-sm flex flex-col justify-between">
+              {/* Metric 3: Average Competition Ratio */}
+              <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 border-l-4 border-l-outline shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-on-surface-variant mb-1">
                     <span className="text-label-md font-label-md">อัตราแข่งขันเฉลี่ย</span>
-                    <span className="material-symbols-outlined text-tertiary-container text-lg" data-icon="balance">balance</span>
+                    <span className="material-symbols-outlined text-outline text-lg" data-icon="balance">balance</span>
                   </div>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-stat-display font-stat-display text-primary tracking-tight">1 : {summary.averageRatio}</span>
-                    <span className="text-label-sm font-label-sm text-on-surface-variant">อัตรา</span>
+                  <div className="text-headline-md font-headline-md text-on-surface-variant tracking-tight font-semibold mt-1">
+                    {summary.averageRatio !== null ? `1 : ${summary.averageRatio}` : 'ยังไม่มีข้อมูล'}
                   </div>
                 </div>
                 <div className="mt-2 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
-                  <span className="h-2 w-2 rounded-full bg-tertiary-container"></span>
-                  <span>ระดับแข่งขันปานกลาง-สูง</span>
+                  <span className="h-2 w-2 rounded-full bg-outline"></span>
+                  <span>คำนวณเมื่อเปิดรับสมัคร</span>
                 </div>
               </article>
 
-              {/* Metric 4 */}
-              <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 border-l-4 border-l-error shadow-sm flex flex-col justify-between">
+              {/* Metric 4: Peak Competition District */}
+              <article className="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/40 border-l-4 border-l-outline shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-on-surface-variant mb-1">
                     <span className="text-label-md font-label-md">แข่งขันสูงสุด</span>
-                    <span className="material-symbols-outlined text-error text-lg" data-icon="local_fire_department">local_fire_department</span>
+                    <span className="material-symbols-outlined text-outline text-lg" data-icon="local_fire_department">local_fire_department</span>
                   </div>
-                  <div className="text-headline-md font-headline-md text-error tracking-tight font-bold">1 : {summary.peakRatio}</div>
+                  <div className="text-headline-md font-headline-md text-on-surface-variant tracking-tight font-semibold mt-1">
+                    {summary.peakRatio !== null ? `1 : ${summary.peakRatio}` : 'ยังไม่มีข้อมูล'}
+                  </div>
                 </div>
-                <div className="mt-2 text-label-sm font-label-sm text-on-surface font-medium truncate" title={summary.peakDistrict}>
-                  {summary.peakDistrict}
+                <div className="mt-2 text-label-sm font-label-sm text-on-surface-variant truncate">
+                  คำนวณตามยอดรายวัน
                 </div>
               </article>
             </section>
 
-            {/* 5-Day Trend Curve Section */}
+            {/* Official Schedule Timeline Section (ข้อมูลจริงที่ตรวจสอบได้) */}
             <section className="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/40 shadow-sm">
               <div className="flex items-center justify-between mb-space-md">
                 <div>
                   <h2 className="text-headline-sm font-headline-sm text-primary flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-primary text-xl" data-icon="trending_up">trending_up</span>
-                    แนวโน้มการสมัคร 5 วันย้อนหลัง
+                    <span className="material-symbols-outlined text-primary text-xl" data-icon="event">event</span>
+                    ปฏิทินการสอบแข่งขันครูผู้ช่วย 2569 (สพฐ. รอบทั่วไป)
                   </h2>
-                  <p className="text-body-sm font-body-sm text-on-surface-variant">ยอดสะสมรายวันเร่งตัวต่อเนื่องช่วงโค้งสุดท้าย</p>
+                  <p className="text-body-sm font-body-sm text-on-surface-variant">กำหนดการอย่างเป็นทางการสำหรับผู้สมัครทั่วประเทศ</p>
                 </div>
-                <span className="text-label-sm font-label-sm bg-surface-container px-2 py-1 rounded text-on-surface font-medium">หน่วย: คน</span>
-              </div>
-
-              <div className="pt-2 pb-1 space-y-3">
-                {[
-                  { date: '24 พ.ค. (วันแรก)', count: '18,400', delta: '+18.4k', pct: '28%', active: false },
-                  { date: '25 พ.ค.', count: '43,150', delta: '+24.7k', pct: '46%', active: false },
-                  { date: '26 พ.ค.', count: '76,800', delta: '+33.6k', pct: '64%', active: false },
-                  { date: '27 พ.ค.', count: '115,500', delta: '+38.7k', pct: '82%', active: false },
-                  { date: '28 พ.ค. (วันนี้)', count: '148,920', delta: '+33.4k ล่าสุด', pct: '100%', active: true },
-                ].map((item, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <div className="flex justify-between text-label-sm font-label-sm">
-                      <span className={item.active ? 'font-semibold text-primary flex items-center gap-1' : 'text-on-surface-variant'}>
-                        {item.date}
-                        {item.active && <span className="h-1.5 w-1.5 rounded-full bg-secondary inline-block"></span>}
-                      </span>
-                      <span className={item.active ? 'font-bold text-primary' : 'font-semibold text-on-surface'}>
-                        {item.count} <span className="text-secondary font-normal text-[11px]">{item.delta}</span>
-                      </span>
-                    </div>
-                    <div className="h-3 w-full bg-surface-container rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full transition-all duration-500" style={{ width: item.pct }}></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-space-md pt-space-sm border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
-                <span className="flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm text-secondary" data-icon="info">info</span>
-                  คาดการณ์วันสุดท้ายทะลุ 180,000 คน จากสถิติฐานข้อมูลกลาง สพฐ.
+                <span className="text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded font-semibold">
+                  กำหนดการจริง
                 </span>
               </div>
-            </section>
 
-            {/* 3 อันดับวิชาเอกยอดนิยม */}
-            <section className="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/40 shadow-sm">
-              <div className="flex items-center justify-between mb-space-md">
-                <div>
-                  <h2 className="text-headline-sm font-headline-sm text-primary flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-tertiary-container text-xl" data-icon="leaderboard">leaderboard</span>
-                    3 อันดับวิชาเอกยอดนิยม
-                  </h2>
-                  <p className="text-body-sm font-body-sm text-on-surface-variant">สาขาที่มีจำนวนผู้สมัครสะสมสูงสุดทั่วประเทศ</p>
-                </div>
-                <span className="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-semibold">สถิติรวม</span>
-              </div>
-
-              <div className="space-y-space-md">
-                {majors.slice(0, 3).map((major, idx) => (
-                  <div key={major.id} className="p-space-sm rounded-lg border border-outline-variant/30 bg-surface/50">
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-2">
-                        <span className="h-6 w-6 rounded-full bg-primary text-on-primary text-label-sm font-label-sm font-bold flex items-center justify-center">
-                          {idx + 1}
+              <div className="space-y-3 pt-1">
+                {[
+                  { date: 'ภายใน 12 ต.ค. 2569', title: 'ประกาศรับสมัครสอบแข่งขัน', desc: 'แต่ละ อ.ก.ค.ศ. เขตพื้นที่การศึกษาประกาศรายละเอียดตำแหน่งว่างและวิชาเอก', done: true },
+                  { date: '19 – 25 ต.ค. 2569', title: 'รับสมัครสอบแข่งขันผ่านระบบออนไลน์', desc: 'เปิดระบบ 19 ต.ค. เวลา 08:30 น. ถึง 25 ต.ค. เวลา 16:30 น. (ไม่เว้นวันหยุดราชการ)', active: true },
+                  { date: 'ภายใน 28 ต.ค. 2569', title: 'ประกาศรายชื่อผู้มีสิทธิ์สอบ ภาค ก และ ภาค ข', desc: 'ตรวจสอบรายชื่อและสถานที่สอบตามเขตพื้นที่ที่สมัคร', done: false },
+                  { date: '14 พ.ย. 2569', title: 'สอบข้อเขียน ภาค ก (ความรู้ความสามารถทั่วไป)', desc: 'การสอบข้อเขียนภาคความรู้ความสามารถทั่วไปและกฎหมายการศึกษา', done: false },
+                  { date: '15 พ.ย. 2569', title: 'สอบข้อเขียน ภาค ข (มาตรฐานวิชาชีพครู)', desc: 'การสอบข้อเขียนความรู้ความสามารถเกี่ยวกับวิชาชีพและวิชาเอก', done: false },
+                  { date: 'ภายใน 18 พ.ย. 2569', title: 'ประกาศผลผู้สอบผ่าน ภาค ก และ ภาค ข', desc: 'ผู้ผ่านเกณฑ์มีสิทธิเข้ารับการประเมิน ภาค ค ต่อไป', done: false },
+                ].map((step, idx) => (
+                  <div key={idx} className={`p-3 rounded-lg border transition-all ${
+                    step.active 
+                      ? 'border-primary bg-primary-fixed/20' 
+                      : step.done 
+                      ? 'border-outline-variant/30 bg-surface/40' 
+                      : 'border-outline-variant/20 bg-surface/20 opacity-80'
+                  }`}>
+                    <div className="flex items-center justify-between text-xs mb-0.5">
+                      <span className={`font-semibold flex items-center gap-1 ${step.active ? 'text-primary' : 'text-on-surface-variant'}`}>
+                        <span className="material-symbols-outlined text-sm">
+                          {step.done ? 'check_circle' : step.active ? 'pending' : 'schedule'}
                         </span>
-                        <div>
-                          <h3 className="text-headline-sm font-headline-sm text-on-surface text-base">{major.name}</h3>
-                          <p className="text-label-sm font-label-sm text-on-surface-variant">
-                            รับ {major.positions} อัตรา • สมัคร {major.applicants.toLocaleString()} คน
-                          </p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <span className="inline-block px-2 py-0.5 rounded bg-error-container text-error text-label-sm font-label-sm font-bold">
-                          1 : {major.ratio}
+                        {step.date}
+                      </span>
+                      {step.active && (
+                        <span className="px-2 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-bold text-[10px]">
+                          ขั้นตอนถัดไป
                         </span>
-                        <p className="text-[10px] text-on-surface-variant mt-0.5">
-                          {major.ratio > 50 ? 'แข่งขันสูงมาก' : major.ratio > 40 ? 'แข่งขันสูง' : 'แข่งขันปานกลาง'}
-                        </p>
-                      </div>
+                      )}
                     </div>
-                    <div className="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: `${major.percentile}%` }}></div>
-                    </div>
+                    <h3 className="font-semibold text-sm text-on-surface">{step.title}</h3>
+                    <p className="text-xs text-on-surface-variant mt-0.5">{step.desc}</p>
                   </div>
                 ))}
-              </div>
-
-              <div className="mt-space-md">
-                <button
-                  onClick={() => setActiveTab('subjects')}
-                  className="w-full py-2.5 px-4 rounded-lg bg-surface-container text-primary font-semibold text-label-lg font-label-lg hover:bg-surface-container-high active:scale-95 transition-all flex items-center justify-center gap-1.5"
-                >
-                  <span className="material-symbols-outlined text-lg" data-icon="compare_arrows">compare_arrows</span>
-                  <span>เปรียบเทียบทุกสาขาวิชาเอก (62 สาขา)</span>
-                </button>
               </div>
             </section>
           </div>
@@ -439,7 +380,7 @@ export default function App() {
               <input
                 type="text"
                 className="w-full bg-transparent outline-none text-sm text-on-surface placeholder:text-outline"
-                placeholder="ค้นหาเขตพื้นที่ เช่น สพม.กรุงเทพฯ, สพป.เชียงใหม่ หรือวิชาเอก..."
+                placeholder="ค้นหาเขตพื้นที่ เช่น สพม.กรุงเทพฯ, สพป.เชียงใหม่..."
                 value={searchDistrict}
                 onChange={(e) => setSearchDistrict(e.target.value)}
               />
@@ -481,10 +422,10 @@ export default function App() {
                 <div>
                   <h2 className="text-headline-sm font-headline-sm text-primary flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-primary text-xl">map</span>
-                    สถิติเจาะลึกรายเขตพื้นที่ (สพฐ.)
+                    รายชื่อเขตพื้นที่การศึกษา สพฐ. ({filteredDistricts.length} เขต)
                   </h2>
                   <p className="text-body-sm font-body-sm text-on-surface-variant">
-                    พบทั้งหมด {filteredDistricts.length} เขตพื้นที่การศึกษา
+                    สถานะปัจจุบัน: รอเปิดระบบรับสมัครออนไลน์พร้อมกันทั่วประเทศ (19 ต.ค. 69)
                   </p>
                 </div>
               </div>
@@ -505,50 +446,28 @@ export default function App() {
                           <p className="text-xs text-on-surface-variant mt-0.5">จังหวัด {d.province}</p>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span
-                            className={`px-2 py-0.5 rounded text-xs font-bold ${
-                              d.competitionLevel === 'high'
-                                ? 'bg-error-container text-error'
-                                : d.competitionLevel === 'medium'
-                                ? 'bg-tertiary-fixed text-tertiary'
-                                : 'bg-secondary-container/40 text-secondary'
-                            }`}
-                          >
-                            1 : {d.ratio}
+                          <span className="px-2 py-0.5 rounded text-xs font-semibold bg-surface-container text-on-surface-variant">
+                            รอเปิดรับสมัคร
                           </span>
                           <button
                             onClick={() => toggleWatchlist(d.id)}
                             className="p-1 hover:bg-surface-container rounded text-outline hover:text-amber-500"
+                            title={isSaved ? 'อยู่ในรายการติดตาม' : 'บันทึกเขตนี้'}
                           >
-                            <span className={`material-symbols-outlined text-lg ${isSaved ? 'text-amber-500 font-variation-settings-[FILL_1]' : ''}`}>
-                              {isSaved ? 'star' : 'star'}
+                            <span className="material-symbols-outlined text-lg">
+                              {isSaved ? 'star' : 'star_outline'}
                             </span>
                           </button>
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 bg-surface-container-low rounded-lg p-2.5 mt-2 text-xs">
-                        <div>
-                          <span className="text-on-surface-variant block text-[11px]">ตำแหน่งว่าง</span>
-                          <span className="font-semibold text-on-surface">{d.positions} อัตรา</span>
-                        </div>
-                        <div>
-                          <span className="text-on-surface-variant block text-[11px]">ผู้สมัครสะสม</span>
-                          <span className="font-semibold text-on-surface">{d.applicants.toLocaleString()} คน</span>
-                        </div>
-                        <div>
-                          <span className="text-on-surface-variant block text-[11px]">ระดับการแข่งขัน</span>
-                          <span className={`font-semibold ${
-                            d.competitionLevel === 'high' ? 'text-error' : d.competitionLevel === 'medium' ? 'text-tertiary' : 'text-secondary'
-                          }`}>
-                            {d.competitionLevel === 'high' ? 'สูงมาก' : d.competitionLevel === 'medium' ? 'ปานกลาง' : 'แข่งขันต่ำ'}
-                          </span>
-                        </div>
+                      <div className="flex items-center justify-between bg-surface-container-low rounded-lg px-3 py-2 mt-2 text-xs text-on-surface-variant">
+                        <span className="flex items-center gap-1">
+                          <span className="material-symbols-outlined text-xs text-outline">schedule</span>
+                          เปิดรับสมัคร: 19 ต.ค. 2569 เวลา 08:30 น.
+                        </span>
+                        <span className="text-[11px] text-primary">สถิติผู้สมัคร: รอเปิดระบบ</span>
                       </div>
-
-                      <p className="text-xs text-primary mt-1.5">
-                        <span className="text-on-surface-variant">วิชาเอกยอดนิยม:</span> {d.topMajors.join(', ')}
-                      </p>
                     </div>
                   );
                 })}
@@ -565,42 +484,28 @@ export default function App() {
                 <div>
                   <h2 className="text-headline-sm font-headline-sm text-primary flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-primary text-xl">compare_arrows</span>
-                    สถิติเปรียบเทียบสาขาวิชาเอก
+                    กลุ่มสาขาวิชาเอกหลักในการสอบครูผู้ช่วย สพฐ.
                   </h2>
-                  <p className="text-body-sm font-body-sm text-on-surface-variant">ข้อมูลรวมทั้ง 62 สาขาวิชาเอกทั่วประเทศ (รอบทั่วไป)</p>
+                  <p className="text-body-sm font-body-sm text-on-surface-variant">
+                    รายชื่อวิชาเอกตามโครงสร้างหลักสูตรการสอบแข่งขันรอบทั่วไป
+                  </p>
                 </div>
-                <span className="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">รอบทั่วไป</span>
+                <span className="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">รอบทั่วไป 2569</span>
               </div>
 
               <div className="divide-y divide-outline-variant/20">
                 {majors.map((m, idx) => (
-                  <div key={m.id} className="py-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-3">
-                        <span className="text-sm font-bold text-outline w-6">#{idx + 1}</span>
-                        <div>
-                          <h3 className="font-semibold text-sm text-on-surface">{m.name}</h3>
-                          <p className="text-xs text-on-surface-variant">
-                            กลุ่ม {m.category} • รับ {m.positions} อัตรา • สมัคร {m.applicants.toLocaleString()} คน
-                          </p>
-                        </div>
+                  <div key={m.id} className="py-3 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-bold text-outline w-6">#{idx + 1}</span>
+                      <div>
+                        <h3 className="font-semibold text-sm text-on-surface">{m.name}</h3>
+                        <p className="text-xs text-on-surface-variant">กลุ่มสาระการเรียนรู้: {m.category}</p>
                       </div>
-                      <span
-                        className={`px-2 py-0.5 rounded text-xs font-bold shrink-0 ${
-                          m.competitionLevel === 'high'
-                            ? 'bg-error-container text-error'
-                            : m.competitionLevel === 'medium'
-                            ? 'bg-tertiary-fixed text-tertiary'
-                            : 'bg-secondary-container/40 text-secondary'
-                        }`}
-                      >
-                        1 : {m.ratio}
-                      </span>
                     </div>
-
-                    <div className="h-1.5 w-full bg-surface-container rounded-full overflow-hidden mt-2">
-                      <div className="h-full bg-primary rounded-full" style={{ width: `${m.percentile}%` }}></div>
-                    </div>
+                    <span className="px-2 py-0.5 rounded text-xs bg-surface-container text-on-surface-variant">
+                      รอเปิดระบบรับสมัคร
+                    </span>
                   </div>
                 ))}
               </div>
@@ -617,7 +522,7 @@ export default function App() {
                 <span className="material-symbols-outlined text-primary text-xl">bookmarks</span>
                 เขตพื้นที่ในรายการติดตาม ({watchlist.length})
               </h2>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mb-3">แจ้งเตือนความหนาแน่นและยอดสมัครรายชั่วโมง</p>
+              <p className="text-body-sm font-body-sm text-on-surface-variant mb-3">บันทึกเขตพื้นที่เพื่อรอการแจ้งเตือนสถิติในวันเปิดรับสมัคร</p>
 
               <div className="space-y-2">
                 {watchlist.map((wid) => {
@@ -628,7 +533,7 @@ export default function App() {
                       <div>
                         <span className="font-semibold text-on-surface text-sm block">{item.name}</span>
                         <span className="text-on-surface-variant">
-                          รับ {item.positions} อัตรา • สมัคร {item.applicants.toLocaleString()} คน • อัตราแข่งขัน 1:{item.ratio}
+                          จังหวัด {item.province} • รอเปิดรับสมัคร 19 ต.ค. 69
                         </span>
                       </div>
                       <button
@@ -643,13 +548,13 @@ export default function App() {
               </div>
             </section>
 
-            {/* Real-time Event Feed */}
+            {/* Official Announcement Feed */}
             <section className="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/40 shadow-sm">
               <h2 className="text-headline-sm font-headline-sm text-primary flex items-center gap-1.5 mb-1">
                 <span className="material-symbols-outlined text-primary text-xl">notifications_active</span>
-                ฟีดแจ้งเตือนการสมัครสด
+                ประกาศและสถานะทางการ (สพฐ.)
               </h2>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mb-3">ระบบเชื่อมต่อฐานข้อมูลกลาง สพฐ. อัปเดตทุก 15 นาที</p>
+              <p className="text-body-sm font-body-sm text-on-surface-variant mb-3">รวบรวมประกาศอย่างเป็นทางการที่ผ่านการตรวจสอบแล้ว</p>
 
               <div className="space-y-3">
                 {feedItems.map((feed) => (
@@ -659,12 +564,12 @@ export default function App() {
                         <span className="material-symbols-outlined text-sm">schedule</span>
                         {feed.timestamp}
                       </span>
-                      <span className="px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary font-bold text-[10px]">
-                        +{feed.delta}
+                      <span className="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold text-[10px]">
+                        {feed.source}
                       </span>
                     </div>
-                    <h3 className="font-bold text-primary text-sm">{feed.district}</h3>
-                    <p className="text-xs text-on-surface mt-0.5">{feed.message}</p>
+                    <h3 className="font-bold text-primary text-sm">{feed.title}</h3>
+                    <p className="text-xs text-on-surface-variant mt-1 leading-relaxed">{feed.message}</p>
                   </div>
                 ))}
               </div>
@@ -720,7 +625,7 @@ export default function App() {
           }`}
         >
           <span className="material-symbols-outlined text-xl" data-icon="notifications_active">notifications_active</span>
-          <span className="text-label-sm font-label-sm mt-0.5">ฟีดสด</span>
+          <span className="text-label-sm font-label-sm mt-0.5">ประกาศ สพฐ.</span>
         </button>
       </nav>
     </div>

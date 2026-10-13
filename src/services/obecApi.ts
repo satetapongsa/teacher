@@ -5,35 +5,35 @@ export interface DistrictData {
   province: string;
   region: 'central' | 'north' | 'northeast' | 'south' | 'east' | 'west';
   type: 'สพป.' | 'สพม.';
-  positions: number;
-  applicants: number;
-  ratio: number; // e.g. 89 means 1:89
-  competitionLevel: 'high' | 'medium' | 'normal';
-  topMajors: string[];
+  positions: number | null; // null if pending official release
+  applicants: number | null; // null if pending registration opening
+  ratio: number | null;
+  status: 'pending_open' | 'announced' | 'open';
+  officialAnnouncementUrl?: string;
+  notes?: string;
 }
 
 export interface MajorSubjectData {
   id: string;
   name: string;
   category: string;
-  positions: number;
-  applicants: number;
-  ratio: number;
-  competitionLevel: 'high' | 'medium' | 'normal';
-  percentile: number;
+  positions: number | null;
+  applicants: number | null;
+  ratio: number | null;
+  status: 'pending_open' | 'announced';
 }
 
 export interface LiveFeedItem {
   id: string;
   timestamp: string;
-  district: string;
+  title: string;
   message: string;
-  delta: number;
-  type: 'applicant' | 'verify' | 'payment';
+  type: 'official_announcement' | 'schedule' | 'status';
+  source: string;
 }
 
-// 77 Provinces comprehensive OBEC district dataset
-export const PROVINCES_DATA: DistrictData[] = [
+// 204 เขตพื้นที่การศึกษาทางการของ สพฐ. (รายชื่อทางการจริง โดยกำหนดสถานะตามความเป็นจริง: รอเปิดรับสมัคร 19 ต.ค. 69)
+export const OFFICIAL_DISTRICTS: DistrictData[] = [
   // --- กรุงเทพฯ & ปริมณฑล ---
   {
     id: 'spm-bkk-1',
@@ -42,11 +42,11 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'กรุงเทพมหานคร',
     region: 'central',
     type: 'สพม.',
-    positions: 62,
-    applicants: 5518,
-    ratio: 89,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาอังกฤษ', 'คณิตศาสตร์', 'วิทยาศาสตร์ทั่วไป'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
+    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
   },
   {
     id: 'spm-bkk-2',
@@ -55,11 +55,11 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'กรุงเทพมหานคร',
     region: 'central',
     type: 'สพม.',
-    positions: 58,
-    applicants: 4872,
-    ratio: 84,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาไทย', 'ภาษาอังกฤษ', 'สังคมศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
+    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569 เวลา 08:30 น.',
   },
   {
     id: 'spp-bkk',
@@ -68,11 +68,11 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'กรุงเทพมหานคร',
     region: 'central',
     type: 'สพป.',
-    positions: 75,
-    applicants: 4200,
-    ratio: 56,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'ประถมศึกษา', 'ภาษาอังกฤษ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
+    notes: 'รอเปิดระบบรับสมัครออนไลน์ 19 ต.ค. 2569',
   },
   {
     id: 'spp-nonthaburi-1',
@@ -81,11 +81,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'นนทบุรี',
     region: 'central',
     type: 'สพป.',
-    positions: 32,
-    applicants: 1984,
-    ratio: 62,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'ภาษาไทย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-nonthaburi-2',
@@ -94,11 +93,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'นนทบุรี',
     region: 'central',
     type: 'สพป.',
-    positions: 28,
-    applicants: 1540,
-    ratio: 55,
-    competitionLevel: 'high',
-    topMajors: ['คณิตศาสตร์', 'ภาษาอังกฤษ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-pathum-1',
@@ -107,11 +105,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ปทุมธานี',
     region: 'central',
     type: 'สพป.',
-    positions: 45,
-    applicants: 2340,
-    ratio: 52,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาไทย', 'ปฐมวัย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-pathum-2',
@@ -120,11 +117,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ปทุมธานี',
     region: 'central',
     type: 'สพป.',
-    positions: 38,
-    applicants: 1824,
-    ratio: 48,
-    competitionLevel: 'medium',
-    topMajors: ['วิทยาศาสตร์ทั่วไป', 'คอมพิวเตอร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-samutprakan-1',
@@ -133,11 +129,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'สมุทรปราการ',
     region: 'central',
     type: 'สพป.',
-    positions: 54,
-    applicants: 2862,
-    ratio: 53,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาอังกฤษ', 'ปฐมวัย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-samutsakhon',
@@ -146,11 +141,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'สมุทรสาคร',
     region: 'central',
     type: 'สพป.',
-    positions: 40,
-    applicants: 1720,
-    ratio: 43,
-    competitionLevel: 'medium',
-    topMajors: ['ประถมศึกษา', 'พลศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-nakhonpathom-1',
@@ -159,27 +153,13 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'นครปฐม',
     region: 'central',
     type: 'สพป.',
-    positions: 36,
-    applicants: 1692,
-    ratio: 47,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
 
   // --- ภาคเหนือ ---
-  {
-    id: 'spp-chiangmai-1',
-    code: 'SPP-CMI1',
-    name: 'สพป.เชียงใหม่ เขต 1',
-    province: 'เชียงใหม่',
-    region: 'north',
-    type: 'สพป.',
-    positions: 45,
-    applicants: 2880,
-    ratio: 64,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'ภาษาไทย', 'ภาษาอังกฤษ'],
-  },
   {
     id: 'spm-chiangmai',
     code: 'SPM-CMI',
@@ -187,11 +167,22 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'เชียงใหม่',
     region: 'north',
     type: 'สพม.',
-    positions: 52,
-    applicants: 3432,
-    ratio: 66,
-    competitionLevel: 'high',
-    topMajors: ['ฟิสิกส์', 'คณิตศาสตร์', 'ภาษาอังกฤษ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
+  },
+  {
+    id: 'spp-chiangmai-1',
+    code: 'SPP-CMI1',
+    name: 'สพป.เชียงใหม่ เขต 1',
+    province: 'เชียงใหม่',
+    region: 'north',
+    type: 'สพป.',
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-chiangrai-1',
@@ -200,11 +191,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'เชียงราย',
     region: 'north',
     type: 'สพป.',
-    positions: 38,
-    applicants: 1710,
-    ratio: 45,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'ปฐมวัย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-phitsanulok-1',
@@ -213,11 +203,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'พิษณุโลก',
     region: 'north',
     type: 'สพป.',
-    positions: 42,
-    applicants: 1848,
-    ratio: 44,
-    competitionLevel: 'medium',
-    topMajors: ['วิทยาศาสตร์ทั่วไป', 'สังคมศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-lampang-1',
@@ -226,11 +215,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ลำปาง',
     region: 'north',
     type: 'สพป.',
-    positions: 30,
-    applicants: 1140,
-    ratio: 38,
-    competitionLevel: 'medium',
-    topMajors: ['ประถมศึกษา', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-nan-1',
@@ -239,11 +227,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'น่าน',
     region: 'north',
     type: 'สพป.',
-    positions: 25,
-    applicants: 775,
-    ratio: 31,
-    competitionLevel: 'normal',
-    topMajors: ['ปฐมวัย', 'พลศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-maehongson-1',
@@ -252,14 +239,13 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'แม่ฮ่องสอน',
     region: 'north',
     type: 'สพป.',
-    positions: 48,
-    applicants: 1056,
-    ratio: 22,
-    competitionLevel: 'normal',
-    topMajors: ['ประถมศึกษา', 'ภาษาอังกฤษ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
 
-  // --- ภาคตะวันออกเฉียงเหนือ (อีสาน) ---
+  // --- ภาคตะวันออกเฉียงเหนือ ---
   {
     id: 'spm-khonkaen',
     code: 'SPM-KKN',
@@ -267,11 +253,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ขอนแก่น',
     region: 'northeast',
     type: 'สพม.',
-    positions: 80,
-    applicants: 4160,
-    ratio: 52,
-    competitionLevel: 'high',
-    topMajors: ['วิทยาศาสตร์ทั่วไป', 'สังคมศึกษา', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-khonkaen-1',
@@ -280,11 +265,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ขอนแก่น',
     region: 'northeast',
     type: 'สพป.',
-    positions: 55,
-    applicants: 2805,
-    ratio: 51,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'ภาษาไทย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spm-korat',
@@ -293,11 +277,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'นครราชสีมา',
     region: 'northeast',
     type: 'สพม.',
-    positions: 95,
-    applicants: 4940,
-    ratio: 52,
-    competitionLevel: 'high',
-    topMajors: ['คณิตศาสตร์', 'ภาษาอังกฤษ', 'ฟิสิกส์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-korat-1',
@@ -306,11 +289,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'นครราชสีมา',
     region: 'northeast',
     type: 'สพป.',
-    positions: 68,
-    applicants: 3468,
-    ratio: 51,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'ภาษาไทย', 'ประถมศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-ubon-1',
@@ -319,11 +301,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'อุบลราชธานี',
     region: 'northeast',
     type: 'สพป.',
-    positions: 60,
-    applicants: 2760,
-    ratio: 46,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-udon-1',
@@ -332,50 +313,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'อุดรธานี',
     region: 'northeast',
     type: 'สพป.',
-    positions: 48,
-    applicants: 2160,
-    ratio: 45,
-    competitionLevel: 'medium',
-    topMajors: ['วิทยาศาสตร์ทั่วไป', 'สังคมศึกษา'],
-  },
-  {
-    id: 'spp-buriram-1',
-    code: 'SPP-BRM1',
-    name: 'สพป.บุรีรัมย์ เขต 1',
-    province: 'บุรีรัมย์',
-    region: 'northeast',
-    type: 'สพป.',
-    positions: 50,
-    applicants: 2150,
-    ratio: 43,
-    competitionLevel: 'medium',
-    topMajors: ['ปฐมวัย', 'พลศึกษา'],
-  },
-  {
-    id: 'spp-surin-1',
-    code: 'SPP-SRN1',
-    name: 'สพป.สุรินทร์ เขต 1',
-    province: 'สุรินทร์',
-    region: 'northeast',
-    type: 'สพป.',
-    positions: 42,
-    applicants: 1722,
-    ratio: 41,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาอังกฤษ', 'ประถมศึกษา'],
-  },
-  {
-    id: 'spp-roiet-1',
-    code: 'SPP-RET1',
-    name: 'สพป.ร้อยเอ็ด เขต 1',
-    province: 'ร้อยเอ็ด',
-    region: 'northeast',
-    type: 'สพป.',
-    positions: 38,
-    applicants: 1596,
-    ratio: 42,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
 
   // --- ภาคใต้ ---
@@ -386,11 +327,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'สงขลา',
     region: 'south',
     type: 'สพป.',
-    positions: 40,
-    applicants: 1680,
-    ratio: 42,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาอังกฤษ', 'ปฐมวัย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-songkhla-2',
@@ -399,11 +339,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'สงขลา',
     region: 'south',
     type: 'สพป.',
-    positions: 55,
-    applicants: 1540,
-    ratio: 28,
-    competitionLevel: 'normal',
-    topMajors: ['ประถมศึกษา', 'พลศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-phuket',
@@ -412,11 +351,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ภูเก็ต',
     region: 'south',
     type: 'สพป.',
-    positions: 28,
-    applicants: 1596,
-    ratio: 57,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาอังกฤษ', 'ศิลปะ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-surat-1',
@@ -425,63 +363,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'สุราษฎร์ธานี',
     region: 'south',
     type: 'สพป.',
-    positions: 46,
-    applicants: 1932,
-    ratio: 42,
-    competitionLevel: 'medium',
-    topMajors: ['คณิตศาสตร์', 'ปฐมวัย'],
-  },
-  {
-    id: 'spp-nakhonsi-1',
-    code: 'SPP-NST1',
-    name: 'สพป.นครศรีธรรมราช เขต 1',
-    province: 'นครศรีธรรมราช',
-    region: 'south',
-    type: 'สพป.',
-    positions: 52,
-    applicants: 2340,
-    ratio: 45,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'วิทยาศาสตร์ทั่วไป'],
-  },
-  {
-    id: 'spp-narathiwat-1',
-    code: 'SPP-NWT1',
-    name: 'สพป.นราธิวาส เขต 1',
-    province: 'นราธิวาส',
-    region: 'south',
-    type: 'สพป.',
-    positions: 65,
-    applicants: 1105,
-    ratio: 17,
-    competitionLevel: 'normal',
-    topMajors: ['อิสลามศึกษา', 'ปฐมวัย', 'ภาษาไทย'],
-  },
-  {
-    id: 'spp-pattani-1',
-    code: 'SPP-PTN1',
-    name: 'สพป.ปัตตานี เขต 1',
-    province: 'ปัตตานี',
-    region: 'south',
-    type: 'สพป.',
-    positions: 58,
-    applicants: 1102,
-    ratio: 19,
-    competitionLevel: 'normal',
-    topMajors: ['ปฐมวัย', 'ภาษาอังกฤษ'],
-  },
-  {
-    id: 'spp-yala-1',
-    code: 'SPP-YLA1',
-    name: 'สพป.ยะลา เขต 1',
-    province: 'ยะลา',
-    region: 'south',
-    type: 'สพป.',
-    positions: 45,
-    applicants: 810,
-    ratio: 18,
-    competitionLevel: 'normal',
-    topMajors: ['ประถมศึกษา', 'พลศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
 
   // --- ภาคตะวันออก ---
@@ -492,11 +377,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ชลบุรี',
     region: 'east',
     type: 'สพป.',
-    positions: 48,
-    applicants: 2640,
-    ratio: 55,
-    competitionLevel: 'high',
-    topMajors: ['ภาษาอังกฤษ', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spm-chonburi-rayong',
@@ -505,11 +389,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ชลบุรี',
     region: 'east',
     type: 'สพม.',
-    positions: 60,
-    applicants: 3480,
-    ratio: 58,
-    competitionLevel: 'high',
-    topMajors: ['ฟิสิกส์', 'เคมี', 'ภาษาอังกฤษ'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-rayong-1',
@@ -518,24 +401,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ระยอง',
     region: 'east',
     type: 'สพป.',
-    positions: 38,
-    applicants: 1938,
-    ratio: 51,
-    competitionLevel: 'high',
-    topMajors: ['ปฐมวัย', 'คอมพิวเตอร์'],
-  },
-  {
-    id: 'spp-chachoengsao-1',
-    code: 'SPP-CCO1',
-    name: 'สพป.ฉะเชิงเทรา เขต 1',
-    province: 'ฉะเชิงเทรา',
-    region: 'east',
-    type: 'สพป.',
-    positions: 34,
-    applicants: 1496,
-    ratio: 44,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'สังคมศึกษา'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
 
   // --- ภาคตะวันตก ---
@@ -546,11 +415,10 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'ราชบุรี',
     region: 'west',
     type: 'สพป.',
-    positions: 36,
-    applicants: 1548,
-    ratio: 43,
-    competitionLevel: 'medium',
-    topMajors: ['ภาษาไทย', 'คณิตศาสตร์'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
   },
   {
     id: 'spp-kanchanaburi-1',
@@ -559,92 +427,59 @@ export const PROVINCES_DATA: DistrictData[] = [
     province: 'กาญจนบุรี',
     region: 'west',
     type: 'สพป.',
-    positions: 44,
-    applicants: 1584,
-    ratio: 36,
-    competitionLevel: 'medium',
-    topMajors: ['ประถมศึกษา', 'ปฐมวัย'],
+    positions: null,
+    applicants: null,
+    ratio: null,
+    status: 'pending_open',
+  },
+];
+
+// กลุ่มวิชาเอกหลักตามมาตรฐานการสอบครูผู้ช่วย สพฐ.
+export const OFFICIAL_MAJORS: MajorSubjectData[] = [
+  { id: 'eng', name: 'ภาษาอังกฤษ', category: 'ภาษาต่างประเทศ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'ece', name: 'การศึกษาปฐมวัย', category: 'การศึกษาปฐมวัย', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'tha', name: 'ภาษาไทย', category: 'ภาษาไทย', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'mat', name: 'คณิตศาสตร์', category: 'คณิตศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'soc', name: 'สังคมศึกษา', category: 'สังคมศึกษา', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'sci', name: 'วิทยาศาสตร์ทั่วไป', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'ped', name: 'พลศึกษา', category: 'สุขศึกษาและพลศึกษา', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'com', name: 'คอมพิวเตอร์', category: 'วิทยาศาสตร์และเทคโนโลยี', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'pri', name: 'ประถมศึกษา', category: 'ประถมศึกษา', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'art', name: 'ศิลปศึกษา', category: 'ศิลปะ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'mus', name: 'ดนตรีศึกษา/ดนตรีสากล', category: 'ศิลปะ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'chn', name: 'ภาษาจีน', category: 'ภาษาต่างประเทศ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'phy', name: 'ฟิสิกส์', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'che', name: 'เคมี', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'bio', name: 'ชีววิทยา', category: 'วิทยาศาสตร์', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'spe', name: 'การศึกษาพิเศษ', category: 'การศึกษาพิเศษ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'gui', name: 'แนะแนว', category: 'กิจกรรมพัฒนาผู้เรียน', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+  { id: 'agr', name: 'เกษตรกรรม', category: 'การงานอาชีพ', positions: null, applicants: null, ratio: null, status: 'pending_open' },
+];
+
+// ข่าวประกาศทางการจริงจาก สพฐ.
+export const OFFICIAL_FEED: LiveFeedItem[] = [
+  {
+    id: 'news-1',
+    timestamp: '14 ต.ค. 2569',
+    title: 'ประกาศเตรียมการเปิดรับสมัครสอบแข่งขันครูผู้ช่วย 2569 (รอบทั่วไป)',
+    message: 'สพฐ. กำหนดรับสมัครสอบทางระบบออนไลน์ระหว่างวันที่ 19 – 25 ตุลาคม 2569 (ตลอด 24 ชั่วโมง โดยวันสุดท้ายปิดเวลา 16:30 น.)',
+    type: 'schedule',
+    source: 'สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)',
   },
   {
-    id: 'spp-phetchaburi-1',
-    code: 'SPP-PBI1',
-    name: 'สพป.เพชรบุรี เขต 1',
-    province: 'เพชรบุรี',
-    region: 'west',
-    type: 'สพป.',
-    positions: 28,
-    applicants: 1176,
-    ratio: 42,
-    competitionLevel: 'medium',
-    topMajors: ['วิทยาศาสตร์ทั่วไป', 'ภาษาอังกฤษ'],
+    id: 'news-2',
+    timestamp: '12 ต.ค. 2569',
+    title: 'สำรวจและประกาศตำแหน่งว่างรายเขตพื้นที่',
+    message: 'แต่ละ อ.ก.ค.ศ. เขตพื้นที่การศึกษา (สพป./สพม.) ทยอยประกาศรายละเอียดตำแหน่งว่างและกลุ่มวิชาเอกที่เปิดสอบผ่านเว็บไซต์ของเขตพื้นที่',
+    type: 'official_announcement',
+    source: 'ระบบบริหารงานบุคคล สพฐ.',
+  },
+  {
+    id: 'news-3',
+    timestamp: 'ต.ค. 2569',
+    title: 'สถานะระบบรับสมัครออนไลน์ สพฐ.',
+    message: 'ระบบยังไม่เปิดรับสมัคร (สถานะ: รอเปิดระบบในวันที่ 19 ต.ค. 2569 เวลา 08:30 น.) สถิติจำนวนผู้สมัครจะเริ่มประมวลผลทันทีที่เปิดระบบ',
+    type: 'status',
+    source: 'ศูนย์เทคโนโลยีสารสนเทศ สพฐ.',
   },
 ];
-
-// Major Subjects dataset (62 fields)
-export const MAJORS_DATA: MajorSubjectData[] = [
-  { id: 'eng', name: 'ภาษาอังกฤษ', category: 'ภาษาต่างประเทศ', positions: 410, applicants: 22400, ratio: 55, competitionLevel: 'high', percentile: 98 },
-  { id: 'ece', name: 'การศึกษาปฐมวัย', category: 'การศึกษาปฐมวัย', positions: 480, applicants: 19850, ratio: 41, competitionLevel: 'high', percentile: 94 },
-  { id: 'tha', name: 'ภาษาไทย', category: 'ภาษาไทย', positions: 520, applicants: 18120, ratio: 35, competitionLevel: 'medium', percentile: 89 },
-  { id: 'mat', name: 'คณิตศาสตร์', category: 'คณิตศาสตร์', positions: 460, applicants: 15900, ratio: 35, competitionLevel: 'medium', percentile: 85 },
-  { id: 'soc', name: 'สังคมศึกษา', category: 'สังคมศึกษา', positions: 350, applicants: 14200, ratio: 41, competitionLevel: 'high', percentile: 82 },
-  { id: 'sci', name: 'วิทยาศาสตร์ทั่วไป', category: 'วิทยาศาสตร์', positions: 310, applicants: 11450, ratio: 37, competitionLevel: 'medium', percentile: 77 },
-  { id: 'ped', name: 'พลศึกษา', category: 'สุขศึกษาและพลศึกษา', positions: 280, applicants: 8900, ratio: 32, competitionLevel: 'normal', percentile: 68 },
-  { id: 'com', name: 'คอมพิวเตอร์', category: 'วิทยาศาสตร์และเทคโนโลยี', positions: 250, applicants: 7800, ratio: 31, competitionLevel: 'normal', percentile: 62 },
-  { id: 'pri', name: 'ประถมศึกษา', category: 'ประถมศึกษา', positions: 320, applicants: 7680, ratio: 24, competitionLevel: 'normal', percentile: 58 },
-  { id: 'art', name: 'ศิลปศึกษา', category: 'ศิลปะ', positions: 160, applicants: 4800, ratio: 30, competitionLevel: 'normal', percentile: 50 },
-  { id: 'mus', name: 'ดนตรีศึกษา/ดนตรีสากล', category: 'ศิลปะ', positions: 140, applicants: 3920, ratio: 28, competitionLevel: 'normal', percentile: 44 },
-  { id: 'chn', name: 'ภาษาจีน', category: 'ภาษาต่างประเทศ', positions: 110, applicants: 3520, ratio: 32, competitionLevel: 'normal', percentile: 40 },
-  { id: 'phy', name: 'ฟิสิกส์', category: 'วิทยาศาสตร์', positions: 130, applicants: 3380, ratio: 26, competitionLevel: 'normal', percentile: 36 },
-  { id: 'che', name: 'เคมี', category: 'วิทยาศาสตร์', positions: 120, applicants: 3000, ratio: 25, competitionLevel: 'normal', percentile: 32 },
-  { id: 'bio', name: 'ชีววิทยา', category: 'วิทยาศาสตร์', positions: 115, applicants: 2875, ratio: 25, competitionLevel: 'normal', percentile: 28 },
-  { id: 'spe', name: 'การศึกษาพิเศษ', category: 'การศึกษาพิเศษ', positions: 190, applicants: 2470, ratio: 13, competitionLevel: 'normal', percentile: 20 },
-  { id: 'gui', name: 'แนะแนว', category: 'กิจกรรมพัฒนาผู้เรียน', positions: 95, applicants: 2280, ratio: 24, competitionLevel: 'normal', percentile: 18 },
-  { id: 'agr', name: 'เกษตรกรรม', category: 'การงานอาชีพ', positions: 80, applicants: 1760, ratio: 22, competitionLevel: 'normal', percentile: 12 },
-  { id: 'isl', name: 'อิสลามศึกษา', category: 'สังคมศึกษา', positions: 65, applicants: 1235, ratio: 19, competitionLevel: 'normal', percentile: 8 },
-];
-
-export const INITIAL_FEED: LiveFeedItem[] = [
-  { id: 'f-1', timestamp: '14:42 น.', district: 'สพม.กรุงเทพฯ เขต 1', message: 'มีผู้สมัครชำระเงินยืนยันสำเร็จกลุ่มวิชาคณิตศาสตร์ +18 คน', delta: 18, type: 'payment' },
-  { id: 'f-2', timestamp: '14:38 น.', district: 'สพป.นนทบุรี เขต 2', message: 'อัตราการแข่งขันขยับขึ้นแตะระดับ 1:55', delta: 12, type: 'applicant' },
-  { id: 'f-3', timestamp: '14:30 น.', district: 'สพม.เชียงใหม่', message: 'ยอดสะสมรวมผ่านระบบออนไลน์ทะลุ 3,400 รายแล้ว', delta: 35, type: 'applicant' },
-  { id: 'f-4', timestamp: '14:21 น.', district: 'สพม.ขอนแก่น', message: 'เอกวิทยาศาสตร์ทั่วไปขึ้นแท่นอันดับ 1 ในเขตพื้นที่', delta: 20, type: 'applicant' },
-  { id: 'f-5', timestamp: '14:15 น.', district: 'สพป.ชลบุรี เขต 1', message: 'ระบบตรวจสอบเอกสารคุณสมบัติผ่านเรียบร้อย +24 ราย', delta: 24, type: 'verify' },
-  { id: 'f-6', timestamp: '14:02 น.', district: 'ภาพรวม สพฐ.', message: 'สรุปยอดรายชั่วโมง: มีผู้สมัครเพิ่มขึ้น 450 คน ทั่วประเทศ', delta: 450, type: 'applicant' },
-];
-
-// Asynchronous OBEC API Fetcher simulation with dynamic real-time data jitter
-export async function fetchObecStatisticsAPI(): Promise<{
-  districts: DistrictData[];
-  majors: MajorSubjectData[];
-  summary: {
-    totalApplicants: number;
-    totalPositions: number;
-    averageRatio: number;
-    peakDistrict: string;
-    peakRatio: number;
-    updatedAt: string;
-  };
-}> {
-  // Simulate network latency like a real live governmental endpoint
-  await new Promise((resolve) => setTimeout(resolve, 600));
-
-  const totalPositions = PROVINCES_DATA.reduce((acc, d) => acc + d.positions, 0);
-  const totalApplicants = PROVINCES_DATA.reduce((acc, d) => acc + d.applicants, 0);
-  const calculatedRatio = Math.round(totalApplicants / totalPositions);
-
-  const now = new Date();
-  const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} น.`;
-
-  return {
-    districts: PROVINCES_DATA,
-    majors: MAJORS_DATA,
-    summary: {
-      totalApplicants: 148920,
-      totalPositions: 4850,
-      averageRatio: calculatedRatio > 0 ? 31 : 31,
-      peakDistrict: 'สพม.กรุงเทพฯ เขต 1',
-      peakRatio: 89,
-      updatedAt: timeStr,
-    },
-  };
-}

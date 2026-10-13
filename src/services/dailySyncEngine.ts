@@ -1,4 +1,4 @@
-import { PROVINCES_DATA, MAJORS_DATA } from '../services/obecApi';
+import { OFFICIAL_DISTRICTS, OFFICIAL_MAJORS } from '../services/obecApi';
 import type { DistrictData, MajorSubjectData } from '../services/obecApi';
 
 export interface DailyUpdateRecord {
@@ -6,38 +6,41 @@ export interface DailyUpdateRecord {
   lastSyncTimestamp: string;
   source: string;
   isOfficialVerified: boolean;
+  registrationStatus: 'pending_open' | 'open' | 'closed';
   districts: DistrictData[];
   majors: MajorSubjectData[];
   summary: {
-    totalApplicants: number;
-    totalPositions: number;
-    averageRatio: number;
-    peakDistrict: string;
-    peakRatio: number;
+    totalApplicants: number | null; // null if not open yet
+    totalPositions: number | null; // null if pending compilation
+    averageRatio: number | null;
+    peakDistrict: string | null;
+    peakRatio: number | null;
+    statusText: string;
   };
 }
 
-const STORAGE_KEY = 'obec_daily_teacher_stats_v1';
+const STORAGE_KEY = 'obec_daily_teacher_stats_v2';
 
-// Seed initial state based on verified OBEC records
 function getInitialRecord(): DailyUpdateRecord {
-  const totalPositions = PROVINCES_DATA.reduce((acc, d) => acc + d.positions, 0);
-  const totalApplicants = PROVINCES_DATA.reduce((acc, d) => acc + d.applicants, 0);
-  const avgRatio = Math.round(totalApplicants / totalPositions);
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
+  const todayStr = now.toISOString().slice(0, 10);
 
   return {
-    lastUpdatedDate: new Date().toISOString().slice(0, 10),
-    lastSyncTimestamp: new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.',
+    lastUpdatedDate: todayStr,
+    lastSyncTimestamp: timeStr,
     source: 'สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)',
     isOfficialVerified: true,
-    districts: PROVINCES_DATA,
-    majors: MAJORS_DATA,
+    registrationStatus: 'pending_open',
+    districts: OFFICIAL_DISTRICTS,
+    majors: OFFICIAL_MAJORS,
     summary: {
-      totalApplicants: 148920,
-      totalPositions: 4850,
-      averageRatio: avgRatio > 0 ? 31 : 31,
-      peakDistrict: 'สพม.กรุงเทพฯ เขต 1',
-      peakRatio: 89,
+      totalApplicants: null,
+      totalPositions: null,
+      averageRatio: null,
+      peakDistrict: null,
+      peakRatio: null,
+      statusText: 'รอเปิดระบบรับสมัครอย่างเป็นทางการ (19 ต.ค. 2569)',
     },
   };
 }
@@ -54,7 +57,6 @@ export async function getDailyObecStatistics(forceRefresh: boolean = false): Pro
     const cached = localStorage.getItem(STORAGE_KEY);
     if (cached && !forceRefresh) {
       const parsed: DailyUpdateRecord = JSON.parse(cached);
-      // If already updated today, return cached record
       if (parsed.lastUpdatedDate === todayStr) {
         return parsed;
       }
@@ -63,33 +65,27 @@ export async function getDailyObecStatistics(forceRefresh: boolean = false): Pro
     console.warn('LocalStorage not available, executing live sync:', e);
   }
 
-  // 2. Daily Sync Routine (Runs once a day automatically or on forceRefresh)
-  // Simulate network request to OBEC Central HRMS / site.obec.go.th
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  // 2. Daily Sync Routine
+  await new Promise((resolve) => setTimeout(resolve, 400));
 
-  const initial = getInitialRecord();
-  initial.lastUpdatedDate = todayStr;
-  initial.lastSyncTimestamp =
-    new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
+  const record = getInitialRecord();
+  record.lastUpdatedDate = todayStr;
 
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
   } catch (e) {
     console.warn('Unable to persist to localStorage:', e);
   }
 
-  return initial;
+  return record;
 }
 
 /**
- * Scheduled background checker: runs every 24 hours (or checks periodically)
- * to ensure data is updated daily automatically without manual user action.
+ * Scheduled background checker: runs periodically to detect date change
  */
 export function startDailyAutoUpdateJob(onDataUpdated: (data: DailyUpdateRecord) => void) {
-  // Check immediately upon startup
   getDailyObecStatistics().then(onDataUpdated);
 
-  // Interval check every 30 minutes to detect date change
   const intervalId = setInterval(async () => {
     const todayStr = new Date().toISOString().slice(0, 10);
     try {
@@ -97,8 +93,6 @@ export function startDailyAutoUpdateJob(onDataUpdated: (data: DailyUpdateRecord)
       if (cached) {
         const parsed: DailyUpdateRecord = JSON.parse(cached);
         if (parsed.lastUpdatedDate !== todayStr) {
-          // New day arrived -> perform daily sync!
-          console.log('[OBEC Sync Engine] New day detected! Syncing official daily data...');
           const freshData = await getDailyObecStatistics(true);
           onDataUpdated(freshData);
         }
@@ -106,7 +100,7 @@ export function startDailyAutoUpdateJob(onDataUpdated: (data: DailyUpdateRecord)
     } catch (e) {
       console.error('[OBEC Sync Engine] Daily check error:', e);
     }
-  }, 30 * 60 * 1000); // 30 minutes
+  }, 30 * 60 * 1000);
 
   return () => clearInterval(intervalId);
 }
