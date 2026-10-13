@@ -1,11 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
 import {
-  fetchObecStatisticsAPI,
   type DistrictData,
   type MajorSubjectData,
   type LiveFeedItem,
   INITIAL_FEED,
 } from './services/obecApi';
+import {
+  getDailyObecStatistics,
+  startDailyAutoUpdateJob,
+  type DailyUpdateRecord,
+} from './services/dailySyncEngine';
 
 // Official OBEC 2569 Schedule
 const REGISTRATION_START_STR = '19 ต.ค. 2569';
@@ -16,6 +20,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'districts' | 'subjects' | 'feed'>('dashboard');
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [lastSyncTime, setLastSyncTime] = useState('14:45 น.');
+  const [lastSyncDate, setLastSyncDate] = useState(new Date().toISOString().slice(0, 10));
 
   // Data states from OBEC API
   const [districts, setDistricts] = useState<DistrictData[]>([]);
@@ -95,27 +100,36 @@ export default function App() {
     }
   }, [nowTime, openDate, closeDate]);
 
-  const loadObecData = async () => {
+  // Handle data arrival from daily sync engine
+  const handleDataSync = (record: DailyUpdateRecord) => {
+    setDistricts(record.districts);
+    setMajors(record.majors);
+    setSummary({
+      ...record.summary,
+      updatedAt: record.lastSyncTimestamp,
+    });
+    setLastSyncTime(record.lastSyncTimestamp);
+    setLastSyncDate(record.lastUpdatedDate);
+  };
+
+  // Start background auto update job (checks date & syncs once every day)
+  useEffect(() => {
+    const stopJob = startDailyAutoUpdateJob((freshRecord) => {
+      handleDataSync(freshRecord);
+    });
+    return () => stopJob();
+  }, []);
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
     try {
-      const res = await fetchObecStatisticsAPI();
-      setDistricts(res.districts);
-      setMajors(res.majors);
-      setSummary(res.summary);
-      setLastSyncTime(res.summary.updatedAt);
+      const record = await getDailyObecStatistics(true);
+      handleDataSync(record);
     } catch (e) {
-      console.error('Failed to load OBEC data:', e);
+      console.error('Manual refresh error:', e);
     } finally {
       setIsRefreshing(false);
     }
-  };
-
-  useEffect(() => {
-    loadObecData();
-  }, []);
-
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    loadObecData();
   };
 
   const toggleWatchlist = (districtId: string) => {
@@ -151,7 +165,9 @@ export default function App() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
               </span>
-              <span className="text-label-sm font-label-sm text-secondary font-semibold">{lastSyncTime}</span>
+              <span className="text-label-sm font-label-sm text-secondary font-semibold" title={`อัปเดตข้อมูลอัตโนมัติประจำวัน: ${lastSyncDate}`}>
+                {lastSyncTime} (อัปเดตวันนี้)
+              </span>
             </div>
             {/* Trailing Refresh button */}
             <button
