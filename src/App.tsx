@@ -35,10 +35,65 @@ export default function App() {
   const [feedItems] = useState<LiveFeedItem[]>(INITIAL_FEED);
   const [watchlist, setWatchlist] = useState<string[]>(['spm-bkk-1', 'spp-chiangmai-1']);
   
-  // Real countdown timer to 25 Oct 2026, 16:30:00 (approx remaining seconds)
-  const [remainingSeconds, setRemainingSeconds] = useState(
-    11 * 24 * 3600 + 15 * 3600 + 17 * 60 + 35
-  );
+  // Real countdown timer based on actual system time
+  const [nowTime, setNowTime] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNowTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Targets based on real schedule: 19 - 25 ต.ค. 2569
+  // Year: 2026, Month: 9 (October is 0-indexed: 0=Jan..9=Oct)
+  const openDate = useMemo(() => new Date(2026, 9, 19, 8, 30, 0), []);
+  const closeDate = useMemo(() => new Date(2026, 9, 25, 16, 30, 0), []);
+
+  const countdownInfo = useMemo(() => {
+    const currentMs = nowTime.getTime();
+    const openMs = openDate.getTime();
+    const closeMs = closeDate.getTime();
+
+    if (currentMs < openMs) {
+      // ก่อนวันเปิดรับสมัครจริง
+      const diffSec = Math.max(0, Math.floor((openMs - currentMs) / 1000));
+      const days = Math.floor(diffSec / 86400);
+      const hours = Math.floor((diffSec % 86400) / 3600);
+      const minutes = Math.floor((diffSec % 3600) / 60);
+      const seconds = diffSec % 60;
+      const pad = (n: number) => String(n).padStart(2, '0');
+
+      return {
+        status: 'before_open',
+        title: 'นับถอยหลังเปิดรับสมัครออนไลน์ (19 ต.ค. 69 เวลา 08:30 น.)',
+        badge: 'ยังไม่เปิดรับสมัคร',
+        display: `อีก ${days} วัน ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`,
+      };
+    } else if (currentMs <= closeMs) {
+      // กำลังเปิดรับสมัคร
+      const diffSec = Math.max(0, Math.floor((closeMs - currentMs) / 1000));
+      const days = Math.floor(diffSec / 86400);
+      const hours = Math.floor((diffSec % 86400) / 3600);
+      const minutes = Math.floor((diffSec % 3600) / 60);
+      const seconds = diffSec % 60;
+      const pad = (n: number) => String(n).padStart(2, '0');
+
+      return {
+        status: 'open',
+        title: 'นับถอยหลังปิดรับสมัครออนไลน์ (25 ต.ค. 69 เวลา 16:30 น.)',
+        badge: 'ระบบกำลังเปิดรับสมัคร',
+        display: `อีก ${days} วัน ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`,
+      };
+    } else {
+      return {
+        status: 'closed',
+        title: 'ระบบปิดรับสมัครออนไลน์แล้ว',
+        badge: 'ปิดรับสมัครเรียบร้อย',
+        display: 'สิ้นสุดการรับสมัครรอบทั่วไป 2569',
+      };
+    }
+  }, [nowTime, openDate, closeDate]);
 
   const loadObecData = async () => {
     try {
@@ -57,22 +112,6 @@ export default function App() {
   useEffect(() => {
     loadObecData();
   }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setRemainingSeconds((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatCountdown = () => {
-    const days = Math.floor(remainingSeconds / 86400);
-    const hours = Math.floor((remainingSeconds % 86400) / 3600);
-    const minutes = Math.floor((remainingSeconds % 3600) / 60);
-    const seconds = remainingSeconds % 60;
-    const pad = (n: number) => String(n).padStart(2, '0');
-    return `อีก ${days} วัน ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-  };
 
   const handleRefresh = () => {
     setIsRefreshing(true);
@@ -151,17 +190,21 @@ export default function App() {
 
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                 <div>
-                  <p className="text-label-md font-label-md text-primary-fixed-dim">นับถอยหลังปิดรับสมัครออนไลน์</p>
+                  <p className="text-label-md font-label-md text-primary-fixed-dim">
+                    {countdownInfo.title}
+                  </p>
                   <div className="flex items-baseline gap-2 mt-0.5">
                     <span className="text-headline-xl-mobile sm:text-headline-xl font-headline-xl text-white tracking-tight">
-                      {formatCountdown()}
+                      {countdownInfo.display}
                     </span>
-                    <span className="text-label-md font-label-md text-primary-fixed-dim">ชม.</span>
+                    <span className="text-label-md font-label-md text-primary-fixed-dim">
+                      {countdownInfo.status !== 'closed' ? 'ชม.' : ''}
+                    </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 text-label-sm font-label-sm bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                   <span className="material-symbols-outlined text-base text-secondary-container" data-icon="verified_user">verified_user</span>
-                  <span>ข้อมูลยืนยันจาก สถิติรวม สพฐ.</span>
+                  <span>{countdownInfo.badge}</span>
                 </div>
               </div>
             </div>
