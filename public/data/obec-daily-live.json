@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-14T04:30:00+07:00",
+  "lastUpdatedDate": "2026-10-14",
+  "lastSyncTimestamp": "04:30 น.",
+  "source": "สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.) - ระบบสารสนเทศกลาง",
+  "sourceUrl": "https://www.obec.go.th",
+  "ibnsPortalUrl": "https://info.obec.go.th/districts",
+  "boppInfoUrl": "https://info.bopp.go.th/area",
+  "bkkPrimaryUrl": "https://www.bkkp.go.th/web/",
+  "registrationSchedule": {
+    "announcementDeadline": "2026-10-12",
+    "registrationStart": "2026-10-19T08:30:00+07:00",
+    "registrationEnd": "2026-10-25T16:30:00+07:00",
+    "examPartA": "2026-11-14",
+    "examPartB": "2026-11-15"
+  },
+  "summary": {
+    "totalDistricts": 246,
+    "announcedDistrictsCount": 6,
+    "pendingDistrictsCount": 240,
+    "totalAnnouncedPositions": 249,
+    "totalApplicants": null,
+    "averageRatio": null,
+    "peakDistrict": "สพม.กรุงเทพมหานคร เขต 2 (82 อัตรา)",
+    "statusText": "ประกาศตำแหน่งว่างแล้ว 6 เขตพื้นที่ (249 อัตรา) • เปิดรับสมัครออนไลน์ 19 – 25 ต.ค. 2569"
+  },
+  "announcedDistricts": [
+    {
+      "id": "spp-bkk",
+      "code": "SPP-64",
+      "name": "สพป.กรุงเทพมหานคร",
+      "province": "กรุงเทพมหานคร",
+      "positions": 25,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพป.กทม. เรื่อง รับสมัครสอบแข่งขันเพื่อบรรจุและแต่งตั้งบุคคลเข้ารับราชการเป็นข้าราชการครูและบุคลากรทางการศึกษา ตำแหน่งครูผู้ช่วย 2569",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "id": "spm-bkk-1",
+      "code": "SPM-BKK1",
+      "name": "สพม.กรุงเทพมหานคร เขต 1",
+      "province": "กรุงเทพมหานคร",
+      "positions": 49,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพม.กทม. เขต 1 ประกาศตำแหน่งว่างและกลุ่มวิชาเอกที่เปิดรับสมัครสอบแข่งขันครูผู้ช่วย 2569",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "id": "spm-bkk-2",
+      "code": "SPM-BKK2",
+      "name": "สพม.กรุงเทพมหานคร เขต 2",
+      "province": "กรุงเทพมหานคร",
+      "positions": 82,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพม.กทม. เขต 2 ประกาศตำแหน่งว่าง 82 อัตรา สูงสุดในเขตกรุงเทพมหานคร",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "id": "spp-udon-1",
+      "code": "SPP-UDON1",
+      "name": "สพป.อุดรธานี เขต 1",
+      "province": "อุดรธานี",
+      "positions": 25,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพป.อุดรธานี เขต 1 ประกาศรายละเอียดตำแหน่งว่างและกลุ่มวิชาเอก 25 อัตรา",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "id": "spp-udon-4",
+      "code": "SPP-UDON4",
+      "name": "สพป.อุดรธานี เขต 4",
+      "province": "อุดรธานี",
+      "positions": 36,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพป.อุดรธานี เขต 4 ประกาศตำแหน่งว่าง 36 อัตรา",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "id": "spm-udon",
+      "code": "SPM-UDON",
+      "name": "สพม.อุดรธานี",
+      "province": "อุดรธานี",
+      "positions": 32,
+      "status": "announced",
+      "officialNotice": "ประกาศ อ.ก.ค.ศ. สพม.อุดรธานี ประกาศรับสมัครสอบแข่งขันครูผู้ช่วย 32 อัตรา",
+      "updatedAt": "2026-10-12"
+    }
+  ]
+}

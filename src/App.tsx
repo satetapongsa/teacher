@@ -8,9 +8,10 @@ import {
   OFFICIAL_CENTRAL_AGENCIES,
 } from './services/obecApi';
 import {
-  getDailyObecStatistics,
+  fetchRealtimeObecDailyData,
   startDailyAutoUpdateJob,
   type DailyUpdateRecord,
+  type DailySyncStatus,
 } from './services/dailySyncEngine';
 
 // กำหนดการทางการ สพฐ. รอบทั่วไป 2569
@@ -21,8 +22,18 @@ const OFFICIAL_PERIOD_LABEL = '19 – 25 ตุลาคม 2569';
 export default function App() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'districts' | 'subjects' | 'feed'>('dashboard');
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [lastSyncTime, setLastSyncTime] = useState('02:30 น.');
-  const [lastSyncDate, setLastSyncDate] = useState(new Date().toISOString().slice(0, 10));
+
+  // Real-time synchronization state
+  const [syncStatus, setSyncStatus] = useState<DailySyncStatus>({
+    state: 'idle',
+    lastSyncTimestamp: '04:30 น.',
+    lastSyncDate: new Date().toISOString().slice(0, 10),
+    latencyMs: 0,
+    source: 'สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)',
+    isOnline: typeof navigator !== 'undefined' ? navigator.onLine : true,
+    announcedCount: 6,
+    totalPositions: 249,
+  });
 
   // Modal State for District Details & Document Downloads
   const [selectedDistrictForDetails, setSelectedDistrictForDetails] = useState<DistrictData | null>(null);
@@ -44,8 +55,8 @@ export default function App() {
     averageRatio: null,
     peakDistrict: null,
     peakRatio: null,
-    statusText: 'กำลังซิงค์ข้อมูลตำแหน่งที่เปิดรับจาก สพฐ. ...',
-    updatedAt: '02:30 น.',
+    statusText: 'กำลังเชื่อมต่อและซิงค์ข้อมูลจริงจาก สพฐ. ...',
+    updatedAt: '04:30 น.',
   });
 
   // Filters & State
@@ -163,23 +174,28 @@ export default function App() {
       ...record.summary,
       updatedAt: record.lastSyncTimestamp,
     });
-    setLastSyncTime(record.lastSyncTimestamp);
-    setLastSyncDate(record.lastUpdatedDate);
   };
 
   // Start background auto update job
   useEffect(() => {
-    const stopJob = startDailyAutoUpdateJob((freshRecord) => {
-      handleDataSync(freshRecord);
-    });
+    const stopJob = startDailyAutoUpdateJob(
+      (freshRecord) => {
+        handleDataSync(freshRecord);
+      },
+      (newStatus) => {
+        setSyncStatus(newStatus);
+        setIsRefreshing(newStatus.state === 'syncing');
+      }
+    );
     return () => stopJob();
   }, []);
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
     try {
-      const record = await getDailyObecStatistics(true);
+      const { record, status } = await fetchRealtimeObecDailyData(true);
       handleDataSync(record);
+      setSyncStatus(status);
     } catch (e) {
       console.error('Manual refresh error:', e);
     } finally {
@@ -315,11 +331,19 @@ export default function App() {
                 : 'bg-slate-100 border-slate-200 text-slate-700'
             }`}>
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-600 dark:bg-slate-400"></span>
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                  syncStatus.state === 'connected' ? 'bg-emerald-400' :
+                  syncStatus.state === 'syncing' ? 'bg-amber-400' :
+                  syncStatus.state === 'offline' ? 'bg-slate-400' : 'bg-red-400'
+                }`}></span>
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${
+                  syncStatus.state === 'connected' ? 'bg-emerald-500' :
+                  syncStatus.state === 'syncing' ? 'bg-amber-500' :
+                  syncStatus.state === 'offline' ? 'bg-slate-400' : 'bg-red-500'
+                }`}></span>
               </span>
-              <span title={`ตรวจสอบข้อมูล สพฐ. ประจำวัน: ${lastSyncDate}`}>
-                {lastSyncTime} (อัปเดตวันนี้)
+              <span title={`ตรวจสอบข้อมูล สพฐ. ประจำวัน: ${syncStatus.lastSyncDate} (ความหน่วง ${syncStatus.latencyMs} ms)`}>
+                {syncStatus.state === 'syncing' ? 'กำลังซิงค์...' : `${syncStatus.lastSyncTimestamp} (${syncStatus.latencyMs} ms)`}
               </span>
             </div>
 
@@ -342,6 +366,54 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="max-w-screen-md mx-auto px-4 pt-4 space-y-4">
+        {/* Real-time Daily Official Sync Status Bar */}
+        <div className={`p-3 rounded-xl border text-xs flex flex-wrap items-center justify-between gap-2 shadow-xs transition-colors duration-150 ${
+          darkMode ? 'bg-slate-900 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-700'
+        }`}>
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                syncStatus.state === 'connected' ? 'bg-emerald-400' :
+                syncStatus.state === 'syncing' ? 'bg-amber-400' :
+                syncStatus.state === 'offline' ? 'bg-slate-400' : 'bg-red-400'
+              }`}></span>
+              <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${
+                syncStatus.state === 'connected' ? 'bg-emerald-500' :
+                syncStatus.state === 'syncing' ? 'bg-amber-500' :
+                syncStatus.state === 'offline' ? 'bg-slate-400' : 'bg-red-500'
+              }`}></span>
+            </span>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              <span className="font-semibold text-slate-900 dark:text-white">
+                {syncStatus.state === 'syncing'
+                  ? 'กำลังซิงค์ข้อมูลจริงจาก สพฐ. ...'
+                  : syncStatus.state === 'connected'
+                  ? 'ระบบซิงค์ข้อมูลจริงรายวัน สพฐ. ทำงานปกติ (Live Feed)'
+                  : syncStatus.state === 'offline'
+                  ? 'โหมดออฟไลน์: ใช้ข้อมูลทางการที่ซิงค์ไว้ล่าสุด'
+                  : 'เกิดข้อผิดพลาดในการเชื่อมต่อ สพฐ.'}
+              </span>
+              <span className="text-slate-500 dark:text-slate-400 text-[11px]">
+                ความหน่วง {syncStatus.latencyMs} ms • ตรวจสอบล่าสุด {syncStatus.lastSyncTimestamp}
+              </span>
+            </div>
+          </div>
+          <button
+            onClick={handleRefresh}
+            disabled={isRefreshing}
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs font-medium transition-all duration-150 active:scale-95 ${
+              darkMode
+                ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
+                : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+            }`}
+          >
+            <span className={`material-symbols-outlined text-sm ${isRefreshing ? 'animate-spin' : ''}`}>
+              refresh
+            </span>
+            <span>{isRefreshing ? 'กำลังซิงค์...' : 'ดึงข้อมูลจริงทันที'}</span>
+          </button>
+        </div>
+
         {/* ================= VIEW 1: DASHBOARD ================= */}
         {activeTab === 'dashboard' && (
           <div className="space-y-4">
