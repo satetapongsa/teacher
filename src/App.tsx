@@ -271,29 +271,29 @@ export default function App() {
     <div className={`min-h-screen pb-28 antialiased selection:bg-[#102a6b] selection:text-white transition-colors duration-200 ${
       darkMode ? 'bg-slate-950 text-slate-100' : 'bg-[#f4f7fb] text-slate-900'
     }`}>
-      {/* Top Header Bar (Original Theme from Reference Image) */}
+      {/* Top Header Bar (Original Theme from Reference Image - Fully Responsive) */}
       <header className={`sticky top-0 z-40 backdrop-blur-md shadow-xs border-b transition-colors duration-200 ${
         darkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white/95 border-slate-200/80'
       }`}>
-        <div className="flex justify-between items-center w-full px-4 py-3 max-w-screen-md mx-auto">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#102a6b] flex items-center justify-center text-white shadow-xs">
-              <span className="material-symbols-outlined text-xl" data-icon="bar_chart">bar_chart</span>
+        <div className="flex justify-between items-center w-full px-3 sm:px-4 py-2.5 sm:py-3 max-w-screen-md mx-auto">
+          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#102a6b] flex items-center justify-center text-white shadow-xs shrink-0">
+              <span className="material-symbols-outlined text-lg sm:text-xl" data-icon="bar_chart">bar_chart</span>
             </div>
-            <div>
-              <h1 className={`text-base sm:text-lg font-bold tracking-tight leading-tight flex items-center gap-1.5 ${
+            <div className="min-w-0">
+              <h1 className={`text-sm sm:text-lg font-bold tracking-tight leading-tight truncate ${
                 darkMode ? 'text-white' : 'text-[#0f2766]'
               }`}>
                 สถิติครูผู้ช่วย 2569
               </h1>
-              <span className={`text-xs block ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+              <span className={`text-[10px] sm:text-xs block truncate ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                 สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            {/* Live Sync Pill (matches screenshot green pill) */}
-            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-semibold ${
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Live Sync Pill (matches screenshot green pill, responsive text) */}
+            <div className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 rounded-full border text-[11px] sm:text-xs font-semibold ${
               darkMode 
                 ? 'bg-emerald-950/40 border-emerald-800 text-emerald-400' 
                 : 'bg-emerald-50 border-emerald-200/80 text-emerald-800'
@@ -303,7 +303,7 @@ export default function App() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span title={`ซิงค์ข้อมูล สพฐ. ประจำวัน: ${syncStatus.lastSyncDate} (ความหน่วง ${syncStatus.latencyMs} ms)`}>
-                {syncStatus.state === 'syncing' ? 'กำลังซิงค์...' : syncStatus.lastSyncTimestamp}
+                {syncStatus.state === 'syncing' ? 'ซิงค์...' : syncStatus.lastSyncTimestamp}
               </span>
             </div>
 
@@ -311,14 +311,14 @@ export default function App() {
             <button
               onClick={() => setDarkMode(!darkMode)}
               aria-label={darkMode ? 'เปลี่ยนเป็นโหมดสว่าง' : 'เปลี่ยนเป็นโหมดมืด'}
-              className={`p-2 rounded-lg transition-all duration-150 border shadow-xs active:scale-95 ${
+              className={`p-1.5 sm:p-2 rounded-lg transition-all duration-150 border shadow-xs active:scale-95 ${
                 darkMode
                   ? 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
               title={darkMode ? 'สลับเป็นโหมดสว่าง (Light Mode)' : 'สลับเป็นโหมดมืด (Dark Mode)'}
             >
-              <span className="material-symbols-outlined text-lg">
+              <span className="material-symbols-outlined text-base sm:text-lg">
                 {darkMode ? 'light_mode' : 'dark_mode'}
               </span>
             </button>
@@ -327,14 +327,14 @@ export default function App() {
             <button
               onClick={handleRefresh}
               aria-label="รีเฟรชข้อมูลล่าสุด"
-              className={`p-2 rounded-lg active:scale-95 transition-all duration-150 border shadow-xs ${
+              className={`p-1.5 sm:p-2 rounded-lg active:scale-95 transition-all duration-150 border shadow-xs ${
                 darkMode
                   ? 'text-slate-300 bg-slate-800 hover:bg-slate-700 border-slate-700'
                   : 'text-[#102a6b] bg-white hover:bg-slate-100 border-slate-200'
               }`}
               title="ดึงข้อมูลล่าสุดจาก สพฐ."
             >
-              <span className={`material-symbols-outlined text-lg ${isRefreshing ? 'animate-spin' : ''}`} data-icon="sync">sync</span>
+              <span className={`material-symbols-outlined text-base sm:text-lg ${isRefreshing ? 'animate-spin' : ''}`} data-icon="sync">sync</span>
             </button>
           </div>
         </div>
@@ -1940,8 +1940,8 @@ export default function App() {
 
       {/* ================= MODAL: DISTRICT DETAILS & APPLICATION DOCUMENTS ================= */}
       {selectedDistrictForDetails && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className={`rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border p-5 space-y-4 transition-colors ${
+        <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className={`rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border p-4 sm:p-5 space-y-4 transition-colors ${
             darkMode ? 'bg-slate-900 border-slate-700 text-slate-100' : 'bg-white border-slate-200 text-slate-900'
           }`}>
             {/* Modal Header */}

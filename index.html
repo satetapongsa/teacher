@@ -138,7 +138,15 @@
       body {
         font-family: 'Plus Jakarta Sans', 'Sarabun', sans-serif;
         -webkit-font-smoothing: antialiased;
-        background-color: #f7f9fb;
+        background-color: #f4f7fb;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .dark body {
+        background-color: #020617;
+        color: #f8fafc;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -149,7 +157,7 @@
       }
     </style>
   </head>
-  <body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary">
+  <body class="min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
