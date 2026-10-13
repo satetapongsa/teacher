@@ -266,21 +266,23 @@ export default function App() {
     <div className={`min-h-screen pb-28 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-200 ${
       darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
     }`}>
-      {/* Top Header Bar */}
-      <header className={`sticky top-0 z-40 backdrop-blur-md shadow-sm border-b transition-colors duration-200 ${
-        darkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white/95 border-blue-100'
+      {/* Top Header Bar (Formal Official Theme) */}
+      <header className={`sticky top-0 z-40 backdrop-blur-md shadow-xs border-b transition-colors duration-200 ${
+        darkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white/95 border-slate-200'
       }`}>
         <div className="flex justify-between items-center w-full px-4 py-3 max-w-screen-md mx-auto">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-              <span className="material-symbols-outlined text-2xl" data-icon="analytics">analytics</span>
+            <div className="w-9 h-9 rounded-lg bg-slate-900 dark:bg-slate-800 flex items-center justify-center text-white shadow-xs">
+              <span className="material-symbols-outlined text-xl" data-icon="analytics">analytics</span>
             </div>
             <div>
-              <h1 className={`text-lg font-bold tracking-tight leading-tight flex items-center gap-1.5 ${
+              <h1 className={`text-base sm:text-lg font-bold tracking-tight leading-tight flex items-center gap-1.5 ${
                 darkMode ? 'text-white' : 'text-slate-900'
               }`}>
                 สถิติครูผู้ช่วย 2569
-                <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200 dark:bg-blue-900/60 dark:text-blue-300 dark:border-blue-700">
+                <span className={`text-[10px] font-bold uppercase px-1.5 py-0.5 rounded border ${
+                  darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-800 border-slate-200'
+                }`}>
                   สพฐ.
                 </span>
               </h1>
@@ -294,10 +296,10 @@ export default function App() {
             <button
               onClick={() => setDarkMode(!darkMode)}
               aria-label={darkMode ? 'เปลี่ยนเป็นโหมดสว่าง' : 'เปลี่ยนเป็นโหมดมืด'}
-              className={`p-2 rounded-xl transition-all duration-150 border shadow-xs active:scale-95 ${
+              className={`p-2 rounded-lg transition-all duration-150 border shadow-xs active:scale-95 ${
                 darkMode
-                  ? 'bg-slate-800 text-amber-400 border-slate-700 hover:bg-slate-700'
-                  : 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200'
+                  ? 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'
+                  : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
               }`}
               title={darkMode ? 'สลับเป็นโหมดสว่าง (Light Mode)' : 'สลับเป็นโหมดมืด (Dark Mode)'}
             >
@@ -307,17 +309,17 @@ export default function App() {
             </button>
 
             {/* Live Sync Pill */}
-            <div className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full border shadow-xs ${
+            <div className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full border shadow-xs text-xs font-medium ${
               darkMode 
-                ? 'bg-emerald-950/60 border-emerald-800 text-emerald-300' 
-                : 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                ? 'bg-slate-800 border-slate-700 text-slate-300' 
+                : 'bg-slate-100 border-slate-200 text-slate-700'
             }`}>
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-600 dark:bg-slate-400"></span>
               </span>
-              <span className="text-xs font-semibold" title={`ตรวจสอบข้อมูล สพฐ. ประจำวัน: ${lastSyncDate}`}>
-                {lastSyncTime}
+              <span title={`ตรวจสอบข้อมูล สพฐ. ประจำวัน: ${lastSyncDate}`}>
+                {lastSyncTime} (อัปเดตวันนี้)
               </span>
             </div>
 
@@ -325,10 +327,10 @@ export default function App() {
             <button
               onClick={handleRefresh}
               aria-label="รีเฟรชข้อมูลล่าสุด"
-              className={`p-2 rounded-xl active:scale-95 transition-all duration-150 border shadow-xs ${
+              className={`p-2 rounded-lg active:scale-95 transition-all duration-150 border shadow-xs ${
                 darkMode
-                  ? 'text-blue-400 bg-slate-800 hover:bg-slate-700 border-slate-700'
-                  : 'text-blue-700 bg-blue-50 hover:bg-blue-100 border-blue-200'
+                  ? 'text-slate-300 bg-slate-800 hover:bg-slate-700 border-slate-700'
+                  : 'text-slate-700 bg-slate-100 hover:bg-slate-200 border-slate-200'
               }`}
               title="ดึงข้อมูลล่าสุดจาก สพฐ."
             >
@@ -343,48 +345,44 @@ export default function App() {
         {/* ================= VIEW 1: DASHBOARD ================= */}
         {activeTab === 'dashboard' && (
           <div className="space-y-4">
-            {/* Hero Countdown & Official Notice Banner */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-700 to-sky-600 text-white p-5 shadow-lg shadow-blue-900/10 border border-blue-400/20">
-              <div className="absolute -right-6 -bottom-8 opacity-15 pointer-events-none text-white">
-                <span className="material-symbols-outlined text-9xl">school</span>
-              </div>
-
+            {/* Hero Countdown & Official Notice Banner (Formal Theme) */}
+            <div className="relative overflow-hidden rounded-2xl bg-slate-900 text-white p-5 shadow-sm border border-slate-800">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white backdrop-blur-md text-xs font-bold border border-white/20">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-slate-200 text-xs font-semibold border border-slate-700">
                   <span className="material-symbols-outlined text-sm" data-icon="campaign">campaign</span>
                   <span>ประกาศสถิติทางการ สพฐ. รอบทั่วไป 2569 ({OFFICIAL_PERIOD_LABEL})</span>
                 </div>
-                <span className="text-xs font-semibold text-blue-100 bg-blue-900/40 px-2.5 py-0.5 rounded-full border border-blue-300/20">
+                <span className="text-xs text-slate-400 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700">
                   ออนไลน์ 08:30 – 16:30 น.
                 </span>
               </div>
 
               {/* วันเปิดรับสมัครจริงเน้นชัดเจน */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/20 mb-4">
-                <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
-                  <span className="material-symbols-outlined text-base">calendar_month</span>
+              <div className="bg-slate-800/80 rounded-xl p-3 border border-slate-700/80 mb-4">
+                <div className="flex items-center gap-1.5 text-slate-300 font-semibold text-xs">
+                  <span className="material-symbols-outlined text-sm">calendar_month</span>
                   <span>วันเปิดรับสมัครจริงอย่างเป็นทางการ:</span>
                 </div>
-                <div className="text-sm sm:text-base font-extrabold text-white mt-1">
+                <div className="text-sm sm:text-base font-bold text-white mt-1">
                   {OFFICIAL_OPEN_DATE_STR} ถึง {OFFICIAL_CLOSE_DATE_STR}
                 </div>
-                <p className="text-xs text-blue-100 mt-0.5">
+                <p className="text-xs text-slate-400 mt-0.5">
                   เขตพื้นที่การศึกษาได้เริ่มประกาศจำนวนตำแหน่งว่างแล้ว (ระบบรับสมัครออนไลน์จะเปิดรับ 24 ชั่วโมง เริ่ม 19 ต.ค. เวลา 08:30 น.)
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pt-1">
                 <div>
-                  <p className="text-xs font-medium text-blue-200">
+                  <p className="text-xs font-medium text-slate-400">
                     {countdownInfo.title}
                   </p>
                   <div className="flex items-baseline gap-2 mt-1">
-                    <span className="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm font-sans">
+                    <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-mono">
                       {countdownInfo.display}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold bg-amber-400 text-slate-900 px-3.5 py-1.5 rounded-xl shadow-md border border-amber-300">
+                <div className="flex items-center gap-1.5 text-xs font-semibold bg-slate-800 text-slate-200 px-3 py-1.5 rounded-xl border border-slate-700">
                   <span className="material-symbols-outlined text-base">
                     {isRegistrationCurrentlyOpen ? 'lock_open' : 'assignment_turned_in'}
                   </span>
@@ -394,20 +392,22 @@ export default function App() {
             </div>
 
             {/* Quick Action Banner: Direct Download & District Websites */}
-            <div className={`rounded-2xl border p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors ${
+            <div className={`rounded-xl border p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors ${
               darkMode
-                ? 'border-emerald-800/80 bg-gradient-to-r from-emerald-950/70 via-teal-950/60 to-slate-900 text-emerald-200'
-                : 'border-emerald-200 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 text-emerald-950'
+                ? 'border-slate-800 bg-slate-900 text-slate-200'
+                : 'border-slate-200 bg-white text-slate-800'
             }`}>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 shadow-xs ${
+                  darkMode ? 'bg-slate-800 text-slate-200 border border-slate-700' : 'bg-slate-900 text-white'
+                }`}>
                   <span className="material-symbols-outlined text-2xl">download_for_offline</span>
                 </div>
                 <div>
-                  <h3 className={`font-bold text-sm ${darkMode ? 'text-emerald-300' : 'text-emerald-950'}`}>
+                  <h3 className={`font-bold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                     ตรวจสอบเขตที่เปิดรับจริง & ดาวน์โหลดเอกสารสมัคร
                   </h3>
-                  <p className={`text-xs mt-0.5 leading-relaxed ${darkMode ? 'text-emerald-400' : 'text-emerald-800'}`}>
+                  <p className={`text-xs mt-0.5 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                     มี {announcedCount} เขตพื้นที่ประกาศจำนวนตำแหน่งว่างแล้ว รวม {summary.totalPositions?.toLocaleString()} อัตรา สามารถคลิกลิงก์ตรงเพื่อโหลดเอกสารได้ทันที
                   </p>
                 </div>
@@ -417,7 +417,11 @@ export default function App() {
                   setStatusFilter('announced');
                   setActiveTab('districts');
                 }}
-                className="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-xs active:scale-95 transition-all"
+                className={`shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold shadow-xs active:scale-95 transition-all ${
+                  darkMode
+                    ? 'bg-slate-100 hover:bg-white text-slate-900'
+                    : 'bg-slate-900 hover:bg-slate-800 text-white'
+                }`}
               >
                 <span>ดูเขตที่เปิดรับแล้ว ({announcedCount} เขต)</span>
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -425,136 +429,146 @@ export default function App() {
             </div>
 
             {/* Status Advisory Card: แจ้งผู้สมัครตามจริง */}
-            <div className={`rounded-xl border p-4 flex gap-3 items-start shadow-xs transition-colors ${
+            <div className={`rounded-xl border p-3.5 flex gap-3 items-start shadow-xs transition-colors ${
               darkMode
-                ? 'border-blue-900/60 bg-gradient-to-r from-blue-950/70 via-slate-900 to-indigo-950/70'
-                : 'border-blue-200 bg-gradient-to-r from-blue-50/90 via-sky-50/80 to-indigo-50/90'
+                ? 'border-slate-800 bg-slate-900/90 text-slate-300'
+                : 'border-slate-200 bg-slate-50 text-slate-700'
             }`}>
-              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <span className="material-symbols-outlined text-xl">info</span>
+              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 shadow-xs ${
+                darkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-200 text-slate-700'
+              }`}>
+                <span className="material-symbols-outlined text-lg">info</span>
               </div>
               <div className="text-xs space-y-1">
-                <p className={`font-bold text-sm ${darkMode ? 'text-blue-300' : 'text-blue-950'}`}>
+                <p className={`font-bold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                   สถานะการประกาศตำแหน่งว่าง สพฐ. 2569:
                 </p>
-                <p className={`leading-relaxed ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+                <p className={`leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                   {summary.statusText} ข้อมูลตำแหน่งว่างของแต่ละจังหวัดและวิชาเอกได้รับการอัปเดตตามประกาศทางการของ อ.ก.ค.ศ. เขตพื้นที่การศึกษา
                 </p>
               </div>
             </div>
 
-            {/* Key Metric KPI Bento Grid (Real Announced Positions & Live State) */}
+            {/* Key Metric KPI Grid (Real Announced Positions & Live State) */}
             <section aria-label="ตัวชี้วัดสำคัญระดับประเทศ" className="grid grid-cols-2 gap-3 sm:gap-4">
-              {/* Metric 1: Total Applicants (Blue / Indigo) */}
-              <article className={`rounded-2xl p-4 border shadow-sm flex flex-col justify-between hover:shadow-md transition-all ${
+              {/* Metric 1: Total Applicants */}
+              <article className={`rounded-xl p-4 border shadow-xs flex flex-col justify-between transition-all ${
                 darkMode
-                  ? 'bg-gradient-to-br from-blue-950/60 to-slate-900 border-blue-900/80 text-blue-200'
-                  : 'bg-gradient-to-br from-blue-50 to-indigo-50/80 border-blue-200'
+                  ? 'bg-slate-900 border-slate-800'
+                  : 'bg-white border-slate-200'
               }`}>
                 <div>
-                  <div className={`flex items-center justify-between mb-1.5 ${darkMode ? 'text-blue-300' : 'text-blue-900'}`}>
-                    <span className="text-xs font-bold uppercase tracking-wide">ผู้สมัครรวมทั่วประเทศ</span>
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-xs">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-xs font-bold uppercase tracking-wide ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>ผู้สมัครรวมทั่วประเทศ</span>
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+                    }`}>
                       <span className="material-symbols-outlined text-base" data-icon="group">group</span>
                     </div>
                   </div>
-                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-white' : 'text-blue-950'}`}>
+                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                     {summary.totalApplicants !== null ? summary.totalApplicants.toLocaleString() : 'รอเปิดรับสมัคร'}
                   </div>
                 </div>
-                <div className={`mt-3 flex items-center gap-1.5 text-xs font-medium ${darkMode ? 'text-blue-400' : 'text-blue-700'}`}>
+                <div className={`mt-3 flex items-center gap-1.5 text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                   <span className="material-symbols-outlined text-sm">event</span>
                   <span>เปิดระบบ 19 ต.ค. 69 (08:30 น.)</span>
                 </div>
               </article>
 
-              {/* Metric 2: Total Positions (Emerald / Teal) - Shows Real Announced Vacancies */}
-              <article className={`rounded-2xl p-4 border shadow-sm flex flex-col justify-between hover:shadow-md transition-all ${
+              {/* Metric 2: Total Positions */}
+              <article className={`rounded-xl p-4 border shadow-xs flex flex-col justify-between transition-all ${
                 darkMode
-                  ? 'bg-gradient-to-br from-emerald-950/60 to-slate-900 border-emerald-900/80 text-emerald-200'
-                  : 'bg-gradient-to-br from-emerald-50 to-teal-50/80 border-emerald-200'
+                  ? 'bg-slate-900 border-slate-800'
+                  : 'bg-white border-slate-200'
               }`}>
                 <div>
-                  <div className={`flex items-center justify-between mb-1.5 ${darkMode ? 'text-emerald-300' : 'text-emerald-900'}`}>
-                    <span className="text-xs font-bold uppercase tracking-wide">ตำแหน่งเปิดรับทั้งหมด</span>
-                    <div className="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-xs font-bold uppercase tracking-wide ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>ตำแหน่งเปิดรับทั้งหมด</span>
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+                    }`}>
                       <span className="material-symbols-outlined text-base" data-icon="badge">badge</span>
                     </div>
                   </div>
-                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-emerald-300' : 'text-emerald-950'}`}>
+                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                     {summary.totalPositions !== null ? `${summary.totalPositions.toLocaleString()} อัตรา` : 'รอประกาศทางการ'}
                   </div>
                 </div>
-                <div className={`mt-3 flex items-center justify-between text-xs font-medium ${darkMode ? 'text-emerald-400' : 'text-emerald-800'}`}>
+                <div className={`mt-3 flex items-center justify-between text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                   <span>ประกาศแล้ว {announcedCount} เขต</span>
-                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
-                    darkMode ? 'bg-emerald-950 text-emerald-300 border-emerald-800' : 'bg-emerald-100 text-emerald-900 border-emerald-200'
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                    darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-800 border-slate-200'
                   }`}>
                     เปิดรับจริง
                   </span>
                 </div>
               </article>
 
-              {/* Metric 3: Average Competition Ratio (Amber / Orange) */}
-              <article className={`rounded-2xl p-4 border shadow-sm flex flex-col justify-between hover:shadow-md transition-all ${
+              {/* Metric 3: Average Competition Ratio */}
+              <article className={`rounded-xl p-4 border shadow-xs flex flex-col justify-between transition-all ${
                 darkMode
-                  ? 'bg-gradient-to-br from-amber-950/60 to-slate-900 border-amber-900/80 text-amber-200'
-                  : 'bg-gradient-to-br from-amber-50 to-orange-50/80 border-amber-200'
+                  ? 'bg-slate-900 border-slate-800'
+                  : 'bg-white border-slate-200'
               }`}>
                 <div>
-                  <div className={`flex items-center justify-between mb-1.5 ${darkMode ? 'text-amber-300' : 'text-amber-950'}`}>
-                    <span className="text-xs font-bold uppercase tracking-wide">อัตราแข่งขันเฉลี่ย</span>
-                    <div className="w-7 h-7 rounded-lg bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-xs font-bold uppercase tracking-wide ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>อัตราแข่งขันเฉลี่ย</span>
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+                    }`}>
                       <span className="material-symbols-outlined text-base" data-icon="balance">balance</span>
                     </div>
                   </div>
-                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-amber-300' : 'text-amber-950'}`}>
+                  <div className={`text-xl sm:text-2xl font-black tracking-tight mt-1 font-sans ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                     {summary.averageRatio !== null ? `1 : ${summary.averageRatio}` : 'คำนวณวันเปิดรับ'}
                   </div>
                 </div>
-                <div className={`mt-3 text-xs font-medium flex items-center gap-1.5 ${darkMode ? 'text-amber-400' : 'text-amber-800'}`}>
-                  <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
+                <div className={`mt-3 text-xs font-medium flex items-center gap-1.5 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-400"></span>
                   <span>ประมวลผลเมื่อเริ่มรับสมัคร</span>
                 </div>
               </article>
 
-              {/* Metric 4: Peak Competition District (Violet / Purple) */}
-              <article className={`rounded-2xl p-4 border shadow-sm flex flex-col justify-between hover:shadow-md transition-all ${
+              {/* Metric 4: Peak District */}
+              <article className={`rounded-xl p-4 border shadow-xs flex flex-col justify-between transition-all ${
                 darkMode
-                  ? 'bg-gradient-to-br from-purple-950/60 to-slate-900 border-purple-900/80 text-purple-200'
-                  : 'bg-gradient-to-br from-purple-50 to-fuchsia-50/80 border-purple-200'
+                  ? 'bg-slate-900 border-slate-800'
+                  : 'bg-white border-slate-200'
               }`}>
                 <div>
-                  <div className={`flex items-center justify-between mb-1.5 ${darkMode ? 'text-purple-300' : 'text-purple-950'}`}>
-                    <span className="text-xs font-bold uppercase tracking-wide">ยอดรับสูงสุด</span>
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 text-white flex items-center justify-center shadow-xs">
-                      <span className="material-symbols-outlined text-base" data-icon="local_fire_department">local_fire_department</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-xs font-bold uppercase tracking-wide ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>ยอดรับสูงสุด</span>
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+                    }`}>
+                      <span className="material-symbols-outlined text-base" data-icon="leaderboard">leaderboard</span>
                     </div>
                   </div>
-                  <div className={`text-sm sm:text-base font-black tracking-tight mt-1 font-sans truncate ${darkMode ? 'text-purple-300' : 'text-purple-950'}`}>
+                  <div className={`text-sm sm:text-base font-black tracking-tight mt-1 font-sans truncate ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                     {summary.peakDistrict ? summary.peakDistrict : 'สพม.กทม. เขต 2 (82 อัตรา)'}
                   </div>
                 </div>
-                <div className={`mt-3 text-xs font-medium truncate ${darkMode ? 'text-purple-400' : 'text-purple-800'}`}>
+                <div className={`mt-3 text-xs font-medium truncate ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                   ตำแหน่งเปิดรับสูงสุด
                 </div>
               </article>
             </section>
 
             {/* Official Schedule Timeline Section (ข้อมูลจริงที่ตรวจสอบได้) */}
-            <section className={`rounded-2xl p-5 border shadow-sm transition-colors ${
+            <section className={`rounded-xl p-5 border shadow-xs transition-colors ${
               darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
                   <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="material-symbols-outlined text-blue-500 text-xl" data-icon="event">event</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl" data-icon="event">event</span>
                     ปฏิทินการสอบแข่งขันครูผู้ช่วย 2569 (สพฐ. รอบทั่วไป)
                   </h2>
                   <p className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>กำหนดการอย่างเป็นทางการสำหรับผู้สมัครทั่วประเทศ</p>
                 </div>
-                <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
-                  darkMode ? 'bg-blue-950 text-blue-300 border-blue-800' : 'bg-blue-100 text-blue-900 border-blue-200'
+                <span className={`text-xs font-bold px-2.5 py-1 rounded-md border ${
+                  darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                 }`}>
                   กำหนดการจริง
                 </span>
@@ -611,40 +625,42 @@ export default function App() {
                     className={`p-3.5 rounded-xl border transition-all ${
                       step.highlight
                         ? darkMode
-                          ? 'border-blue-700 bg-blue-950/60 shadow-xs ring-1 ring-blue-500/30'
-                          : 'border-blue-300 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-xs ring-1 ring-blue-400/30'
+                          ? 'border-slate-700 bg-slate-800/80 shadow-xs'
+                          : 'border-slate-300 bg-slate-50 shadow-xs'
                         : step.done
                         ? darkMode
-                          ? 'border-emerald-800/80 bg-emerald-950/40'
-                          : 'border-emerald-200 bg-emerald-50/50'
+                          ? 'border-slate-800 bg-slate-900/60'
+                          : 'border-slate-200 bg-slate-50/50'
                         : darkMode
-                        ? 'border-slate-800 bg-slate-800/60'
-                        : 'border-slate-200 bg-slate-50/60'
+                        ? 'border-slate-800 bg-slate-900/40'
+                        : 'border-slate-200 bg-white'
                     }`}
                   >
                     <div className="flex items-center justify-between text-xs mb-1">
                       <span className={`font-bold flex items-center gap-1.5 ${
                         step.highlight 
-                          ? darkMode ? 'text-blue-300' : 'text-blue-900' 
+                          ? darkMode ? 'text-white' : 'text-slate-900' 
                           : step.done 
-                          ? darkMode ? 'text-emerald-300' : 'text-emerald-800' 
+                          ? darkMode ? 'text-slate-300' : 'text-slate-700' 
                           : darkMode ? 'text-slate-400' : 'text-slate-600'
                       }`}>
                         <span className={`material-symbols-outlined text-base ${
-                          step.highlight ? 'text-blue-500' : step.done ? 'text-emerald-500' : 'text-slate-400'
+                          step.highlight ? 'text-slate-900 dark:text-white' : 'text-slate-400'
                         }`}>
                           {step.done ? 'check_circle' : step.highlight ? 'pending_actions' : 'schedule'}
                         </span>
                         {step.date}
                       </span>
                       {step.highlight && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-bold text-[10px] shadow-xs">
+                        <span className={`px-2.5 py-0.5 rounded text-[10px] font-bold shadow-xs ${
+                          darkMode ? 'bg-slate-100 text-slate-900' : 'bg-slate-900 text-white'
+                        }`}>
                           วันเปิดรับสมัครจริง
                         </span>
                       )}
                       {step.done && (
-                        <span className={`px-2 py-0.5 rounded-full font-semibold text-[10px] border ${
-                          darkMode ? 'bg-emerald-950 text-emerald-300 border-emerald-800' : 'bg-emerald-100 text-emerald-800 border-emerald-200'
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${
+                          darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                         }`}>
                           ประกาศตำแหน่งแล้ว
                         </span>
@@ -658,13 +674,13 @@ export default function App() {
             </section>
 
             {/* Official Data Sources Showcase */}
-            <section className={`rounded-2xl p-5 border shadow-sm space-y-3 transition-colors ${
+            <section className={`rounded-xl p-5 border shadow-xs space-y-3 transition-colors ${
               darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
                   <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="material-symbols-outlined text-blue-500 text-xl">hub</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">hub</span>
                     ศูนย์รวมข้อมูลและเว็บไซต์ทางการ สพฐ.
                   </h2>
                   <p className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -673,10 +689,10 @@ export default function App() {
                 </div>
                 <button
                   onClick={() => { setActiveTab('feed'); setFeedSubTab('agencies'); }}
-                  className={`text-xs font-bold px-3 py-1 rounded-full border transition-all ${
+                  className={`text-xs font-bold px-3 py-1 rounded-lg border transition-all ${
                     darkMode
-                      ? 'text-blue-300 bg-blue-950/60 border-blue-800 hover:bg-blue-900/60'
-                      : 'text-blue-700 hover:text-blue-800 bg-blue-50 border-blue-200'
+                      ? 'text-slate-300 bg-slate-800 border-slate-700 hover:bg-slate-700'
+                      : 'text-slate-700 hover:text-slate-900 bg-slate-100 border-slate-200'
                   }`}
                 >
                   ดู 16 หน่วยงาน สพฐ.
@@ -690,24 +706,26 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`p-3.5 rounded-xl border transition-all flex flex-col justify-between group ${
                     darkMode
-                      ? 'border-indigo-900/80 bg-gradient-to-br from-indigo-950/60 to-slate-900 hover:border-indigo-700 hover:bg-indigo-950/80'
-                      : 'border-indigo-200 bg-gradient-to-br from-indigo-50 to-blue-50 hover:bg-indigo-100/80'
+                      ? 'border-slate-800 bg-slate-900 hover:border-slate-700 hover:bg-slate-800/80'
+                      : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-indigo-700 text-white flex items-center justify-center mb-2 shadow-xs">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-lg">lan</span>
                     </div>
                     <h3 className={`font-bold text-xs sm:text-sm ${
-                      darkMode ? 'text-indigo-200 group-hover:text-white' : 'text-indigo-950 group-hover:text-indigo-700'
+                      darkMode ? 'text-white group-hover:text-slate-200' : 'text-slate-900 group-hover:text-slate-700'
                     }`}>
                       พอร์ทัลเขตพื้นที่ สพฐ. IBNS
                     </h3>
-                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-indigo-300' : 'text-indigo-800'}`}>
+                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       ระบบสารสนเทศ IBNS เชื่อมโยงพอร์ทัลข่าวสารประจำเขตทั่วประเทศ
                     </p>
                   </div>
-                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-indigo-400' : 'text-indigo-700'}`}>
+                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                     <span>info.obec.go.th/districts</span>
                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                   </div>
@@ -719,24 +737,26 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`p-3.5 rounded-xl border transition-all flex flex-col justify-between group ${
                     darkMode
-                      ? 'border-sky-900/80 bg-gradient-to-br from-sky-950/60 to-slate-900 hover:border-sky-700 hover:bg-sky-950/80'
-                      : 'border-sky-200 bg-gradient-to-br from-sky-50 to-blue-50 hover:bg-sky-100/80'
+                      ? 'border-slate-800 bg-slate-900 hover:border-slate-700 hover:bg-slate-800/80'
+                      : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-lg">database</span>
                     </div>
                     <h3 className={`font-bold text-xs sm:text-sm ${
-                      darkMode ? 'text-sky-200 group-hover:text-white' : 'text-sky-950 group-hover:text-blue-700'
+                      darkMode ? 'text-white group-hover:text-slate-200' : 'text-slate-900 group-hover:text-slate-700'
                     }`}>
                       สารสนเทศ สพฐ. (BOPP)
                     </h3>
-                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-sky-300' : 'text-sky-800'}`}>
+                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       ข้อมูลสารสนเทศเขตพื้นที่การศึกษา 246 เขต และสถานศึกษาทั่วไทย
                     </p>
                   </div>
-                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-sky-400' : 'text-sky-700'}`}>
+                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                     <span>info.bopp.go.th/area</span>
                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                   </div>
@@ -748,24 +768,26 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`p-3.5 rounded-xl border transition-all flex flex-col justify-between group ${
                     darkMode
-                      ? 'border-blue-900/80 bg-gradient-to-br from-blue-950/60 to-slate-900 hover:border-blue-700 hover:bg-blue-950/80'
-                      : 'border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 hover:bg-blue-100/80'
+                      ? 'border-slate-800 bg-slate-900 hover:border-slate-700 hover:bg-slate-800/80'
+                      : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-lg">apartment</span>
                     </div>
                     <h3 className={`font-bold text-xs sm:text-sm ${
-                      darkMode ? 'text-blue-200 group-hover:text-white' : 'text-blue-950 group-hover:text-blue-700'
+                      darkMode ? 'text-white group-hover:text-slate-200' : 'text-slate-900 group-hover:text-slate-700'
                     }`}>
                       สพป.กรุงเทพมหานคร
                     </h3>
-                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       Bangkok Primary Educational Service Area Office พอร์ทัลทางการ
                     </p>
                   </div>
-                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-blue-400' : 'text-blue-700'}`}>
+                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                     <span>www.bkkp.go.th/web</span>
                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                   </div>
@@ -777,24 +799,26 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`p-3.5 rounded-xl border transition-all flex flex-col justify-between group ${
                     darkMode
-                      ? 'border-emerald-900/80 bg-gradient-to-br from-emerald-950/60 to-slate-900 hover:border-emerald-700 hover:bg-emerald-950/80'
-                      : 'border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 hover:bg-emerald-100/80'
+                      ? 'border-slate-800 bg-slate-900 hover:border-slate-700 hover:bg-slate-800/80'
+                      : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center mb-2 shadow-xs">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 shadow-xs ${
+                      darkMode ? 'bg-slate-800 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-lg">account_balance</span>
                     </div>
                     <h3 className={`font-bold text-xs sm:text-sm ${
-                      darkMode ? 'text-emerald-200 group-hover:text-white' : 'text-emerald-950 group-hover:text-emerald-700'
+                      darkMode ? 'text-white group-hover:text-slate-200' : 'text-slate-900 group-hover:text-slate-700'
                     }`}>
                       หน่วยงานในสังกัด สพฐ.
                     </h3>
-                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-emerald-300' : 'text-emerald-800'}`}>
+                    <p className={`text-[11px] mt-1 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       ศูนย์รวม 16 สำนัก/ศูนย์ส่วนกลาง กระทรวงศึกษาธิการ
                     </p>
                   </div>
-                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-emerald-400' : 'text-emerald-700'}`}>
+                  <div className={`mt-3 flex items-center text-[11px] font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                     <span>obec.go.th/th/agency-website</span>
                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                   </div>
@@ -894,7 +918,9 @@ export default function App() {
                   }}
                   className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold shrink-0 transition-all ${
                     selectedProvince === prov || searchDistrict === prov
-                      ? 'bg-blue-600 text-white shadow-xs'
+                      ? darkMode
+                        ? 'bg-slate-100 text-slate-900 shadow-xs'
+                        : 'bg-slate-900 text-white shadow-xs'
                       : darkMode
                       ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'
                       : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
@@ -924,19 +950,19 @@ export default function App() {
             }`}>
               <span>
                 พบ <strong className={darkMode ? 'text-white' : 'text-slate-900'}>{filteredDistricts.length}</strong> เขตพื้นที่
-                {selectedProvince !== 'all' && <span> ในจังหวัด <strong className="text-blue-500">{selectedProvince}</strong></span>}
-                {searchDistrict && <span> (คำค้น: "<strong className="text-blue-500">{searchDistrict}</strong>")</span>}
+                {selectedProvince !== 'all' && <span> ในจังหวัด <strong className={darkMode ? 'text-white' : 'text-slate-900'}>{selectedProvince}</strong></span>}
+                {searchDistrict && <span> (คำค้น: "<strong className={darkMode ? 'text-white' : 'text-slate-900'}>{searchDistrict}</strong>")</span>}
               </span>
               {filteredDistricts.length > visibleCount ? (
                 <button
                   onClick={() => setVisibleCount(filteredDistricts.length)}
-                  className="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs flex items-center gap-1"
+                  className="text-slate-900 dark:text-white hover:underline font-bold text-xs flex items-center gap-1"
                 >
                   <span className="material-symbols-outlined text-sm">unfold_more</span>
                   <span>แสดงให้ครบทุกเขต ({filteredDistricts.length} เขต)</span>
                 </button>
               ) : (
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold text-[11px] flex items-center gap-1">
+                <span className="text-slate-700 dark:text-slate-300 font-bold text-[11px] flex items-center gap-1">
                   <span className="material-symbols-outlined text-xs">check</span>
                   <span>แสดงครบทุกเขตในหน้านี้แล้ว</span>
                 </span>
@@ -947,9 +973,11 @@ export default function App() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 onClick={() => { setStatusFilter('all'); setVisibleCount(40); }}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   statusFilter === 'all'
-                    ? 'bg-blue-600 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
                     ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
                     : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
@@ -959,12 +987,14 @@ export default function App() {
               </button>
               <button
                 onClick={() => { setStatusFilter('announced'); setVisibleCount(40); }}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
                   statusFilter === 'announced'
-                    ? 'bg-emerald-600 text-white shadow-xs shadow-emerald-600/20'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'bg-emerald-950/40 text-emerald-300 border border-emerald-800 hover:bg-emerald-900/60'
-                    : 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
+                    ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 <span className="material-symbols-outlined text-sm">check_circle</span>
@@ -972,12 +1002,14 @@ export default function App() {
               </button>
               <button
                 onClick={() => { setStatusFilter('pending'); setVisibleCount(40); }}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   statusFilter === 'pending'
-                    ? 'bg-slate-700 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'bg-slate-900 text-slate-400 border border-slate-700 hover:bg-slate-800'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                    ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 รอประกาศ ({pendingCount})
@@ -989,9 +1021,11 @@ export default function App() {
               <span className={`text-xs font-bold shrink-0 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>ประเภท:</span>
               <button
                 onClick={() => { setTypeFilter('all'); setVisibleCount(40); }}
-                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   typeFilter === 'all'
-                    ? 'bg-blue-800 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
                     ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
                     : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
@@ -1001,36 +1035,42 @@ export default function App() {
               </button>
               <button
                 onClick={() => { setTypeFilter('สพป.'); setVisibleCount(40); }}
-                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   typeFilter === 'สพป.'
-                    ? 'bg-cyan-700 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'bg-cyan-950/40 text-cyan-300 border border-cyan-800 hover:bg-cyan-900/60'
-                    : 'bg-cyan-50 text-cyan-900 border border-cyan-200 hover:bg-cyan-100'
+                    ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 สพป. ประถมศึกษา ({sppCount})
               </button>
               <button
                 onClick={() => { setTypeFilter('สพม.'); setVisibleCount(40); }}
-                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   typeFilter === 'สพม.'
-                    ? 'bg-indigo-700 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'bg-indigo-950/40 text-indigo-300 border border-indigo-800 hover:bg-indigo-900/60'
-                    : 'bg-indigo-50 text-indigo-900 border border-indigo-200 hover:bg-indigo-100'
+                    ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 สพม. มัธยมศึกษา ({spmCount})
               </button>
               <button
                 onClick={() => { setTypeFilter('สศศ.'); setVisibleCount(40); }}
-                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all shrink-0 ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   typeFilter === 'สศศ.'
-                    ? 'bg-purple-700 text-white shadow-xs'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'bg-purple-950/40 text-purple-300 border border-purple-800 hover:bg-purple-900/60'
-                    : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
+                    ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 การศึกษาพิเศษ ({specCount})
@@ -1051,12 +1091,14 @@ export default function App() {
                 <button
                   key={r.id}
                   onClick={() => { setSelectedRegion(r.id); setVisibleCount(40); }}
-                  className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                  className={`shrink-0 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     selectedRegion === r.id
-                      ? 'bg-blue-600 text-white shadow-sm shadow-blue-500/20'
+                      ? darkMode
+                        ? 'bg-slate-100 text-slate-900 shadow-xs'
+                        : 'bg-slate-900 text-white shadow-xs'
                       : darkMode
                       ? 'bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800'
-                      : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-blue-700'
+                      : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                   }`}
                 >
                   {r.label}
@@ -1066,10 +1108,10 @@ export default function App() {
 
             {/* Official Sorting Controls (เรียงลำดับข้อมูลทางการ) */}
             <div className={`rounded-xl p-3 border shadow-xs flex flex-wrap items-center justify-between gap-2.5 ${
-              darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'
+              darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <div className={`flex items-center gap-1.5 text-xs font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-                <span className="material-symbols-outlined text-blue-500 text-base">sort</span>
+                <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-base">sort</span>
                 <span>เรียงลำดับ:</span>
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
@@ -1084,7 +1126,9 @@ export default function App() {
                     onClick={() => setSortBy(s.id as any)}
                     className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
                       sortBy === s.id
-                        ? 'bg-blue-600 text-white shadow-xs'
+                        ? darkMode
+                          ? 'bg-slate-100 text-slate-900 shadow-xs'
+                          : 'bg-slate-900 text-white shadow-xs'
                         : darkMode
                         ? 'bg-slate-800 hover:bg-slate-700 text-slate-300'
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
@@ -1098,23 +1142,23 @@ export default function App() {
             </div>
 
             {/* District List Card */}
-            <section className={`rounded-2xl p-4 sm:p-5 border shadow-sm transition-colors ${
+            <section className={`rounded-xl p-4 sm:p-5 border shadow-xs transition-colors ${
               darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
                   <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="material-symbols-outlined text-blue-500 text-xl">map</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">map</span>
                     รายชื่อเขตพื้นที่การศึกษา สพฐ. ({filteredDistricts.length} เขต)
                   </h2>
                   <p className={`text-xs mt-0.5 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                     แสดงข้อมูลเขตที่เปิดรับจริงและจำนวนตำแหน่งว่าง สามารถกดดาวน์โหลดเอกสารสมัครหรือเข้าสู่เว็บไซต์เขตได้ทันที
                   </p>
                 </div>
-                <div className={`flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border font-semibold ${
-                  darkMode ? 'bg-amber-950/40 text-amber-300 border-amber-800' : 'bg-amber-50 text-amber-700 border-amber-200'
+                <div className={`flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border font-semibold ${
+                  darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                 }`}>
-                  <span className="material-symbols-outlined text-sm text-amber-500">star</span>
+                  <span className="material-symbols-outlined text-sm">star</span>
                   <span>ติดตามแล้ว {watchlist.length} เขต</span>
                 </div>
               </div>
@@ -1131,14 +1175,10 @@ export default function App() {
                         <div>
                           <div className="flex items-center gap-2">
                             <h3 className={`font-bold text-sm sm:text-base ${darkMode ? 'text-white' : 'text-slate-900'}`}>{d.name}</h3>
-                            <span className={`px-2 py-0.5 rounded text-[11px] font-bold ${
-                              d.type === 'สพม.' 
-                                ? darkMode
-                                  ? 'bg-indigo-950 text-indigo-300 border border-indigo-800'
-                                  : 'bg-indigo-100 text-indigo-800 border border-indigo-200' 
-                                : darkMode
-                                  ? 'bg-cyan-950 text-cyan-300 border border-cyan-800'
-                                  : 'bg-cyan-100 text-cyan-800 border border-cyan-200'
+                            <span className={`px-2 py-0.5 rounded text-[11px] font-bold border ${
+                              darkMode
+                                ? 'bg-slate-800 text-slate-300 border-slate-700'
+                                : 'bg-slate-100 text-slate-700 border-slate-200'
                             }`}>
                               {d.type}
                             </span>
@@ -1151,14 +1191,14 @@ export default function App() {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => toggleWatchlist(d.id)}
-                            className={`p-1.5 rounded-xl transition-all ${
+                            className={`p-1.5 rounded-lg transition-all ${
                               isSaved 
                                 ? darkMode
-                                  ? 'bg-amber-950/60 text-amber-400 border border-amber-700 shadow-xs'
-                                  : 'bg-amber-50 text-amber-500 border border-amber-300 shadow-xs' 
+                                  ? 'bg-slate-800 text-amber-400 border border-slate-700 shadow-xs'
+                                  : 'bg-slate-100 text-amber-500 border border-slate-200 shadow-xs' 
                                 : darkMode
                                   ? 'text-slate-500 hover:text-amber-400 hover:bg-slate-800'
-                                  : 'text-slate-400 hover:text-amber-500 hover:bg-slate-50'
+                                  : 'text-slate-400 hover:text-amber-500 hover:bg-slate-100'
                             }`}
                             title={isSaved ? 'อยู่ในรายการติดตาม (ปักดาวแล้ว)' : 'ปักดาวเพื่อติดตาม'}
                           >
@@ -1173,21 +1213,23 @@ export default function App() {
                       {hasAnnouncedPositions ? (
                         <div className={`flex flex-wrap items-center justify-between gap-2 border rounded-xl px-3.5 py-2.5 mt-2.5 text-xs shadow-xs ${
                           darkMode
-                            ? 'bg-gradient-to-r from-emerald-950/80 via-teal-950/70 to-emerald-950/80 border-emerald-800 text-emerald-200'
-                            : 'bg-gradient-to-r from-emerald-50 via-teal-50 to-green-50 border border-emerald-200 text-emerald-950'
+                            ? 'bg-slate-800/60 border-slate-700 text-slate-200'
+                            : 'bg-slate-50 border-slate-200 text-slate-900'
                         }`}>
                           <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                            <span className={`w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs shadow-xs ${
+                              darkMode ? 'bg-slate-700 text-white' : 'bg-slate-900 text-white'
+                            }`}>
                               <span className="material-symbols-outlined text-sm">assignment_turned_in</span>
                             </span>
-                            <span className={`font-extrabold text-sm ${darkMode ? 'text-emerald-300' : 'text-emerald-950'}`}>
+                            <span className={`font-extrabold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                               เปิดรับสมัคร: {d.positions} อัตรา ({d.positions} ตำแหน่งว่าง)
                             </span>
                           </div>
-                          <span className={`font-bold px-2.5 py-1 rounded-lg border text-[11px] shadow-xs ${
+                          <span className={`font-bold px-2.5 py-1 rounded-md border text-[11px] ${
                             darkMode
-                              ? 'bg-slate-900 border-emerald-700 text-emerald-300'
-                              : 'bg-white border-emerald-200 text-emerald-900'
+                              ? 'bg-slate-900 border-slate-700 text-slate-300'
+                              : 'bg-white border-slate-200 text-slate-700'
                           }`}>
                             {isLive ? `ผู้สมัคร ${d.applicants?.toLocaleString()} คน (1:${d.ratio})` : 'เปิดรับแล้ว (ประกาศตำแหน่งแล้ว)'}
                           </span>
@@ -1222,7 +1264,7 @@ export default function App() {
                           <span className={`font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>อำเภอในความรับผิดชอบ: </span>
                           <span>{d.jurisdiction}</span>
                           {d.headquarters && (
-                            <span className={`ml-2 font-semibold ${darkMode ? 'text-blue-400' : 'text-blue-800'}`}>
+                            <span className={`ml-2 font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                               (ที่ตั้งสำนักงาน: อ.{d.headquarters})
                             </span>
                           )}
@@ -1240,7 +1282,11 @@ export default function App() {
                           href={d.officialAnnouncementUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs active:scale-95 transition-all"
+                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-xs shadow-xs active:scale-95 transition-all ${
+                            darkMode
+                              ? 'bg-slate-100 hover:bg-white text-slate-900'
+                              : 'bg-slate-900 hover:bg-slate-800 text-white'
+                          }`}
                           title={`ดาวน์โหลดประกาศรับสมัครและใบสมัคร ${d.name}`}
                         >
                           <span className="material-symbols-outlined text-sm">download</span>
@@ -1250,10 +1296,10 @@ export default function App() {
                           href={d.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs active:scale-95 transition-all border ${
+                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-all border ${
                             darkMode
-                              ? 'bg-slate-800 hover:bg-slate-700 text-blue-300 border-slate-700'
-                              : 'bg-blue-50 hover:bg-blue-100 text-blue-900 border-blue-200'
+                              ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
+                              : 'bg-white hover:bg-slate-100 text-slate-800 border-slate-200'
                           }`}
                           title={`เข้าสู่เว็บไซต์ สพฐ. ${d.name}`}
                         >
@@ -1265,10 +1311,10 @@ export default function App() {
                             href={d.ibnsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs active:scale-95 transition-all border ${
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-all border ${
                               darkMode
-                                ? 'bg-indigo-950/60 hover:bg-indigo-900 text-indigo-300 border-indigo-800'
-                                : 'bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border-indigo-200'
+                                ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                             }`}
                             title={`พอร์ทัลเขตพื้นที่การศึกษา สพฐ. IBNS (info.obec.go.th)`}
                           >
@@ -1281,10 +1327,10 @@ export default function App() {
                             href={d.boppUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs active:scale-95 transition-all border ${
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-all border ${
                               darkMode
-                                ? 'bg-sky-950/60 hover:bg-sky-900 text-sky-300 border-sky-800'
-                                : 'bg-sky-50 hover:bg-sky-100 text-sky-900 border-sky-200'
+                                ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                             }`}
                             title={`สารสนเทศเขตพื้นที่การศึกษา สพฐ. (info.bopp.go.th)`}
                           >
@@ -1294,7 +1340,7 @@ export default function App() {
                         )}
                         <button
                           onClick={() => setSelectedDistrictForDetails(d)}
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-semibold text-xs active:scale-95 transition-all ml-auto border ${
+                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-xs active:scale-95 transition-all ml-auto border ${
                             darkMode
                               ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
                               : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200'
@@ -1316,19 +1362,19 @@ export default function App() {
                 }`}>
                   <button
                     onClick={() => setVisibleCount((prev) => prev + 50)}
-                    className={`px-4 py-2 rounded-xl font-bold text-xs shadow-xs transition-all border ${
+                    className={`px-4 py-2 rounded-lg font-bold text-xs shadow-xs transition-all border ${
                       darkMode
-                        ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-blue-300'
-                        : 'bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-900'
+                        ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-300'
+                        : 'bg-white hover:bg-slate-100 border-slate-200 text-slate-800'
                     }`}
                   >
                     โหลดเขตพื้นที่เพิ่ม (+50 เขต)
                   </button>
                   <button
                     onClick={() => setVisibleCount(filteredDistricts.length)}
-                    className={`px-4 py-2 rounded-xl font-bold text-xs shadow-xs transition-all ${
+                    className={`px-4 py-2 rounded-lg font-bold text-xs shadow-xs transition-all ${
                       darkMode
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                        ? 'bg-slate-100 hover:bg-white text-slate-900'
                         : 'bg-slate-900 hover:bg-slate-800 text-white'
                     }`}
                   >
@@ -1343,21 +1389,21 @@ export default function App() {
         {/* ================= VIEW 3: SUBJECTS ================= */}
         {activeTab === 'subjects' && (
           <div className="space-y-4">
-            <section className={`rounded-2xl p-5 border shadow-sm transition-colors ${
+            <section className={`rounded-xl p-5 border shadow-xs transition-colors ${
               darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
                   <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="material-symbols-outlined text-blue-500 text-xl">school</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">school</span>
                     กลุ่มสาขาวิชาเอกหลักและจำนวนตำแหน่งว่างที่เปิดรับ (สพฐ.)
                   </h2>
                   <p className={`text-xs mt-0.5 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                     สรุปจำนวนโควตาตำแหน่งว่างที่ประกาศเปิดรับทั่วประเทศตามกลุ่มสาระการเรียนรู้
                   </p>
                 </div>
-                <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
-                  darkMode ? 'bg-blue-950 text-blue-300 border-blue-800' : 'bg-blue-100 text-blue-900 border-blue-200'
+                <span className={`px-3 py-1 rounded-md text-xs font-bold border ${
+                  darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                 }`}>
                   รอบทั่วไป 2569
                 </span>
@@ -1369,7 +1415,7 @@ export default function App() {
                     <div key={m.id} className="py-3.5 flex items-center justify-between gap-2 first:pt-0 last:pb-0">
                       <div className="flex items-center gap-3">
                         <span className={`text-xs font-black w-7 h-7 rounded-lg flex items-center justify-center border ${
-                          darkMode ? 'bg-blue-950 text-blue-300 border-blue-800' : 'bg-blue-50 text-blue-600 border-blue-200'
+                          darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-800 border-slate-200'
                         }`}>
                           {idx + 1}
                         </span>
@@ -1381,8 +1427,8 @@ export default function App() {
                       <div className="text-right">
                         {m.positions !== null ? (
                           <div>
-                            <span className={`text-xs font-black px-2.5 py-1 rounded-lg border block ${
-                              darkMode ? 'bg-emerald-950 text-emerald-300 border-emerald-800' : 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                            <span className={`text-xs font-black px-2.5 py-1 rounded-md border block ${
+                              darkMode ? 'bg-slate-800 text-slate-200 border-slate-700' : 'bg-slate-100 text-slate-800 border-slate-200'
                             }`}>
                               เปิดรับ {m.positions.toLocaleString()} อัตรา
                             </span>
@@ -1393,7 +1439,7 @@ export default function App() {
                             )}
                           </div>
                         ) : (
-                          <span className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${
+                          <span className={`px-2.5 py-1 rounded text-[11px] font-semibold border ${
                             darkMode ? 'bg-slate-800 text-slate-400 border-slate-700' : 'bg-slate-50 text-slate-600 border-slate-200'
                           }`}>
                             รอประกาศ
@@ -1412,17 +1458,19 @@ export default function App() {
         {activeTab === 'feed' && (
           <div className="space-y-4">
             {/* Sub-tab Navigation */}
-            <div className={`flex items-center gap-2 p-1 rounded-2xl border shadow-xs transition-colors ${
+            <div className={`flex items-center gap-2 p-1 rounded-xl border shadow-xs transition-colors ${
               darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
             }`}>
               <button
                 onClick={() => setFeedSubTab('agencies')}
-                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   feedSubTab === 'agencies'
-                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                    ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 <span className="material-symbols-outlined text-base">account_balance</span>
@@ -1430,12 +1478,14 @@ export default function App() {
               </button>
               <button
                 onClick={() => setFeedSubTab('watchlist')}
-                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   feedSubTab === 'watchlist'
-                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                    ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 <span className="material-symbols-outlined text-base">star</span>
@@ -1443,12 +1493,14 @@ export default function App() {
               </button>
               <button
                 onClick={() => setFeedSubTab('announcements')}
-                className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   feedSubTab === 'announcements'
-                    ? 'bg-blue-700 text-white shadow-xs shadow-blue-500/20'
+                    ? darkMode
+                      ? 'bg-slate-100 text-slate-900 shadow-xs'
+                      : 'bg-slate-900 text-white shadow-xs'
                     : darkMode
-                    ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-                    : 'text-slate-600 hover:text-blue-700 hover:bg-slate-50'
+                    ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 <span className="material-symbols-outlined text-base">notifications</span>
@@ -1458,13 +1510,13 @@ export default function App() {
 
             {/* SUBTAB 1: OFFICIAL OBEC CENTRAL AGENCIES */}
             {feedSubTab === 'agencies' && (
-              <section className={`rounded-2xl p-5 border shadow-sm space-y-4 transition-colors ${
+              <section className={`rounded-xl p-5 border shadow-xs space-y-4 transition-colors ${
                 darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
               }`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div>
                     <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                      <span className="material-symbols-outlined text-blue-500 text-xl">account_balance</span>
+                      <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">account_balance</span>
                       เว็บไซต์หน่วยงานในสังกัด สพฐ. ({centralAgencies.length} สำนัก/หน่วยงานส่วนกลาง)
                     </h2>
                     <p className={`text-xs mt-0.5 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -1475,10 +1527,10 @@ export default function App() {
                     href="https://www.obec.go.th/th/agency-website"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full border font-bold transition-all ${
+                    className={`inline-flex items-center gap-1 text-xs px-3 py-1 rounded-md border font-bold transition-all ${
                       darkMode
-                        ? 'text-blue-300 hover:text-blue-200 bg-blue-950/60 hover:bg-blue-900/60 border-blue-800'
-                        : 'text-blue-700 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 border-blue-200'
+                        ? 'text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border-slate-700'
+                        : 'text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border-slate-200'
                     }`}
                   >
                     <span>เว็บไซต์หลัก สพฐ.</span>
@@ -1489,8 +1541,8 @@ export default function App() {
                 {/* Agency Search */}
                 <div className={`flex items-center rounded-xl border px-3 py-2 gap-2 transition-all ${
                   darkMode
-                    ? 'bg-slate-800 border-slate-700 focus-within:border-blue-400 focus-within:bg-slate-900'
-                    : 'bg-slate-50 border-slate-200 focus-within:border-blue-500 focus-within:bg-white'
+                    ? 'bg-slate-800 border-slate-700 focus-within:border-slate-500 focus-within:bg-slate-900'
+                    : 'bg-slate-50 border-slate-200 focus-within:border-slate-400 focus-within:bg-white'
                 }`}>
                   <span className="material-symbols-outlined text-slate-400 text-lg">search</span>
                   <input
@@ -1517,13 +1569,13 @@ export default function App() {
                       className={`p-4 rounded-xl border transition-all flex flex-col justify-between ${
                         darkMode
                           ? 'border-slate-800 bg-slate-800/50 hover:bg-slate-800 hover:border-slate-700'
-                          : 'border-slate-200 bg-slate-50/60 hover:bg-white hover:border-blue-300 hover:shadow-xs'
+                          : 'border-slate-200 bg-white hover:border-slate-400 hover:shadow-xs'
                       }`}
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
-                            darkMode ? 'bg-blue-950 text-blue-300 border-blue-800' : 'bg-blue-100 text-blue-900 border-blue-200'
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                            darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                           }`}>
                             {agency.category}
                           </span>
@@ -1536,7 +1588,7 @@ export default function App() {
                         </p>
                       </div>
                       <div className={`pt-3 mt-3 border-t flex items-center justify-between ${
-                        darkMode ? 'border-slate-800' : 'border-slate-200/60'
+                        darkMode ? 'border-slate-800' : 'border-slate-100'
                       }`}>
                         <span className="text-[10px] text-slate-400 truncate max-w-[160px]">
                           {agency.url}
@@ -1545,7 +1597,11 @@ export default function App() {
                           href={agency.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow-xs active:scale-95 transition-all"
+                          className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg font-bold text-xs shadow-xs active:scale-95 transition-all ${
+                            darkMode
+                              ? 'bg-slate-100 hover:bg-white text-slate-900'
+                              : 'bg-slate-900 hover:bg-slate-800 text-white'
+                          }`}
                         >
                           <span>เข้าเว็บไซต์</span>
                           <span className="material-symbols-outlined text-xs">launch</span>
@@ -1559,16 +1615,16 @@ export default function App() {
 
             {/* SUBTAB 2: WATCHLIST */}
             {feedSubTab === 'watchlist' && (
-              <section className={`rounded-2xl p-5 border shadow-sm transition-colors ${
+              <section className={`rounded-xl p-5 border shadow-xs transition-colors ${
                 darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
               }`}>
                 <div className="flex items-center justify-between mb-2">
                   <h2 className={`text-base font-bold flex items-center gap-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="material-symbols-outlined text-amber-500 filled text-xl">star</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">star</span>
                     เขตพื้นที่ในรายการติดตาม ({watchlist.length})
                   </h2>
-                  <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${
-                    darkMode ? 'text-blue-300 bg-blue-950/60 border-blue-800' : 'text-blue-700 bg-blue-50 border-blue-200'
+                  <span className={`text-xs font-bold px-2.5 py-0.5 rounded-md border ${
+                    darkMode ? 'text-slate-300 bg-slate-800 border-slate-700' : 'text-slate-700 bg-slate-100 border-slate-200'
                   }`}>
                     ปักดาวเริ่มต้น: อุดรฯ & กทม.
                   </span>
@@ -1587,8 +1643,8 @@ export default function App() {
                         key={wid}
                         className={`p-3.5 rounded-xl border text-xs shadow-xs space-y-2.5 transition-colors ${
                           darkMode
-                            ? 'bg-gradient-to-r from-amber-950/30 via-slate-900 to-amber-950/30 border-amber-800/60 text-slate-300'
-                            : 'bg-gradient-to-r from-amber-50/70 via-orange-50/50 to-amber-50/70 border-amber-200 text-slate-800'
+                            ? 'bg-slate-900 border-slate-800 text-slate-300'
+                            : 'bg-white border-slate-200 text-slate-800'
                         }`}
                       >
                         <div className="flex items-start justify-between gap-2">
@@ -1596,16 +1652,16 @@ export default function App() {
                             <div className="flex items-center gap-2">
                               <span className={`font-bold text-sm block ${darkMode ? 'text-white' : 'text-slate-900'}`}>{item.name}</span>
                               <span className={`px-1.5 py-0.2 rounded text-[10px] font-bold border ${
-                                darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-white text-slate-800 border-amber-200'
+                                darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-800 border-slate-200'
                               }`}>
                                 {item.type}
                               </span>
                             </div>
                             {item.positions !== null ? (
                               <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md font-extrabold text-xs border ${
-                                darkMode ? 'bg-emerald-950 text-emerald-300 border-emerald-800' : 'bg-emerald-100 text-emerald-900 border-emerald-200'
+                                darkMode ? 'bg-slate-800 text-slate-200 border-slate-700' : 'bg-slate-100 text-slate-900 border-slate-200'
                               }`}>
-                                <span className="material-symbols-outlined text-sm text-emerald-500">check_circle</span>
+                                <span className="material-symbols-outlined text-sm text-slate-700 dark:text-slate-300">check_circle</span>
                                 <span>เปิดรับสมัครจริง: {item.positions} อัตรา</span>
                               </div>
                             ) : (
@@ -1617,7 +1673,9 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => toggleWatchlist(wid)}
-                            className="text-rose-500 hover:text-rose-400 font-bold hover:bg-rose-950/40 px-2.5 py-1 rounded-lg transition-all border border-rose-300 dark:border-rose-800 text-xs shrink-0"
+                            className={`font-semibold hover:text-rose-500 px-2.5 py-1 rounded-lg transition-all border text-xs shrink-0 ${
+                              darkMode ? 'border-slate-700 text-slate-400 hover:border-rose-800' : 'border-slate-200 text-slate-500 hover:border-rose-300'
+                            }`}
                           >
                             ยกเลิกติดตาม
                           </button>
@@ -1625,13 +1683,17 @@ export default function App() {
 
                         {/* Direct Links in Watchlist */}
                         <div className={`flex flex-wrap items-center gap-2 pt-1 border-t ${
-                          darkMode ? 'border-amber-900/40' : 'border-amber-200/60'
+                          darkMode ? 'border-slate-800' : 'border-slate-100'
                         }`}>
                           <a
                             href={item.officialAnnouncementUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-xs shadow-xs transition-all ${
+                              darkMode
+                                ? 'bg-slate-100 hover:bg-white text-slate-900'
+                                : 'bg-slate-900 hover:bg-slate-800 text-white'
+                            }`}
                           >
                             <span className="material-symbols-outlined text-sm">download</span>
                             <span>ดาวน์โหลดเอกสารสมัคร</span>
@@ -1642,8 +1704,8 @@ export default function App() {
                             rel="noopener noreferrer"
                             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border font-bold text-xs transition-all ${
                               darkMode
-                                ? 'bg-slate-800 hover:bg-slate-700 text-blue-300 border-slate-700'
-                                : 'bg-white hover:bg-slate-50 text-blue-900 border-slate-300'
+                                ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
+                                : 'bg-white hover:bg-slate-100 text-slate-800 border-slate-200'
                             }`}
                           >
                             <span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -1656,8 +1718,8 @@ export default function App() {
                               rel="noopener noreferrer"
                               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border font-bold text-xs transition-all ${
                                 darkMode
-                                  ? 'bg-indigo-950/60 hover:bg-indigo-900 text-indigo-300 border-indigo-800'
-                                  : 'bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border-indigo-200'
+                                  ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                  : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                               }`}
                             >
                               <span className="material-symbols-outlined text-sm">lan</span>
@@ -1671,8 +1733,8 @@ export default function App() {
                               rel="noopener noreferrer"
                               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border font-bold text-xs transition-all ${
                                 darkMode
-                                  ? 'bg-sky-950/60 hover:bg-sky-900 text-sky-300 border-sky-800'
-                                  : 'bg-sky-50 hover:bg-sky-100 text-sky-900 border-sky-200'
+                                  ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                  : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                               }`}
                             >
                               <span className="material-symbols-outlined text-sm">database</span>
@@ -1683,8 +1745,8 @@ export default function App() {
                             onClick={() => setSelectedDistrictForDetails(item)}
                             className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg font-semibold text-xs ml-auto border ${
                               darkMode
-                                ? 'bg-amber-950/60 hover:bg-amber-900 text-amber-300 border-amber-800'
-                                : 'bg-amber-100 hover:bg-amber-200 text-amber-900 border-transparent'
+                                ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200'
                             }`}
                           >
                             <span className="material-symbols-outlined text-sm">info</span>
@@ -1700,11 +1762,11 @@ export default function App() {
 
             {/* SUBTAB 3: OFFICIAL ANNOUNCEMENT FEED */}
             {feedSubTab === 'announcements' && (
-              <section className={`rounded-2xl p-5 border shadow-sm transition-colors ${
+              <section className={`rounded-xl p-5 border shadow-xs transition-colors ${
                 darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
               }`}>
                 <h2 className={`text-base font-bold flex items-center gap-2 mb-1 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                  <span className="material-symbols-outlined text-blue-500 text-xl">notifications_active</span>
+                  <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-xl">notifications_active</span>
                   ประกาศและสถานะทางการ (สพฐ.)
                 </h2>
                 <p className={`text-xs mb-4 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>รวบรวมประกาศอย่างเป็นทางการที่ผ่านการตรวจสอบแล้ว</p>
@@ -1712,20 +1774,20 @@ export default function App() {
                 <div className="space-y-3">
                   {feedItems.map((feed) => (
                     <div key={feed.id} className={`p-3.5 rounded-xl border transition-all ${
-                      darkMode ? 'border-slate-800 bg-slate-800/50 hover:bg-slate-800' : 'border-slate-200 bg-slate-50/70 hover:bg-white'
+                      darkMode ? 'border-slate-800 bg-slate-800/50 hover:bg-slate-800' : 'border-slate-200 bg-white hover:border-slate-400'
                     }`}>
                       <div className="flex items-center justify-between text-xs mb-1.5">
                         <span className={`flex items-center gap-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                           <span className="material-symbols-outlined text-xs">schedule</span>
                           {feed.timestamp}
                         </span>
-                        <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] border ${
-                          darkMode ? 'bg-blue-950 text-blue-300 border-blue-800' : 'bg-blue-100 text-blue-900 border-blue-200'
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                          darkMode ? 'bg-slate-800 text-slate-300 border-slate-700' : 'bg-slate-100 text-slate-700 border-slate-200'
                         }`}>
                           {feed.source}
                         </span>
                       </div>
-                      <h3 className={`font-bold text-sm ${darkMode ? 'text-blue-300' : 'text-blue-950'}`}>{feed.title}</h3>
+                      <h3 className={`font-bold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>{feed.title}</h3>
                       <p className={`text-xs mt-1 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>{feed.message}</p>
                     </div>
                   ))}
@@ -1785,14 +1847,14 @@ export default function App() {
             {selectedDistrictForDetails.positions !== null ? (
               <div className={`p-3.5 rounded-xl border text-xs ${
                 darkMode
-                  ? 'bg-gradient-to-r from-emerald-950/80 to-teal-950/70 border-emerald-800 text-emerald-200'
-                  : 'bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 text-slate-800'
+                  ? 'bg-slate-800/60 border-slate-700 text-slate-200'
+                  : 'bg-slate-50 border border-slate-200 text-slate-900'
               }`}>
-                <div className={`flex items-center gap-2 font-extrabold text-sm ${darkMode ? 'text-emerald-300' : 'text-emerald-900'}`}>
-                  <span className="material-symbols-outlined text-emerald-500">assignment_turned_in</span>
+                <div className={`flex items-center gap-2 font-extrabold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>
+                  <span className="material-symbols-outlined text-slate-700 dark:text-slate-300">assignment_turned_in</span>
                   <span>เปิดรับสมัครจริง: {selectedDistrictForDetails.positions} อัตรา ({selectedDistrictForDetails.positions} ตำแหน่งว่าง)</span>
                 </div>
-                <p className={`mt-1 ${darkMode ? 'text-emerald-300/80' : 'text-emerald-800'}`}>
+                <p className={`mt-1 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                   อ.ก.ค.ศ. เขตพื้นที่การศึกษาได้ออกประกาศรายละเอียดตำแหน่งว่างและวิชาเอกอย่างเป็นทางการแล้ว
                 </p>
               </div>
@@ -1810,15 +1872,21 @@ export default function App() {
                 href={selectedDistrictForDetails.officialAnnouncementUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm shadow-md shadow-emerald-600/20 active:scale-98 transition-all"
+                className={`w-full flex items-center justify-between p-3.5 rounded-xl font-bold text-sm shadow-xs active:scale-98 transition-all ${
+                  darkMode
+                    ? 'bg-slate-100 hover:bg-white text-slate-900'
+                    : 'bg-slate-900 hover:bg-slate-800 text-white'
+                }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                    darkMode ? 'bg-slate-200 text-slate-900' : 'bg-slate-800 text-white'
+                  }`}>
                     <span className="material-symbols-outlined text-xl">download</span>
                   </div>
                   <div className="text-left">
                     <div className="text-sm">ดาวน์โหลดประกาศ & เอกสารสมัคร</div>
-                    <div className="text-[11px] font-normal text-emerald-100">ไฟล์ประกาศรับสมัครสอบแข่งขันและแบบฟอร์ม</div>
+                    <div className={`text-[11px] font-normal ${darkMode ? 'text-slate-600' : 'text-slate-300'}`}>ไฟล์ประกาศรับสมัครสอบแข่งขันและแบบฟอร์ม</div>
                   </div>
                 </div>
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -1830,22 +1898,24 @@ export default function App() {
                 rel="noopener noreferrer"
                 className={`w-full flex items-center justify-between p-3.5 rounded-xl border font-bold text-sm active:scale-98 transition-all ${
                   darkMode
-                    ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-blue-300'
-                    : 'bg-gradient-to-r from-blue-50 to-indigo-50 hover:bg-blue-100 border-blue-200 text-blue-900'
+                    ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                    : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                    darkMode ? 'bg-slate-700 text-slate-200' : 'bg-slate-100 text-slate-800'
+                  }`}>
                     <span className="material-symbols-outlined text-xl">open_in_new</span>
                   </div>
                   <div className="text-left">
                     <div className="text-sm">เข้าสู่เว็บไซต์ทางการ สพฐ. ประจำเขต</div>
-                    <div className={`text-[11px] font-normal ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                    <div className={`text-[11px] font-normal ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                       {selectedDistrictForDetails.websiteUrl}
                     </div>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-lg text-blue-500">launch</span>
+                <span className="material-symbols-outlined text-lg text-slate-400">launch</span>
               </a>
 
               {selectedDistrictForDetails.ibnsUrl && (
@@ -1855,22 +1925,24 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`w-full flex items-center justify-between p-3.5 rounded-xl border font-bold text-sm active:scale-98 transition-all ${
                     darkMode
-                      ? 'bg-indigo-950/60 hover:bg-indigo-900 border-indigo-800 text-indigo-300'
-                      : 'bg-gradient-to-r from-indigo-50 to-blue-50 hover:bg-indigo-100 border-indigo-200 text-indigo-950'
+                      ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                      : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-700 text-white flex items-center justify-center">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                      darkMode ? 'bg-slate-700 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-xl">lan</span>
                     </div>
                     <div className="text-left">
                       <div className="text-sm">ระบบสารสนเทศ สพฐ. IBNS (พอร์ทัลเขต)</div>
-                      <div className={`text-[11px] font-normal ${darkMode ? 'text-indigo-400' : 'text-indigo-700'}`}>
+                      <div className={`text-[11px] font-normal ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                         {selectedDistrictForDetails.ibnsUrl}
                       </div>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined text-lg text-indigo-400">launch</span>
+                  <span className="material-symbols-outlined text-lg text-slate-400">launch</span>
                 </a>
               )}
 
@@ -1881,22 +1953,24 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`w-full flex items-center justify-between p-3.5 rounded-xl border font-bold text-sm active:scale-98 transition-all ${
                     darkMode
-                      ? 'bg-sky-950/60 hover:bg-sky-900 border-sky-800 text-sky-300'
-                      : 'bg-gradient-to-r from-sky-50 to-blue-50 hover:bg-sky-100 border-sky-200 text-sky-950'
+                      ? 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                      : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                      darkMode ? 'bg-slate-700 text-slate-200' : 'bg-slate-100 text-slate-800'
+                    }`}>
                       <span className="material-symbols-outlined text-xl">database</span>
                     </div>
                     <div className="text-left">
                       <div className="text-sm">สารสนเทศเขตพื้นที่การศึกษา สพฐ. (BOPP)</div>
-                      <div className={`text-[11px] font-normal ${darkMode ? 'text-sky-400' : 'text-sky-700'}`}>
+                      <div className={`text-[11px] font-normal ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                         {selectedDistrictForDetails.boppUrl}
                       </div>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined text-lg text-sky-400">launch</span>
+                  <span className="material-symbols-outlined text-lg text-slate-400">launch</span>
                 </a>
               )}
             </div>
@@ -1937,7 +2011,11 @@ export default function App() {
                 </div>
                 <a
                   href={`tel:${selectedDistrictForDetails.contactPhone}`}
-                  className="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700"
+                  className={`px-3 py-1 rounded-lg font-bold text-xs shadow-xs transition-all ${
+                    darkMode
+                      ? 'bg-slate-100 hover:bg-white text-slate-900'
+                      : 'bg-slate-900 hover:bg-slate-800 text-white'
+                  }`}
                 >
                   โทรออก
                 </a>
@@ -1949,7 +2027,7 @@ export default function App() {
               darkMode ? 'bg-slate-800/40 border-slate-700' : 'bg-slate-50/60 border-slate-200'
             }`}>
               <h4 className={`font-bold text-xs flex items-center gap-1.5 ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>
-                <span className="material-symbols-outlined text-base text-blue-500">task</span>
+                <span className="material-symbols-outlined text-base text-slate-700 dark:text-slate-300">task</span>
                 รายการเอกสารหลักฐานที่ต้องเตรียมในการสมัคร:
               </h4>
               <ul className={`text-xs space-y-1.5 list-none pl-1 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -1962,7 +2040,7 @@ export default function App() {
                   '6. ใบรับรองแพทย์จากสถานพยาบาลของรัฐ (ออกไว้ไม่เกิน 1 เดือน นับถึงวันสมัคร)',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-1.5">
-                    <span className="material-symbols-outlined text-emerald-500 text-sm mt-0.5">check_circle</span>
+                    <span className="material-symbols-outlined text-slate-700 dark:text-slate-300 text-sm mt-0.5">check_circle</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -1972,11 +2050,11 @@ export default function App() {
             {/* Critical Note */}
             <div className={`rounded-xl border p-3 text-xs space-y-1 ${
               darkMode
-                ? 'bg-amber-950/40 border-amber-800 text-amber-200'
-                : 'bg-amber-50 border-amber-200 text-amber-900'
+                ? 'bg-slate-800/80 border-slate-700 text-slate-300'
+                : 'bg-slate-50 border-slate-200 text-slate-800'
             }`}>
               <div className="font-bold flex items-center gap-1">
-                <span className="material-symbols-outlined text-base text-amber-500">warning</span>
+                <span className="material-symbols-outlined text-base text-slate-700 dark:text-slate-300">warning</span>
                 ข้อกำหนดสำคัญตามระเบียบ สพฐ.:
               </div>
               <p className="leading-relaxed">
@@ -1989,7 +2067,7 @@ export default function App() {
             <div className="pt-2 flex justify-end">
               <button
                 onClick={() => setSelectedDistrictForDetails(null)}
-                className={`w-full sm:w-auto px-5 py-2 rounded-xl font-bold text-xs transition-all ${
+                className={`w-full sm:w-auto px-5 py-2 rounded-lg font-bold text-xs transition-all ${
                   darkMode
                     ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700'
                     : 'bg-slate-200 hover:bg-slate-300 text-slate-800'
@@ -2008,12 +2086,14 @@ export default function App() {
       }`}>
         <button
           onClick={() => setActiveTab('dashboard')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 transition-all ${
+          className={`flex flex-col items-center justify-center rounded-lg px-4 py-1.5 transition-all ${
             activeTab === 'dashboard'
-              ? 'bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-bold shadow-md shadow-blue-500/20'
+              ? darkMode
+                ? 'bg-slate-100 text-slate-900 font-bold shadow-xs'
+                : 'bg-slate-900 text-white font-bold shadow-xs'
               : darkMode
-              ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-              : 'text-slate-600 hover:text-blue-700 hover:bg-slate-100'
+              ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           <span className="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
@@ -2022,12 +2102,14 @@ export default function App() {
 
         <button
           onClick={() => setActiveTab('districts')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 transition-all ${
+          className={`flex flex-col items-center justify-center rounded-lg px-4 py-1.5 transition-all ${
             activeTab === 'districts'
-              ? 'bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-bold shadow-md shadow-blue-500/20'
+              ? darkMode
+                ? 'bg-slate-100 text-slate-900 font-bold shadow-xs'
+                : 'bg-slate-900 text-white font-bold shadow-xs'
               : darkMode
-              ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-              : 'text-slate-600 hover:text-blue-700 hover:bg-slate-100'
+              ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           <span className="material-symbols-outlined text-xl" data-icon="map">map</span>
@@ -2036,12 +2118,14 @@ export default function App() {
 
         <button
           onClick={() => setActiveTab('subjects')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 transition-all ${
+          className={`flex flex-col items-center justify-center rounded-lg px-4 py-1.5 transition-all ${
             activeTab === 'subjects'
-              ? 'bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-bold shadow-md shadow-blue-500/20'
+              ? darkMode
+                ? 'bg-slate-100 text-slate-900 font-bold shadow-xs'
+                : 'bg-slate-900 text-white font-bold shadow-xs'
               : darkMode
-              ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-              : 'text-slate-600 hover:text-blue-700 hover:bg-slate-100'
+              ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           <span className="material-symbols-outlined text-xl" data-icon="school">school</span>
@@ -2050,12 +2134,14 @@ export default function App() {
 
         <button
           onClick={() => setActiveTab('feed')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 transition-all ${
+          className={`flex flex-col items-center justify-center rounded-lg px-4 py-1.5 transition-all ${
             activeTab === 'feed'
-              ? 'bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-bold shadow-md shadow-blue-500/20'
+              ? darkMode
+                ? 'bg-slate-100 text-slate-900 font-bold shadow-xs'
+                : 'bg-slate-900 text-white font-bold shadow-xs'
               : darkMode
-              ? 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
-              : 'text-slate-600 hover:text-blue-700 hover:bg-slate-100'
+              ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           <span className="material-symbols-outlined text-xl" data-icon="account_balance">account_balance</span>
